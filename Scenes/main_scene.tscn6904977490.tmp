@@ -1,0 +1,226 @@
+[gd_scene load_steps=26 format=3 uid="uid://ctwo5lb1pn5x6"]
+
+[ext_resource type="Script" path="res://Scripts/main_scene.gd" id="1_g6g71"]
+[ext_resource type="PackedScene" uid="uid://1cglsstr7xwf" path="res://Scenes/xr_origin_3d.tscn" id="2_ofuuo"]
+[ext_resource type="PackedScene" uid="uid://b2nrcvyosv3nu" path="res://Scenes/button.tscn" id="4_m8ls2"]
+[ext_resource type="AudioStream" uid="uid://cyveup882wmd8" path="res://Materials/Audio/Select Dashboard.mp3" id="5_ctww5"]
+[ext_resource type="AudioStream" uid="uid://dd8h3nebqufmn" path="res://Materials/Audio/Welcome.mp3" id="9_0vxff"]
+[ext_resource type="AudioStream" uid="uid://dnnplwstw8vcr" path="res://Materials/Audio/Follow to begin.mp3" id="10_fe615"]
+[ext_resource type="VideoStream" path="res://Materials/Videos/video2.ogv" id="11_jbfun"]
+[ext_resource type="PackedScene" uid="uid://b2ok30rv1bije" path="res://Scenes/rooms.tscn" id="11_mp72e"]
+[ext_resource type="PackedScene" uid="uid://dp5rcaqlartce" path="res://Scenes/carousel.tscn" id="14_0hukr"]
+[ext_resource type="PackedScene" uid="uid://b8sq3r6nsqtrs" path="res://Scenes/shining_text.tscn" id="16_oofr5"]
+[ext_resource type="PackedScene" uid="uid://byt2qgu65dyx8" path="res://Scenes/pickable_floating.tscn" id="17_sbvn2"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_s15m3"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_oxdov"]
+sky_material = SubResource("ProceduralSkyMaterial_s15m3")
+
+[sub_resource type="Environment" id="Environment_7w174"]
+background_mode = 2
+sky = SubResource("Sky_oxdov")
+ambient_light_sky_contribution = 0.1
+reflected_light_source = 1
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="GDScript" id="GDScript_fawv2"]
+script/source = "extends Node3D
+
+# Variables de referencia
+var right_hand: XRController3D
+var left_hand: XRController3D
+@export var rotation_speed: float = 3.0  # Velocidad de rotación ajustable
+
+func _ready():
+	# Obtener la referencia al controlador derecho
+	var xr_origin = get_node(\"../XROrigin3D\")  # Asumiendo que XROrigin3D es hermano en la escena
+	if xr_origin:
+		right_hand = xr_origin.get_node(\"RightHand\")
+		left_hand = xr_origin.get_node(\"LeftHand\")
+
+func _process(delta):
+	# Verificar si el botón está presionado y rotar el mesh
+	if right_hand.is_button_pressed(\"ax_button\"):
+		$MeshInstance3D.rotate_y(rotation_speed * delta)
+	
+	if left_hand.is_button_pressed(\"ax_button\"):
+		$MeshInstance3D.rotate_y(-rotation_speed * delta)
+"
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_s5iu7"]
+viewport_path = NodePath("SphereVideo/SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bsoam"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_s5iu7")
+
+[sub_resource type="SphereMesh" id="SphereMesh_2qlpe"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_oucmj"]
+
+[sub_resource type="GDScript" id="GDScript_q80oo"]
+script/source = "extends Node3D
+
+# Variables de referencia
+var right_hand: XRController3D
+var left_hand: XRController3D
+@export var rotation_speed: float = 3.0  # Velocidad de rotación ajustable
+
+func _ready():
+	# Obtener la referencia al controlador derecho
+	var xr_origin = get_node(\"../XROrigin3D\")  # Asumiendo que XROrigin3D es hermano en la escena
+	if xr_origin:
+		right_hand = xr_origin.get_node(\"RightHand\")
+		left_hand = xr_origin.get_node(\"LeftHand\")
+
+func _process(delta):
+	# Verificar si el botón está presionado y rotar el mesh
+	if right_hand.is_button_pressed(\"ax_button\"):
+		$MeshInstance3D.rotate_y(rotation_speed * delta)
+	
+	if left_hand.is_button_pressed(\"ax_button\"):
+		$MeshInstance3D.rotate_y(-rotation_speed * delta)
+"
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_lnnao"]
+viewport_path = NodePath("SphereVideo2/SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x8yjs"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_lnnao")
+
+[sub_resource type="SphereMesh" id="SphereMesh_c80hj"]
+
+[sub_resource type="VideoStreamTheora" id="VideoStreamTheora_vjsl1"]
+file = "res://Materials/Videos/video3.ogv"
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ibcf2"]
+
+[node name="MainScene" type="Node3D"]
+script = ExtResource("1_g6g71")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_7w174")
+
+[node name="XROrigin3D" parent="." instance=ExtResource("2_ofuuo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.53356)
+
+[node name="Voices" type="Node3D" parent="."]
+
+[node name="Begin" type="AudioStreamPlayer" parent="Voices"]
+stream = ExtResource("10_fe615")
+
+[node name="Welcome" type="AudioStreamPlayer" parent="Voices"]
+stream = ExtResource("9_0vxff")
+
+[node name="SelectDashboard" type="AudioStreamPlayer" parent="Voices"]
+stream = ExtResource("5_ctww5")
+
+[node name="Button" parent="." instance=ExtResource("4_m8ls2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.23012, 1.00232, -0.53215)
+visible = false
+
+[node name="Lights" type="Node3D" parent="."]
+
+[node name="FirstLight" type="DirectionalLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, 8.62304, 2.12629, 7.23593)
+
+[node name="HyperwallLight" type="SpotLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -25)
+visible = false
+light_negative = true
+light_cull_mask = 4294967294
+spot_range = 9.792
+spot_attenuation = -10.0
+
+[node name="CarouselRoot" parent="." node_paths=PackedStringArray("xr_origin") instance=ExtResource("14_0hukr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, -9.5)
+xr_origin = NodePath("../XROrigin3D")
+
+[node name="Text" type="Node3D" parent="."]
+
+[node name="ShiningText" parent="Text" instance=ExtResource("16_oofr5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.185, -7.72801)
+visible = false
+
+[node name="Label3D" type="Label3D" parent="Text"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -0.49, -7.5)
+visible = false
+text = "Select topic"
+font_size = 100
+
+[node name="PickableObject" parent="." instance=ExtResource("17_sbvn2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.994, 0.5, -16.8)
+visible = false
+
+[node name="Rooms" parent="." instance=ExtResource("11_mp72e")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="SphereVideo" type="Node3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 1.02537, -15.1237)
+visible = false
+script = SubResource("GDScript_fawv2")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SphereVideo"]
+material_override = SubResource("StandardMaterial3D_bsoam")
+mesh = SubResource("SphereMesh_2qlpe")
+
+[node name="SubViewport" type="SubViewport" parent="SphereVideo"]
+size = Vector2i(2048, 1024)
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="SphereVideo/SubViewport"]
+offset_right = 40.0
+offset_bottom = 40.0
+stream = ExtResource("11_jbfun")
+autoplay = true
+loop = true
+
+[node name="Area3D" type="Area3D" parent="SphereVideo"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.851136)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SphereVideo/Area3D"]
+shape = SubResource("BoxShape3D_oucmj")
+
+[node name="SphereVideo2" type="Node3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 2.8047, 1.02537, -23.4087)
+visible = false
+script = SubResource("GDScript_q80oo")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SphereVideo2"]
+transform = Transform3D(0.890086, 0, -0.455793, 0, 1, 0, 0.455793, 0, 0.890086, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_x8yjs")
+mesh = SubResource("SphereMesh_c80hj")
+
+[node name="SubViewport" type="SubViewport" parent="SphereVideo2"]
+size = Vector2i(2048, 1024)
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="SphereVideo2/SubViewport"]
+offset_right = 40.0
+offset_bottom = 40.0
+stream = SubResource("VideoStreamTheora_vjsl1")
+autoplay = true
+loop = true
+
+[node name="Area3D" type="Area3D" parent="SphereVideo2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.851136)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SphereVideo2/Area3D"]
+shape = SubResource("BoxShape3D_ibcf2")
+
+[connection signal="object_seen" from="XROrigin3D" to="." method="XROrigin_ObjectSeen"]
+[connection signal="status_changed" from="Button" to="." method="ButtonPressed"]
+[connection signal="image_change" from="CarouselRoot" to="." method="carousel_image_change"]
+[connection signal="SignalPhase2In" from="Rooms" to="." method="Phase2In"]
+[connection signal="SignalPhase2Out" from="Rooms" to="." method="Phase2Out"]
+[connection signal="SignalPhase3In" from="Rooms" to="." method="Phase3In"]
+[connection signal="SignalPhase3Out" from="Rooms" to="." method="Phase3Out"]
+[connection signal="SignalPhase4In" from="Rooms" to="." method="Phase4In"]
+[connection signal="SignalPhase4Out" from="Rooms" to="." method="Phase4Out"]
+[connection signal="SignalPhase5In" from="Rooms" to="." method="Phase5In"]
+[connection signal="SignalPhase5Out" from="Rooms" to="." method="Phase5Out"]
+[connection signal="SignalPhase6LeftIn" from="Rooms" to="." method="Phase6LeftIn"]
+[connection signal="SignalPhase6LeftOut" from="Rooms" to="." method="Phase6LeftOut"]

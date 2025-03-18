@@ -1,0 +1,78 @@
+[gd_scene load_steps=16 format=3 uid="uid://dp5rcaqlartce"]
+
+[ext_resource type="PackedScene" uid="uid://1cglsstr7xwf" path="res://Scenes/xr_origin_3d.tscn" id="1_slwbh"]
+[ext_resource type="Script" path="res://carousel_container.gd" id="2_v4k6n"]
+[ext_resource type="Texture2D" uid="uid://brgpe74xx5ote" path="res://Materials/icon.svg" id="3_6f7a1"]
+[ext_resource type="Script" path="res://image.gd" id="4_y2jje"]
+[ext_resource type="Script" path="res://image_2.gd" id="5_tkl03"]
+[ext_resource type="Script" path="res://image_3.gd" id="6_e8x0p"]
+[ext_resource type="Script" path="res://image_4.gd" id="7_kf52q"]
+[ext_resource type="Script" path="res://image_5.gd" id="8_wufik"]
+[ext_resource type="Material" uid="uid://cca0uhiijc5jq" path="res://Materials/floor.tres" id="9_uomjc"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qpi8m"]
+size = Vector3(1, 1, 0.2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xjb1g"]
+albedo_texture = ExtResource("3_6f7a1")
+
+[sub_resource type="QuadMesh" id="QuadMesh_8mfcu"]
+material = SubResource("StandardMaterial3D_xjb1g")
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_n4jup"]
+bounce = 0.5
+absorbent = true
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_t4kus"]
+data = PackedVector3Array(7.5, 0, 5, -7.5, 0, 5, 7.5, 0, -5, -7.5, 0, 5, -7.5, 0, -5, 7.5, 0, -5)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_hcfit"]
+size = Vector2(15, 10)
+
+[node name="CarouselRoot" type="Node3D"]
+
+[node name="XROrigin3D" parent="." instance=ExtResource("1_slwbh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.73881)
+
+[node name="CarouselContainer" type="Node3D" parent="."]
+script = ExtResource("2_v4k6n")
+
+[node name="Area3D" type="Area3D" parent="CarouselContainer"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CarouselContainer/Area3D"]
+shape = SubResource("BoxShape3D_qpi8m")
+
+[node name="Image" type="MeshInstance3D" parent="."]
+mesh = SubResource("QuadMesh_8mfcu")
+script = ExtResource("4_y2jje")
+
+[node name="Image2" type="MeshInstance3D" parent="."]
+mesh = SubResource("QuadMesh_8mfcu")
+script = ExtResource("5_tkl03")
+
+[node name="Image3" type="MeshInstance3D" parent="."]
+mesh = SubResource("QuadMesh_8mfcu")
+script = ExtResource("6_e8x0p")
+
+[node name="Image4" type="MeshInstance3D" parent="."]
+mesh = SubResource("QuadMesh_8mfcu")
+script = ExtResource("7_kf52q")
+
+[node name="Image5" type="MeshInstance3D" parent="."]
+mesh = SubResource("QuadMesh_8mfcu")
+script = ExtResource("8_wufik")
+
+[node name="Floor" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+physics_material_override = SubResource("PhysicsMaterial_n4jup")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
+shape = SubResource("ConcavePolygonShape3D_t4kus")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor/CollisionShape3D"]
+material_override = ExtResource("9_uomjc")
+mesh = SubResource("PlaneMesh_hcfit")
+skeleton = NodePath("../..")
+
+[connection signal="body_entered" from="CarouselContainer/Area3D" to="CarouselContainer" method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="CarouselContainer/Area3D" to="CarouselContainer" method="_on_area_3d_body_exited"]

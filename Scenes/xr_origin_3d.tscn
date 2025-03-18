@@ -1,0 +1,53 @@
+[gd_scene load_steps=8 format=3 uid="uid://1cglsstr7xwf"]
+
+[ext_resource type="Script" path="res://Scenes/xr_origin_3d.gd" id="1_xo5b2"]
+[ext_resource type="PackedScene" uid="uid://nqiyqnx42m61" path="res://addons/godot-xr-tools/hands/scenes/highpoly/left_fullglove_physics_hand.tscn" id="2_fite4"]
+[ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="2_icvry"]
+[ext_resource type="PackedScene" uid="uid://kcqomcjq52np" path="res://addons/godot-xr-tools/hands/scenes/highpoly/right_physics_hand.tscn" id="3_e3nux"]
+[ext_resource type="PackedScene" uid="uid://b4ysuy43poobf" path="res://addons/godot-xr-tools/functions/function_pickup.tscn" id="3_vgfbe"]
+[ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="4_q5oao"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8rgna"]
+radius = 0.05
+height = 0.6
+
+[node name="XROrigin3D" type="XROrigin3D"]
+script = ExtResource("1_xo5b2")
+
+[node name="XRCamera3D" type="XRCamera3D" parent="."]
+
+[node name="RayCast3D" type="RayCast3D" parent="XRCamera3D"]
+target_position = Vector3(0, 0, -3)
+collision_mask = 512
+collide_with_areas = true
+debug_shape_thickness = 5
+
+[node name="LeftHand" type="XRController3D" parent="."]
+tracker = &"left_hand"
+
+[node name="MovementDirect" parent="LeftHand" instance=ExtResource("2_icvry")]
+strafe = true
+
+[node name="LeftPhysics" parent="LeftHand" instance=ExtResource("2_fite4")]
+
+[node name="FunctionPickup" parent="LeftHand" instance=ExtResource("3_vgfbe")]
+
+[node name="RightHand" type="XRController3D" parent="."]
+tracker = &"right_hand"
+
+[node name="RightPhysics" parent="RightHand" groups=["controller"] instance=ExtResource("3_e3nux")]
+
+[node name="Area3D" type="Area3D" parent="RightHand/RightPhysics" groups=["controller"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0371896, 0)
+collision_layer = 32768
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RightHand/RightPhysics/Area3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.0155003, 0, -0.0726627)
+shape = SubResource("CapsuleShape3D_8rgna")
+
+[node name="FunctionPickup" parent="RightHand" instance=ExtResource("3_vgfbe")]
+
+[node name="PlayerBody" parent="." instance=ExtResource("4_q5oao")]
+collision_layer = 524289
+push_rigid_bodies = false

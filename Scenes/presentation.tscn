@@ -1,0 +1,87 @@
+[gd_scene load_steps=9 format=3 uid="uid://dnk0nloko6shh"]
+
+[ext_resource type="PackedScene" uid="uid://bmh8ra2indctv" path="res://Scenes/globe.tscn" id="1_ksvc7"]
+[ext_resource type="Script" path="res://Scripts/globe.gd" id="2_pjblo"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gujep"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_wkdgb"]
+sky_material = SubResource("ProceduralSkyMaterial_gujep")
+
+[sub_resource type="Environment" id="Environment_bi0ng"]
+background_mode = 2
+sky = SubResource("Sky_wkdgb")
+tonemap_mode = 2
+
+[sub_resource type="FontFile" id="FontFile_0hlgf"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/32/0/ascent = 0.0
+cache/0/32/0/descent = 0.0
+cache/0/32/0/underline_position = 0.0
+cache/0/32/0/underline_thickness = 0.0
+cache/0/32/0/scale = 1.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/40/0/ascent = 0.0
+cache/0/40/0/descent = 0.0
+cache/0/40/0/underline_position = 0.0
+cache/0/40/0/underline_thickness = 0.0
+cache/0/40/0/scale = 1.0
+cache/0/50/0/ascent = 0.0
+cache/0/50/0/descent = 0.0
+cache/0/50/0/underline_position = 0.0
+cache/0/50/0/underline_thickness = 0.0
+cache/0/50/0/scale = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3c2fb"]
+albedo_color = Color(0.355314, 0.355314, 0.355313, 1)
+metallic_specular = 1.0
+emission_enabled = true
+emission = Color(0.303233, 0.303233, 0.303233, 1)
+
+[sub_resource type="TextMesh" id="TextMesh_xq3rn"]
+material = SubResource("StandardMaterial3D_3c2fb")
+text = "Want to know
+abourt the earth?"
+font = SubResource("FontFile_0hlgf")
+font_size = 50
+
+[node name="Presentation" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_bi0ng")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0.620365, -2.17529)
+visible = false
+layers = 512
+light_color = Color(0.976839, 0.974482, 1.54018e-06, 1)
+light_energy = 9.64
+light_indirect_energy = 0.0
+spot_range = 3.0
+spot_attenuation = -10.0
+spot_angle = 40.0
+spot_angle_attenuation = 48.5031
+
+[node name="Attention" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.03118)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Attention"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.21011, 0)
+visible = false
+mesh = SubResource("TextMesh_xq3rn")
+skeleton = NodePath("../..")
+
+[node name="Globe" type="Node3D" parent="Attention"]
+transform = Transform3D(0.91706, -0.398749, 0, 0.398749, 0.91706, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="TextureGlobe" parent="Attention/Globe" instance=ExtResource("1_ksvc7")]
+transform = Transform3D(0.0906268, 0.0393763, 0.0153714, 0.0364911, -0.0912342, 0.0185667, 0.0213349, -0.0112172, -0.0970515, 0, 0, 0)
+script = ExtResource("2_pjblo")

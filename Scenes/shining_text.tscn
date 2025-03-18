@@ -1,0 +1,60 @@
+[gd_scene load_steps=6 format=3 uid="uid://b8sq3r6nsqtrs"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_klv1v"]
+albedo_color = Color(1, 0.843137, 0, 1)
+roughness = 0.2
+emission_enabled = true
+emission = Color(1, 0.996078, 1, 1)
+
+[sub_resource type="TextMesh" id="TextMesh_ov46v"]
+material = SubResource("StandardMaterial3D_klv1v")
+text = "Select topic"
+font_size = 35
+
+[sub_resource type="Animation" id="Animation_ki1xb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Text:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_kq6yu"]
+resource_name = "rotate"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Text:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, -0.523599, 0), Vector3(0, 0.523599, 0), Vector3(0, -0.523599, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uat11"]
+_data = {
+&"RESET": SubResource("Animation_ki1xb"),
+&"rotate": SubResource("Animation_kq6yu")
+}
+
+[node name="ShiningText" type="Node3D"]
+
+[node name="Text" type="MeshInstance3D" parent="."]
+mesh = SubResource("TextMesh_ov46v")
+
+[node name="Rotation" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_uat11")
+}

@@ -1,0 +1,121 @@
+[gd_scene load_steps=16 format=3 uid="uid://dltebxkvutlpn"]
+
+[ext_resource type="VideoStream" path="res://Materials/Videos/video1.ogv" id="1_ul622"]
+[ext_resource type="Shader" path="res://Scripts/Darker.gdshader" id="2_jhs31"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_v73rh"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_f4wvi"]
+sky_material = SubResource("ProceduralSkyMaterial_v73rh")
+
+[sub_resource type="Environment" id="Environment_pj254"]
+background_mode = 2
+sky = SubResource("Sky_f4wvi")
+tonemap_mode = 2
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_1nv6i"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1ti35"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_1nv6i")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dbkvh"]
+render_priority = 0
+shader = ExtResource("2_jhs31")
+shader_parameter/highlight_center = Vector2(0.8, 0.2)
+shader_parameter/highlight_radius = 0.15
+shader_parameter/darkness = 0.3
+
+[sub_resource type="QuadMesh" id="QuadMesh_6jra8"]
+material = SubResource("ShaderMaterial_dbkvh")
+size = Vector2(2, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fi0se"]
+transparency = 1
+blend_mode = 1
+albedo_color = Color(1, 1, 1, 0.27451)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_m2hcn"]
+material = SubResource("StandardMaterial3D_fi0se")
+top_radius = 0.1
+bottom_radius = 0.1
+height = 0.01
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bl4tl"]
+transparency = 1
+blend_mode = 1
+albedo_color = Color(0, 1, 0, 0.27451)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_j2yf8"]
+material = SubResource("StandardMaterial3D_bl4tl")
+top_radius = 0.1
+bottom_radius = 0.1
+height = 0.01
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eqfgj"]
+transparency = 1
+blend_mode = 2
+albedo_color = Color(1, 1, 1, 0.196078)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_rdy35"]
+material = SubResource("StandardMaterial3D_eqfgj")
+top_radius = 0.1
+bottom_radius = 0.1
+height = 0.01
+
+[node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_pj254")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.805595)
+visible = false
+
+[node name="SubViewport" type="SubViewport" parent="."]
+size = Vector2i(2048, 1024)
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="SubViewport"]
+offset_right = 40.0
+offset_bottom = 40.0
+stream = ExtResource("1_ul622")
+autoplay = true
+loop = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_1ti35")
+mesh = SubResource("QuadMesh_6jra8")
+
+[node name="Highlight" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.36165)
+visible = false
+light_energy = 0.5
+
+[node name="DarkLight" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
+visible = false
+light_energy = 0.5
+light_indirect_energy = 16.0
+light_negative = true
+light_specular = 16.0
+spot_range = 7.64399
+spot_angle = 29.7728
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.36151, 0, 0)
+mesh = SubResource("CylinderMesh_m2hcn")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.420268, 0, 0)
+mesh = SubResource("CylinderMesh_j2yf8")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.168158, 0.281268, 0)
+mesh = SubResource("CylinderMesh_rdy35")

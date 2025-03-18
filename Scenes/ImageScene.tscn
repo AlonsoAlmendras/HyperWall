@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://b3jlwnnsdanrn"]
+
+[ext_resource type="Texture2D" uid="uid://brgpe74xx5ote" path="res://Materials/icon.svg" id="1_pa5ge"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lemit"]
+albedo_texture = ExtResource("1_pa5ge")
+
+[sub_resource type="QuadMesh" id="QuadMesh_b1fax"]
+material = SubResource("StandardMaterial3D_lemit")
+
+[node name="Node3D" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("QuadMesh_b1fax")

@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://2o7kkllf0b70"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_e27xk"]
+size = Vector2(2, 1)
+
+[node name="VideoDisplay" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("QuadMesh_e27xk")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0

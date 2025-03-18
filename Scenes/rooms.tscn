@@ -1,0 +1,308 @@
+[gd_scene load_steps=32 format=3 uid="uid://b2ok30rv1bije"]
+
+[ext_resource type="PackedScene" uid="uid://p0rqj36w3w10" path="res://Scenes/roomDoor.tscn" id="1_08cyf"]
+[ext_resource type="Script" path="res://Scripts/rooms.gd" id="1_t3j6o"]
+[ext_resource type="PackedScene" uid="uid://bpvlsqkhpu5hj" path="res://Scenes/HyperWallFire.tscn" id="2_oftdw"]
+[ext_resource type="PackedScene" uid="uid://bh0fulsy8j3qx" path="res://Scenes/HyperWallFire2.tscn" id="3_gsgou"]
+[ext_resource type="PackedScene" uid="uid://b04mc3elohq87" path="res://Scenes/hyper_wall_tutorial.tscn" id="4_u2rm2"]
+[ext_resource type="PackedScene" uid="uid://bes6fl7nhtgm6" path="res://Scenes/roomHallway.tscn" id="5_uax71"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_0l5fl"]
+data = PackedVector3Array(-0.25, 2, 5, 0.25, 2, 5, -0.25, -2, 5, 0.25, 2, 5, 0.25, -2, 5, -0.25, -2, 5, 0.25, 2, -5, -0.25, 2, -5, 0.25, -2, -5, -0.25, 2, -5, -0.25, -2, -5, 0.25, -2, -5, 0.25, 2, 5, 0.25, 2, -5, 0.25, -2, 5, 0.25, 2, -5, 0.25, -2, -5, 0.25, -2, 5, -0.25, 2, -5, -0.25, 2, 5, -0.25, -2, -5, -0.25, 2, 5, -0.25, -2, 5, -0.25, -2, -5, 0.25, 2, 5, -0.25, 2, 5, 0.25, 2, -5, -0.25, 2, 5, -0.25, 2, -5, 0.25, 2, -5, -0.25, -2, 5, 0.25, -2, 5, -0.25, -2, -5, 0.25, -2, 5, 0.25, -2, -5, -0.25, -2, -5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ybgtb"]
+size = Vector3(0.5, 4, 10)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_43r2j"]
+size = Vector3(3.5, 2, 9)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y3my3"]
+albedo_color = Color(0.392157, 0.392157, 0.392157, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_cax22"]
+material = SubResource("StandardMaterial3D_y3my3")
+size = Vector2(5, 10)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_50vws"]
+size = Vector3(3.5, 2, 9)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7n824"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_whfii"]
+material = SubResource("StandardMaterial3D_7n824")
+size = Vector2(5, 10)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bmjtl"]
+size = Vector3(3.5, 2, 9)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rnp0f"]
+albedo_color = Color(0.392157, 0.392157, 0.392157, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_kklov"]
+material = SubResource("StandardMaterial3D_rnp0f")
+size = Vector2(5, 10)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_47u5p"]
+size = Vector3(3.5, 2, 9)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sa0yg"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_83pod"]
+material = SubResource("StandardMaterial3D_sa0yg")
+size = Vector2(5, 10)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_a82bt"]
+size = Vector3(3.5, 2, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vhrof"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_q4po6"]
+material = SubResource("StandardMaterial3D_vhrof")
+size = Vector2(5, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_klmbg"]
+size = Vector3(3.5, 2, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_imgkq"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_ivp3f"]
+material = SubResource("StandardMaterial3D_imgkq")
+size = Vector2(5, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gopkn"]
+size = Vector3(3.5, 2, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b4de6"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_rvksq"]
+material = SubResource("StandardMaterial3D_b4de6")
+size = Vector2(5, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kd0s4"]
+albedo_color = Color(1, 1, 0.266667, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_5nhl3"]
+material = SubResource("StandardMaterial3D_kd0s4")
+size = Vector2(0.25, 1)
+
+[node name="Rooms" type="Node3D"]
+script = ExtResource("1_t3j6o")
+
+[node name="RoomDoor" parent="." instance=ExtResource("1_08cyf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.25, 0, 0)
+
+[node name="Hallway" type="Node3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="WallFront" type="StaticBody3D" parent="Hallway"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.5, 1.462, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hallway/WallFront"]
+shape = SubResource("ConcavePolygonShape3D_0l5fl")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Hallway/WallFront/CollisionShape3D"]
+layers = 2
+mesh = SubResource("BoxMesh_ybgtb")
+skeleton = NodePath("../..")
+
+[node name="HyperWallFire1" parent="Hallway/WallFront" instance=ExtResource("2_oftdw")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.251, -0.5, 0)
+visible = false
+
+[node name="HyperWallFire2" parent="Hallway/WallFront" instance=ExtResource("3_gsgou")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.251, -0.5, 0)
+
+[node name="HyperWallTutorial" parent="Hallway/WallFront" instance=ExtResource("4_u2rm2")]
+transform = Transform3D(-1.74846e-07, 0, 4, 0, 2, 0, -2, 0, -8.74228e-08, 0.251, -0.5, 0)
+
+[node name="Phases" type="Node3D" parent="Hallway"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, -0.505, 1.09278e-06)
+
+[node name="Phase2" type="Node3D" parent="Hallway/Phases"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 0)
+
+[node name="Area3D" type="Area3D" parent="Hallway/Phases/Phase2"]
+collision_layer = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hallway/Phases/Phase2/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("BoxShape3D_43r2j")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Hallway/Phases/Phase2/Area3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("QuadMesh_cax22")
+
+[node name="RoomHallway" parent="Hallway/Phases/Phase2" instance=ExtResource("5_uax71")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0.5, 0)
+
+[node name="Phase3" type="Node3D" parent="Hallway/Phases"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 0)
+
+[node name="Area3D" type="Area3D" parent="Hallway/Phases/Phase3"]
+collision_layer = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hallway/Phases/Phase3/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("BoxShape3D_50vws")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Hallway/Phases/Phase3/Area3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("QuadMesh_whfii")
+
+[node name="RoomHallway2" parent="Hallway/Phases/Phase3" instance=ExtResource("5_uax71")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0.5, 0)
+
+[node name="Phase4" type="Node3D" parent="Hallway/Phases"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0)
+
+[node name="Area3D" type="Area3D" parent="Hallway/Phases/Phase4"]
+collision_layer = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hallway/Phases/Phase4/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("BoxShape3D_bmjtl")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Hallway/Phases/Phase4/Area3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("QuadMesh_kklov")
+
+[node name="RoomHallway" parent="Hallway/Phases/Phase4" instance=ExtResource("5_uax71")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0.5, 0)
+
+[node name="Phase5" type="Node3D" parent="Hallway/Phases"]
+
+[node name="Area3D" type="Area3D" parent="Hallway/Phases/Phase5"]
+collision_layer = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hallway/Phases/Phase5/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("BoxShape3D_47u5p")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Hallway/Phases/Phase5/Area3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("QuadMesh_83pod")
+
+[node name="RoomHallway" parent="Hallway/Phases/Phase5" instance=ExtResource("5_uax71")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0.5, 0)
+
+[node name="Phase6" type="Node3D" parent="Hallway/Phases"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0)
+
+[node name="Left" type="Area3D" parent="Hallway/Phases/Phase6"]
+collision_layer = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hallway/Phases/Phase6/Left"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 3.25099)
+shape = SubResource("BoxShape3D_a82bt")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Hallway/Phases/Phase6/Left"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 3.251)
+mesh = SubResource("QuadMesh_q4po6")
+
+[node name="Middle" type="Area3D" parent="Hallway/Phases/Phase6"]
+collision_layer = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hallway/Phases/Phase6/Middle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.554932, 1, 0.212128)
+shape = SubResource("BoxShape3D_klmbg")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Hallway/Phases/Phase6/Middle"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0.212)
+mesh = SubResource("QuadMesh_ivp3f")
+
+[node name="Right" type="Area3D" parent="Hallway/Phases/Phase6"]
+collision_layer = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hallway/Phases/Phase6/Right"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -2.68584)
+shape = SubResource("BoxShape3D_gopkn")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Hallway/Phases/Phase6/Right"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, -2.686)
+mesh = SubResource("QuadMesh_rvksq")
+
+[node name="RoomHallway" parent="Hallway/Phases/Phase6" instance=ExtResource("5_uax71")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0.5, 0)
+
+[node name="Path" type="Node3D" parent="Hallway"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, -0.5, 0)
+visible = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Hallway/Path"]
+transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, 25, 0, 0)
+mesh = SubResource("QuadMesh_5nhl3")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Hallway/Path"]
+transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, 23, 0, 0)
+mesh = SubResource("QuadMesh_5nhl3")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Hallway/Path"]
+transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, 21, 0, 0)
+mesh = SubResource("QuadMesh_5nhl3")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Hallway/Path"]
+transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, 19, 0, 0)
+mesh = SubResource("QuadMesh_5nhl3")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Hallway/Path"]
+transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, 17, 0, 0)
+mesh = SubResource("QuadMesh_5nhl3")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Hallway/Path"]
+transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, 15, 0, 0)
+mesh = SubResource("QuadMesh_5nhl3")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="Hallway/Path"]
+transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, 13, 0, 0)
+mesh = SubResource("QuadMesh_5nhl3")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="Hallway/Path"]
+transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, 11, 0, 0)
+mesh = SubResource("QuadMesh_5nhl3")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="Hallway/Path"]
+transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, 9, 0, 0)
+mesh = SubResource("QuadMesh_5nhl3")
+
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="Hallway/Path"]
+transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, 7, 0, 0)
+mesh = SubResource("QuadMesh_5nhl3")
+
+[node name="MeshInstance3D11" type="MeshInstance3D" parent="Hallway/Path"]
+transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, 5, 0, 0)
+mesh = SubResource("QuadMesh_5nhl3")
+
+[node name="MeshInstance3D12" type="MeshInstance3D" parent="Hallway/Path"]
+transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, 3, 0, 0)
+mesh = SubResource("QuadMesh_5nhl3")
+
+[node name="MeshInstance3D13" type="MeshInstance3D" parent="Hallway/Path"]
+transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, 1, 0, 0)
+mesh = SubResource("QuadMesh_5nhl3")
+
+[node name="MeshInstance3D14" type="MeshInstance3D" parent="Hallway/Path"]
+transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, -1, 0, 0)
+mesh = SubResource("QuadMesh_5nhl3")
+
+[node name="MeshInstance3D15" type="MeshInstance3D" parent="Hallway/Path"]
+transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, -3, 0, 0)
+mesh = SubResource("QuadMesh_5nhl3")
+
+[node name="MeshInstance3D16" type="MeshInstance3D" parent="Hallway/Path"]
+transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, -5, 0, 0)
+mesh = SubResource("QuadMesh_5nhl3")
+
+[node name="MeshInstance3D17" type="MeshInstance3D" parent="Hallway/Path"]
+transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, -7, 0, 0)
+mesh = SubResource("QuadMesh_5nhl3")
+
+[connection signal="body_entered" from="Hallway/Phases/Phase2/Area3D" to="." method="Phase2In"]
+[connection signal="body_exited" from="Hallway/Phases/Phase2/Area3D" to="." method="Phase2Out"]
+[connection signal="body_entered" from="Hallway/Phases/Phase3/Area3D" to="." method="Phase3In"]
+[connection signal="body_exited" from="Hallway/Phases/Phase3/Area3D" to="." method="Phase3Out"]
+[connection signal="body_entered" from="Hallway/Phases/Phase4/Area3D" to="." method="Phase4In"]
+[connection signal="body_exited" from="Hallway/Phases/Phase4/Area3D" to="." method="Phase4Out"]
+[connection signal="body_entered" from="Hallway/Phases/Phase5/Area3D" to="." method="Phase5In"]
+[connection signal="body_exited" from="Hallway/Phases/Phase5/Area3D" to="." method="Phase5Out"]
+[connection signal="body_entered" from="Hallway/Phases/Phase6/Left" to="." method="Phase6LeftIn"]
+[connection signal="body_exited" from="Hallway/Phases/Phase6/Left" to="." method="Phase6LeftOut"]

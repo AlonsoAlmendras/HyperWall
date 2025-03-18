@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bmh8ra2indctv"]
+
+[ext_resource type="PackedScene" uid="uid://dblpeyumcvgs4" path="res://Materials/earth_globe.glb" id="1_rehqi"]
+
+[node name="Sketchfab_Scene" instance=ExtResource("1_rehqi")]
+transform = Transform3D(0.906063, 0.394174, 0.153871, 0.365404, -0.912235, 0.185219, 0.213375, -0.111595, -0.970576, 0, 0, 0)
+
+[node name="Sketchfab_model" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1.54, 10.966, 1.794)

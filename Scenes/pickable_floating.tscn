@@ -1,0 +1,40 @@
+[gd_scene load_steps=8 format=3 uid="uid://byt2qgu65dyx8"]
+
+[ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="1_ljmsb"]
+[ext_resource type="VideoStream" path="res://Videos/Video.ogv" id="2_cicw3"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_4ptcl"]
+bounce = 0.9
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_431ab"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_gsv05"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ykgnw"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_gsv05")
+
+[sub_resource type="SphereMesh" id="SphereMesh_gapq2"]
+
+[node name="PickableObject" instance=ExtResource("1_ljmsb")]
+physics_material_override = SubResource("PhysicsMaterial_4ptcl")
+gravity_scale = 0.0
+picked_up_layer = 8388609
+
+[node name="CollisionShape3D" parent="." index="0"]
+shape = SubResource("SphereShape3D_431ab")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="1"]
+material_override = SubResource("StandardMaterial3D_ykgnw")
+mesh = SubResource("SphereMesh_gapq2")
+
+[node name="SubViewport" type="SubViewport" parent="." index="2"]
+size = Vector2i(2048, 1024)
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="SubViewport" index="0"]
+offset_right = 40.0
+offset_bottom = 40.0
+stream = ExtResource("2_cicw3")
+autoplay = true
+loop = true

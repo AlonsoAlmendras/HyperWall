@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cyveup882wmd8"
+path="res://.godot/imported/Select Dashboard.mp3-4c8e73aab619270a7834674076066e06.mp3str"
+
+[deps]
+
+source_file="res://Materials/Audio/Select Dashboard.mp3"
+dest_files=["res://.godot/imported/Select Dashboard.mp3-4c8e73aab619270a7834674076066e06.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

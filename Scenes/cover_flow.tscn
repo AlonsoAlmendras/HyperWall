@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=3 uid="uid://dwpsnu2i4rspl"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_loky1"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_jbkpe"]
+material = SubResource("StandardMaterial3D_loky1")
+
+[sub_resource type="GDScript" id="GDScript_u6oa4"]
+script/source = "@tool
+class_name Pool extends Node
+
+@export var size := 21
+@export var scene: PackedScene:
+	set(value):
+		scene = value
+		update_configuration_warnings()
+
+var _pool: Array[Node] = []
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[node name="CoverFlow" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.25978)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("QuadMesh_jbkpe")
+
+[node name="Node3D" type="Node3D" parent="."]
+script = SubResource("GDScript_u6oa4")
+size = 3

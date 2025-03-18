@@ -1,0 +1,77 @@
+[gd_scene load_steps=13 format=3 uid="uid://dp5rcaqlartce"]
+
+[ext_resource type="Script" path="res://carousel.gd" id="1_nfq1q"]
+[ext_resource type="PackedScene" uid="uid://1cglsstr7xwf" path="res://Scenes/xr_origin_3d.tscn" id="1_slwbh"]
+[ext_resource type="Script" path="res://carousel_container.gd" id="2_v4k6n"]
+[ext_resource type="PackedScene" uid="uid://b3jlwnnsdanrn" path="res://Scenes/ImageScene.tscn" id="3_ku2er"]
+[ext_resource type="Material" uid="uid://cca0uhiijc5jq" path="res://Materials/floor.tres" id="9_uomjc"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_i54sk"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_86ak7"]
+sky_material = SubResource("ProceduralSkyMaterial_i54sk")
+
+[sub_resource type="Environment" id="Environment_5vec6"]
+background_mode = 2
+sky = SubResource("Sky_86ak7")
+tonemap_mode = 2
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qpi8m"]
+size = Vector3(1, 0.5, 0.5)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_n4jup"]
+bounce = 0.5
+absorbent = true
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_t4kus"]
+data = PackedVector3Array(7.5, 0, 5, -7.5, 0, 5, 7.5, 0, -5, -7.5, 0, 5, -7.5, 0, -5, 7.5, 0, -5)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_hcfit"]
+size = Vector2(15, 10)
+
+[node name="CarouselRoot" type="Node3D"]
+script = ExtResource("1_nfq1q")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_5vec6")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="XROrigin3D" parent="." instance=ExtResource("1_slwbh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 1.739)
+
+[node name="CarouselContainer" type="Node3D" parent="."]
+script = ExtResource("2_v4k6n")
+radius = null
+angle_step = null
+rotation_speed = null
+damping = null
+swipe_sensitivity = null
+image_count = null
+image_scene = ExtResource("3_ku2er")
+
+[node name="InteractionArea" type="Area3D" parent="CarouselContainer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.217603)
+collision_mask = 32768
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CarouselContainer/InteractionArea"]
+shape = SubResource("BoxShape3D_qpi8m")
+
+[node name="Floor" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, 0)
+physics_material_override = SubResource("PhysicsMaterial_n4jup")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
+shape = SubResource("ConcavePolygonShape3D_t4kus")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor/CollisionShape3D"]
+material_override = ExtResource("9_uomjc")
+mesh = SubResource("PlaneMesh_hcfit")
+skeleton = NodePath("../..")
+
+[connection signal="area_entered" from="CarouselContainer/InteractionArea" to="CarouselContainer" method="_on_interaction_area_area_entered"]
+[connection signal="area_exited" from="CarouselContainer/InteractionArea" to="CarouselContainer" method="_on_interaction_area_area_exited"]

@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://dp5rcaqlartce"]
+
+[ext_resource type="Script" path="res://Scripts/carousel.gd" id="1_2dg2a"]
+[ext_resource type="Script" path="res://Scripts/carousel_container.gd" id="3_kajjf"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qpi8m"]
+size = Vector3(3, 2, 1.5)
+
+[node name="CarouselRoot" type="Node3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+script = ExtResource("1_2dg2a")
+
+[node name="CarouselContainer" type="Node3D" parent="."]
+script = ExtResource("3_kajjf")
+
+[node name="InteractionArea" type="Area3D" parent="CarouselContainer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.5)
+collision_mask = 32768
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CarouselContainer/InteractionArea"]
+shape = SubResource("BoxShape3D_qpi8m")
+
+[connection signal="selected_image" from="CarouselContainer" to="." method="selected_image"]
+[connection signal="area_entered" from="CarouselContainer/InteractionArea" to="CarouselContainer" method="_on_interaction_area_area_entered"]
+[connection signal="area_exited" from="CarouselContainer/InteractionArea" to="CarouselContainer" method="_on_interaction_area_area_exited"]
