@@ -2,6 +2,7 @@
 
 [ext_resource type="VideoStream" path="res://Materials/Videos/video1.ogv" id="1_ul622"]
 [ext_resource type="Shader" path="res://Scripts/Darker.gdshader" id="2_jhs31"]
+[ext_resource type="Material" uid="uid://bbymxyk6ghx64" path="res://Materials/HiglightGreen.tres" id="3_4asqh"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_v73rh"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -44,13 +45,8 @@ top_radius = 0.1
 bottom_radius = 0.1
 height = 0.01
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bl4tl"]
-transparency = 1
-blend_mode = 1
-albedo_color = Color(0, 1, 0, 0.27451)
-
 [sub_resource type="CylinderMesh" id="CylinderMesh_j2yf8"]
-material = SubResource("StandardMaterial3D_bl4tl")
+material = ExtResource("3_4asqh")
 top_radius = 0.1
 bottom_radius = 0.1
 height = 0.01

@@ -1,9 +1,10 @@
-[gd_scene load_steps=26 format=3 uid="uid://ctwo5lb1pn5x6"]
+[gd_scene load_steps=27 format=3 uid="uid://ctwo5lb1pn5x6"]
 
 [ext_resource type="Script" path="res://Scripts/main_scene.gd" id="1_g6g71"]
 [ext_resource type="PackedScene" uid="uid://1cglsstr7xwf" path="res://Scenes/xr_origin_3d.tscn" id="2_ofuuo"]
 [ext_resource type="PackedScene" uid="uid://b2nrcvyosv3nu" path="res://Scenes/button.tscn" id="4_m8ls2"]
 [ext_resource type="AudioStream" uid="uid://cyveup882wmd8" path="res://Materials/Audio/Select Dashboard.mp3" id="5_ctww5"]
+[ext_resource type="AudioStream" uid="uid://crw7ujih66jva" path="res://Materials/Audio/Select Topic.mp3" id="6_a4fec"]
 [ext_resource type="AudioStream" uid="uid://dd8h3nebqufmn" path="res://Materials/Audio/Welcome.mp3" id="9_0vxff"]
 [ext_resource type="AudioStream" uid="uid://dnnplwstw8vcr" path="res://Materials/Audio/Follow to begin.mp3" id="10_fe615"]
 [ext_resource type="VideoStream" path="res://Materials/Videos/video2.ogv" id="11_jbfun"]
@@ -120,6 +121,9 @@ stream = ExtResource("9_0vxff")
 [node name="SelectDashboard" type="AudioStreamPlayer" parent="Voices"]
 stream = ExtResource("5_ctww5")
 
+[node name="SelectTopic" type="AudioStreamPlayer" parent="Voices"]
+stream = ExtResource("6_a4fec")
+
 [node name="Button" parent="." instance=ExtResource("4_m8ls2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.23012, 1.00232, -0.53215)
 visible = false
@@ -170,6 +174,7 @@ material_override = SubResource("StandardMaterial3D_bsoam")
 mesh = SubResource("SphereMesh_2qlpe")
 
 [node name="SubViewport" type="SubViewport" parent="SphereVideo"]
+scaling_3d_scale = 1.5
 size = Vector2i(2048, 1024)
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="SphereVideo/SubViewport"]
@@ -196,6 +201,7 @@ material_override = SubResource("StandardMaterial3D_x8yjs")
 mesh = SubResource("SphereMesh_c80hj")
 
 [node name="SubViewport" type="SubViewport" parent="SphereVideo2"]
+scaling_3d_scale = 1.5
 size = Vector2i(2048, 1024)
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="SphereVideo2/SubViewport"]
@@ -214,6 +220,7 @@ shape = SubResource("BoxShape3D_ibcf2")
 [connection signal="object_seen" from="XROrigin3D" to="." method="XROrigin_ObjectSeen"]
 [connection signal="status_changed" from="Button" to="." method="ButtonPressed"]
 [connection signal="image_change" from="CarouselRoot" to="." method="carousel_image_change"]
+[connection signal="IntroductionFinish" from="Rooms" to="." method="Introduction_finish"]
 [connection signal="SignalPhase2In" from="Rooms" to="." method="Phase2In"]
 [connection signal="SignalPhase2Out" from="Rooms" to="." method="Phase2Out"]
 [connection signal="SignalPhase3In" from="Rooms" to="." method="Phase3In"]

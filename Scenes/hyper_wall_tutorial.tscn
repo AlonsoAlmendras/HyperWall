@@ -1,6 +1,7 @@
-[gd_scene load_steps=51 format=3 uid="uid://b04mc3elohq87"]
+[gd_scene load_steps=55 format=3 uid="uid://b04mc3elohq87"]
 
 [ext_resource type="VideoStream" path="res://Videos/Video.ogv" id="1_46dqh"]
+[ext_resource type="Script" path="res://Scripts/hyper_wall_tutorial.gd" id="1_wjpwy"]
 [ext_resource type="VideoStream" path="res://Videos/Video2.ogv" id="2_u7y0i"]
 [ext_resource type="VideoStream" path="res://Videos/Video3.ogv" id="3_vttr0"]
 [ext_resource type="VideoStream" path="res://Videos/Video4.ogv" id="4_dpd32"]
@@ -72,7 +73,13 @@ size = Vector2(1.729, 0.721)
 height = 0.1
 radius = 0.175324
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wgv6e"]
+transparency = 1
+blend_mode = 1
+albedo_color = Color(1, 0.392157, 0.0941176, 0.27451)
+
 [sub_resource type="CylinderMesh" id="CylinderMesh_te10a"]
+material = SubResource("StandardMaterial3D_wgv6e")
 top_radius = 0.175
 bottom_radius = 0.175
 height = 0.01
@@ -81,7 +88,13 @@ height = 0.01
 height = 0.1
 radius = 0.2
 
-[sub_resource type="CylinderMesh" id="CylinderMesh_lnhct"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_57fiy"]
+transparency = 1
+blend_mode = 1
+albedo_color = Color(1, 0.392157, 0.0941176, 0.27451)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_y7nvp"]
+material = SubResource("StandardMaterial3D_57fiy")
 top_radius = 0.2
 bottom_radius = 0.2
 height = 0.01
@@ -90,7 +103,13 @@ height = 0.01
 height = 0.1
 radius = 0.2
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tcggb"]
+transparency = 1
+blend_mode = 1
+albedo_color = Color(1, 0.392157, 0.0941176, 0.27451)
+
 [sub_resource type="CylinderMesh" id="CylinderMesh_a625i"]
+material = SubResource("StandardMaterial3D_tcggb")
 top_radius = 0.2
 bottom_radius = 0.2
 height = 0.01
@@ -121,378 +140,6 @@ resource_name = "Description"
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_a16x0"]
 _data = {
 &"Description": SubResource("Animation_ro2ru")
-}
-
-[sub_resource type="Animation" id="Animation_abrki"]
-resource_name = "PlayLeft"
-length = 35.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("DashBoard/MeshInstance3D:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.4, 33, 35),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(1, 1, 1), Vector3(1.2, 1.2, 1.2), Vector3(1.2, 1.2, 1.2), Vector3(1, 1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("DashBoard/MeshInstance3D:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.4, 33, 35),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(-1.527, -0.137, 0.01), Vector3(-1.527, 0, 0.05), Vector3(-1.527, 0, 0.05), Vector3(-1.527, -0.137, 0.01)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../Audios/Left/Intro:playing")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0.6),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("../Audios/Left/Focus:playing")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(11),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("../Audios/Left/Reason:playing")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(20),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("DashBoard/MeshInstance3D/SouthAsia:visible")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 12.0667, 19.5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [false, true, false]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("DashBoard/MeshInstance3D/EastAsia:visible")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0, 12.5667, 19.5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [false, true, false]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("../Audios/Left/Focus2:playing")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(24),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("../Audios/Left/Conclution:playing")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(30),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("DashBoard/MeshInstance3D/AtlanticOcean:spot_attenuation")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"times": PackedFloat32Array(23.5, 24.5, 25.25, 26, 26.75, 27.5, 28.25, 29),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [0.0, 2.0, 0.5, 2.0, 0.5, 2.0, 0.5, 0.0]
-}
-tracks/10/type = "value"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("DashBoard/MeshInstance3D/AtlanticOcean2:spot_attenuation")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
-"times": PackedFloat32Array(23.4667, 24.5667, 25.3333, 26.1333, 26.7333, 27.6333, 28.2667, 29),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [0.0, 2.0, 0.5, 2.0, 0.5, 2.0, 0.5, 0.0]
-}
-tracks/11/type = "value"
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/path = NodePath("DashBoard/MeshInstance3D/AtlanticOcean:visible")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/keys = {
-"times": PackedFloat32Array(0, 23.3, 30),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [false, true, false]
-}
-tracks/12/type = "value"
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/path = NodePath("DashBoard/MeshInstance3D/AtlanticOcean2:visible")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/keys = {
-"times": PackedFloat32Array(0.1, 23.2, 30),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [false, true, false]
-}
-tracks/13/type = "value"
-tracks/13/imported = false
-tracks/13/enabled = true
-tracks/13/path = NodePath("DashBoard/MeshInstance3D/AtlanticOcean3:spot_attenuation")
-tracks/13/interp = 1
-tracks/13/loop_wrap = true
-tracks/13/keys = {
-"times": PackedFloat32Array(23.5333, 24.5667, 25.3, 25.9333, 26.7667, 27.6667, 28.3333, 29.1333),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [0.0, 2.0, 0.5, 2.0, 0.5, 2.0, 0.5, 0.0]
-}
-tracks/14/type = "value"
-tracks/14/imported = false
-tracks/14/enabled = true
-tracks/14/path = NodePath("DashBoard/MeshInstance3D/AtlanticOcean3:visible")
-tracks/14/interp = 1
-tracks/14/loop_wrap = true
-tracks/14/keys = {
-"times": PackedFloat32Array(0.166667, 23.4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-
-[sub_resource type="Animation" id="Animation_wje1f"]
-resource_name = "Introduction"
-length = 13.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("DashBoard/MeshInstance3D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(1.98333, 2.98333, 5.01667, 5.68333),
-"transitions": PackedFloat32Array(1, 0.999999, 0.999999, 1),
-"update": 0,
-"values": [Vector3(-1.527, -0.137, 0.01), Vector3(0, 0, 3.5), Vector3(0, 0, 3.5), Vector3(-1.527, -0.137, 0.01)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("DashBoard/MeshInstance3D:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(1.98333, 2.98333, 5.01667, 5.68333),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(1, 1, 1), Vector3(2, 2, 2), Vector3(2, 2, 2), Vector3(1, 1, 1)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("DashBoard/MeshInstance3D2:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(4.98333, 6.48333, 9.98333, 10.4833),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(-0.092, 0.01, 0.01), Vector3(0, 0, 3.5), Vector3(0, 0, 3.5), Vector3(-0.092, 0.01, 0.01)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("DashBoard/MeshInstance3D3:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(9.98333, 10.9833, 12.9833, 13.4833),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(1.43, 0.231, 0.01), Vector3(0, 0.3, 3.5), Vector3(0, 0.3, 3.5), Vector3(1.43, 0.231, 0.01)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("DashBoard/MeshInstance3D3:scale")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(9.98333, 10.9833, 12.9833, 13.4833),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(1, 1, 1), Vector3(1.5, 1.5, 1.5), Vector3(1.5, 1.5, 1.5), Vector3(1, 1, 1)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("DashBoard/MeshInstance3D4:position")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(9.98333, 10.9833, 12.9833, 13.4833),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(1.43, -0.225703, 0.0100021), Vector3(0, -0.3, 3.5), Vector3(0, -0.3, 3.5), Vector3(1.43, -0.225703, 0.0100021)]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("DashBoard/MeshInstance3D4:scale")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(9.98333, 10.9833, 12.9833, 13.4833),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(1, 1, 1), Vector3(1.5, 1.5, 1.5), Vector3(1.5, 1.5, 1.5), Vector3(1, 1, 1)]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("../Left:playing")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(2.03333),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("../Middle:playing")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(5.98333),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("../Right:playing")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"times": PackedFloat32Array(9.98333),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/10/type = "value"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("../Intro:playing")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
-"times": PackedFloat32Array(0.05),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/11/type = "value"
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/path = NodePath("DashBoard/MeshInstance3D/EastAsia:visible")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/12/type = "value"
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/path = NodePath("DashBoard/MeshInstance3D/SouthAsia:visible")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/keys = {
-"times": PackedFloat32Array(0.0333333),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-
-[sub_resource type="Animation" id="Animation_b1f86"]
-resource_name = "PlayRight"
-length = 15.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("DashBoard/MeshInstance3D3:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1, 3.03333, 4),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(1.43, 0.231, 0.01), Vector3(1.43, 0, 1), Vector3(1.43, 0, 1), Vector3(1.43, 0.231, 0.01)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("DashBoard/MeshInstance3D3:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1, 3.03333, 4),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(1, 1, 1), Vector3(1.3, 1.3, 1.3), Vector3(1.3, 1.3, 1.3), Vector3(1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_ild8r"]
@@ -785,6 +432,389 @@ tracks/23/keys = {
 "values": [false]
 }
 
+[sub_resource type="Animation" id="Animation_abrki"]
+resource_name = "PlayLeft"
+length = 35.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DashBoard/MeshInstance3D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 33, 35),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(1.2, 1.2, 1.2), Vector3(1.2, 1.2, 1.2), Vector3(1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DashBoard/MeshInstance3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4, 33, 35),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-1.527, -0.137, 0.01), Vector3(-1.527, 0, 0.05), Vector3(-1.527, 0, 0.05), Vector3(-1.527, -0.137, 0.01)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Audios/Left/Intro:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.6),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Audios/Left/Focus:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(11),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Audios/Left/Reason:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(20),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("DashBoard/MeshInstance3D/SouthAsia:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 12.0667, 19.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("DashBoard/MeshInstance3D/EastAsia:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 12.5667, 19.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../Audios/Left/Focus2:playing")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(24),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../Audios/Left/Conclution:playing")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(30),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("DashBoard/MeshInstance3D/AtlanticOcean:spot_attenuation")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(23.5, 24.5, 25.25, 26, 26.75, 27.5, 28.25, 29),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 2.0, 0.5, 2.0, 0.5, 2.0, 0.5, 0.0]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("DashBoard/MeshInstance3D/AtlanticOcean2:spot_attenuation")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(23.4667, 24.5667, 25.3333, 26.1333, 26.7333, 27.6333, 28.2667, 29),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 2.0, 0.5, 2.0, 0.5, 2.0, 0.5, 0.0]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("DashBoard/MeshInstance3D/AtlanticOcean:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 23.3, 30),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("DashBoard/MeshInstance3D/AtlanticOcean2:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0.1, 23.2, 30),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("DashBoard/MeshInstance3D/AtlanticOcean3:spot_attenuation")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(23.5333, 24.5667, 25.3, 25.9333, 26.7667, 27.6667, 28.3333, 29.1333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 2.0, 0.5, 2.0, 0.5, 2.0, 0.5, 0.0]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("DashBoard/MeshInstance3D/AtlanticOcean3:visible")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0.166667, 23.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_b1f86"]
+resource_name = "PlayRight"
+length = 15.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DashBoard/MeshInstance3D3:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 3.03333, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(1.43, 0.231, 0.01), Vector3(1.43, 0, 1), Vector3(1.43, 0, 1), Vector3(1.43, 0.231, 0.01)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DashBoard/MeshInstance3D3:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 3.03333, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(1.3, 1.3, 1.3), Vector3(1.3, 1.3, 1.3), Vector3(1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_wje1f"]
+resource_name = "Introduction"
+length = 13.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DashBoard/MeshInstance3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1.98333, 2.98333, 5.01667, 5.68333),
+"transitions": PackedFloat32Array(1, 0.999999, 0.999999, 1),
+"update": 0,
+"values": [Vector3(-1.527, -0.137, 0.01), Vector3(0, 0, 3.5), Vector3(0, 0, 3.5), Vector3(-1.527, -0.137, 0.01)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DashBoard/MeshInstance3D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.98333, 2.98333, 5.01667, 5.68333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(2, 2, 2), Vector3(2, 2, 2), Vector3(1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("DashBoard/MeshInstance3D2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(4.98333, 6.48333, 9.98333, 10.4833),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.092, 0.01, 0.01), Vector3(0, 0, 3.5), Vector3(0, 0, 3.5), Vector3(-0.092, 0.01, 0.01)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("DashBoard/MeshInstance3D3:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(9.98333, 10.9833, 12.9833, 13.4833),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(1.43, 0.231, 0.01), Vector3(0, 0.3, 3.5), Vector3(0, 0.3, 3.5), Vector3(1.43, 0.231, 0.01)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("DashBoard/MeshInstance3D3:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(9.98333, 10.9833, 12.9833, 13.4833),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(1.5, 1.5, 1.5), Vector3(1.5, 1.5, 1.5), Vector3(1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("DashBoard/MeshInstance3D4:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(9.98333, 10.9833, 12.9833, 13.4833),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(1.43, -0.225703, 0.0100021), Vector3(0, -0.3, 3.5), Vector3(0, -0.3, 3.5), Vector3(1.43, -0.225703, 0.0100021)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("DashBoard/MeshInstance3D4:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(9.98333, 10.9833, 12.9833, 13.4833),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(1.5, 1.5, 1.5), Vector3(1.5, 1.5, 1.5), Vector3(1, 1, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../Left:playing")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(2.03333),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../Middle:playing")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(5.98333),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("../Right:playing")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(9.98333),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("../Intro:playing")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0.05),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("DashBoard/MeshInstance3D/EastAsia:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("DashBoard/MeshInstance3D/SouthAsia:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0.0333333),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/13/type = "method"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("..")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"values": []
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2a5q2"]
 _data = {
 &"RESET": SubResource("Animation_ild8r"),
@@ -795,6 +825,7 @@ _data = {
 
 [node name="HyperWall" type="Node3D"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+script = ExtResource("1_wjpwy")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_sv5or")
@@ -808,6 +839,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.43043)
 visible = false
 
 [node name="SubViewport" type="SubViewport" parent="."]
+scaling_3d_scale = 1.5
 size = Vector2i(2048, 1024)
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="SubViewport"]
@@ -818,9 +850,11 @@ autoplay = true
 loop = true
 
 [node name="SubViewport3" type="SubViewport" parent="."]
+scaling_3d_scale = 1.5
 size = Vector2i(2048, 1024)
 
 [node name="SubViewport2" type="SubViewport" parent="SubViewport3"]
+scaling_3d_scale = 1.5
 size = Vector2i(2048, 1024)
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="SubViewport3/SubViewport2"]
@@ -838,6 +872,7 @@ autoplay = true
 loop = true
 
 [node name="SubViewport4" type="SubViewport" parent="."]
+scaling_3d_scale = 1.5
 size = Vector2i(2048, 1024)
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="SubViewport4"]
@@ -918,7 +953,7 @@ material_override = SubResource("StandardMaterial3D_66lgr")
 mesh = SubResource("QuadMesh_xs6pa")
 
 [node name="US" type="Area3D" parent="Node3D/DashBoard/MeshInstance3D2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.546258, 0.164616, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.496475, 0.164616, 0)
 collision_layer = 512
 collision_mask = 0
 
@@ -927,7 +962,6 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 
 shape = SubResource("CylinderShape3D_l65in")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/DashBoard/MeshInstance3D2/US/CollisionShape3D"]
-visible = false
 mesh = SubResource("CylinderMesh_te10a")
 
 [node name="Asia" type="Area3D" parent="Node3D/DashBoard/MeshInstance3D2"]
@@ -940,11 +974,10 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 
 shape = SubResource("CylinderShape3D_mq1lf")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/DashBoard/MeshInstance3D2/Asia/CollisionShape3D"]
-visible = false
-mesh = SubResource("CylinderMesh_lnhct")
+mesh = SubResource("CylinderMesh_y7nvp")
 
 [node name="SouthAmerica" type="Area3D" parent="Node3D/DashBoard/MeshInstance3D2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.289345, -0.166114, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.289345, -0.146024, 0)
 collision_layer = 512
 collision_mask = 0
 
@@ -953,7 +986,6 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 
 shape = SubResource("CylinderShape3D_2mw3v")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/DashBoard/MeshInstance3D2/SouthAmerica/CollisionShape3D"]
-visible = false
 mesh = SubResource("CylinderMesh_a625i")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="Node3D/DashBoard"]
@@ -1009,3 +1041,5 @@ root_node = NodePath("../Node3D")
 libraries = {
 &"": SubResource("AnimationLibrary_2a5q2")
 }
+
+[connection signal="animation_finished" from="Animation" to="." method="animation_finished"]

@@ -11,6 +11,8 @@ signal SignalPhase5Out
 signal SignalPhase6LeftIn
 signal SignalPhase6LeftOut
 
+signal IntroductionFinish
+
 func Phase2In(_body: Node3D) -> void:
 	SignalPhase2In.emit()
 
@@ -49,3 +51,7 @@ func Phase6LeftIn(_body: Node3D) -> void:
 
 func Phase6LeftOut(_body: Node3D) -> void:
 	SignalPhase6LeftOut.emit()
+
+
+func _on_hyper_wall_tutorial_introduction_finish() -> void:
+	IntroductionFinish.emit()

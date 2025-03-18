@@ -296,6 +296,7 @@ mesh = SubResource("QuadMesh_5nhl3")
 transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, -7, 0, 0)
 mesh = SubResource("QuadMesh_5nhl3")
 
+[connection signal="IntroductionFinish" from="Hallway/WallFront/HyperWallTutorial" to="." method="_on_hyper_wall_tutorial_introduction_finish"]
 [connection signal="body_entered" from="Hallway/Phases/Phase2/Area3D" to="." method="Phase2In"]
 [connection signal="body_exited" from="Hallway/Phases/Phase2/Area3D" to="." method="Phase2Out"]
 [connection signal="body_entered" from="Hallway/Phases/Phase3/Area3D" to="." method="Phase3In"]

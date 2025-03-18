@@ -5,6 +5,7 @@ var xr_interface : XRInterface
 @onready var voice_welcome = $Voices/Welcome
 @onready var voice_begin = $Voices/Begin
 @onready var select_dashboard: AudioStreamPlayer = $Voices/SelectDashboard
+@onready var select_topic: AudioStreamPlayer = $Voices/SelectTopic
 
 var ObjectSeen
 var ActualStage
@@ -71,17 +72,12 @@ func LightSwitch() -> void:
 
 func Phase2In() -> void:
 	print("FASE 2 IN")
+	ActualStage = 2
 	$Rooms/Hallway/WallFront/HyperWallTutorial/Node3D/DashBoard/MeshInstance3D/EastAsia.visible = false
 	$Rooms/Hallway/WallFront/HyperWallTutorial.visible = true
 	$Rooms/Hallway/WallFront/HyperWallTutorial/Node3D/DashBoard/MeshInstance3D/SouthAsia.visible = false
 	$Rooms/Hallway/WallFront/HyperWallTutorial/Animation.play("Introduction")
 	
-	await get_tree().create_timer(13.5).timeout 
-	
-	$Text/ShiningText/Rotation.play("rotate")
-	$Text/Label3D.visible = true
-	$Text/ShiningText.visible = true
-	ActualStage = 2
 
 func Phase2Out() -> void:
 	print("FASE 2 Out")
@@ -99,6 +95,7 @@ func Phase3In() -> void:
 	$Rooms/Hallway/WallFront/HyperWallTutorial.visible = false
 	$CarouselRoot.visible = true
 	$Text.visible = false
+	select_topic.stop()
 	ActualStage = 3
 	
 
@@ -199,3 +196,15 @@ func XROrigin_ObjectSeen(object: Variant) -> void:
 			$Rooms/Hallway/WallFront/HyperWallTutorial/Audios/Middle/SouthAmerica.stop()
 			$Rooms/Hallway/WallFront/HyperWallTutorial/Audios/Middle/US.stop()
 			$Rooms/Hallway/WallFront/HyperWallTutorial/Audios/Middle/Asia.play()
+
+
+func Introduction_finish() -> void:
+	await get_tree().create_timer(1).timeout 
+	select_topic.play()
+	
+	await get_tree().create_timer(1).timeout 
+	if ActualStage == 2:
+		$Text/ShiningText/Rotation.play("rotate")
+		$Text/Label3D.visible = true
+		$Text/ShiningText.visible = true
+		
