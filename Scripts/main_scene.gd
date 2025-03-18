@@ -8,6 +8,7 @@ var xr_interface : XRInterface
 
 var ObjectSeen
 var ActualStage
+var ActualDashboard
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -32,10 +33,6 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	#if ActualStage == 5:
-	#	if ObjectSeen == "WallFront":
-	#		$Rooms/Hallway/WallFront/HyperWallTutorial/Animation.play("PlayRight")
-	#print(ObjectSeen)
 	pass
 		
 	
@@ -88,7 +85,12 @@ func Phase2In() -> void:
 
 func Phase2Out() -> void:
 	print("FASE 2 Out")
-	$Rooms/Hallway/WallFront/HyperWallTutorial/Animation.pause()
+	$Rooms/Hallway/WallFront/HyperWallTutorial/Animation.stop()
+	$Rooms/Hallway/WallFront/HyperWallTutorial/Intro.stop()
+	$Rooms/Hallway/WallFront/HyperWallTutorial/Left.stop()
+	$Rooms/Hallway/WallFront/HyperWallTutorial/Middle.stop()
+	$Rooms/Hallway/WallFront/HyperWallTutorial/Right.stop()
+	$Rooms/Hallway/WallFront/HyperWallTutorial/Animation.seek(0)
 	
 	
 func Phase3In() -> void:
@@ -97,13 +99,14 @@ func Phase3In() -> void:
 	$Rooms/Hallway/WallFront/HyperWallTutorial.visible = false
 	$CarouselRoot.visible = true
 	$Text.visible = false
-	$Text/ShiningText/Rotation.pause()
-	ActualStage = 2
+	ActualStage = 3
+	
 
 func Phase3Out() -> void:
 	#print("Body Out Phase5")
 	$CarouselRoot.visible = false
 	$Text.visible = true
+	select_dashboard.stop()
 
 
 func Phase4In() -> void:
@@ -130,12 +133,17 @@ func Phase5Out() -> void:
 
 
 func Phase6LeftIn() -> void:
-	print("Phase6 In")
 	ActualStage = 6
-	$Rooms/Hallway/WallFront/HyperWallTutorial/Animation.play("PlayLeft")
+	if ActualDashboard == "Tutorial":
+		$Rooms/Hallway/WallFront/HyperWallTutorial/Animation.play("PlayLeft")
+		$Rooms/Hallway/WallFront/HyperWallTutorial/Audios/Middle/SouthAmerica.stop()
+		$Rooms/Hallway/WallFront/HyperWallTutorial/Audios/Middle/Asia.stop()		
+		$Rooms/Hallway/WallFront/HyperWallTutorial/Audios/Middle/US.stop()
 	
 func Phase6LeftOut() -> void:
-	$Rooms/Hallway/WallFront/HyperWallTutorial/Animation.pause()
+	$Rooms/Hallway/WallFront/HyperWallTutorial/Animation.stop()
+	$Rooms/Hallway/WallFront/HyperWallTutorial/Animation.seek(0)
+	
 
 
 func ButtonPressed() -> void:
@@ -155,34 +163,39 @@ func carousel_image_change(image_id: Variant) -> void:
 		$Rooms/Hallway/WallFront/HyperWallFire1.visible=true
 		$Rooms/Hallway/WallFront/HyperWallFire2.visible=false
 		$Rooms/Hallway/WallFront/HyperWallTutorial.visible = false
+		ActualDashboard = "Fire1"
 	if image_id == 1:
 		$Rooms/Hallway/WallFront/HyperWallFire1.visible=false
 		$Rooms/Hallway/WallFront/HyperWallFire2.visible=true
 		$Rooms/Hallway/WallFront/HyperWallTutorial.visible = false
+		ActualDashboard = "Fire2"
 	if image_id == 2:
 		$Rooms/Hallway/WallFront/HyperWallFire1.visible=false
 		$Rooms/Hallway/WallFront/HyperWallFire2.visible=false
 		$Rooms/Hallway/WallFront/HyperWallTutorial.visible = true
+		ActualDashboard = "Tutorial"
 
 
 func XROrigin_ObjectSeen(object: Variant) -> void:
 	print(object)
 	ObjectSeen = object
 	print(ObjectSeen)
-	if ObjectSeen == $Rooms/Hallway/WallFront/HyperWallTutorial/Node3D/DashBoard/MeshInstance3D2/US:
-		print("US")
-		$Rooms/Hallway/WallFront/HyperWallTutorial/Audios/Middle/SouthAmerica.stop()
-		$Rooms/Hallway/WallFront/HyperWallTutorial/Audios/Middle/Asia.stop()		
-		$Rooms/Hallway/WallFront/HyperWallTutorial/Audios/Middle/US.play()
+	if ActualDashboard == "Tutorial":
 		
-	elif ObjectSeen == $Rooms/Hallway/WallFront/HyperWallTutorial/Node3D/DashBoard/MeshInstance3D2/SouthAmerica:
-		print("SouthAmerica")
-		$Rooms/Hallway/WallFront/HyperWallTutorial/Audios/Middle/US.stop()
-		$Rooms/Hallway/WallFront/HyperWallTutorial/Audios/Middle/Asia.stop()
-		$Rooms/Hallway/WallFront/HyperWallTutorial/Audios/Middle/SouthAmerica.play()
-	
-	elif ObjectSeen == $Rooms/Hallway/WallFront/HyperWallTutorial/Node3D/DashBoard/MeshInstance3D2/Asia:
-		print("Asia")
-		$Rooms/Hallway/WallFront/HyperWallTutorial/Audios/Middle/SouthAmerica.stop()
-		$Rooms/Hallway/WallFront/HyperWallTutorial/Audios/Middle/US.stop()
-		$Rooms/Hallway/WallFront/HyperWallTutorial/Audios/Middle/Asia.play()
+		if ObjectSeen == $Rooms/Hallway/WallFront/HyperWallTutorial/Node3D/DashBoard/MeshInstance3D2/US:
+			print("US")
+			$Rooms/Hallway/WallFront/HyperWallTutorial/Audios/Middle/SouthAmerica.stop()
+			$Rooms/Hallway/WallFront/HyperWallTutorial/Audios/Middle/Asia.stop()		
+			$Rooms/Hallway/WallFront/HyperWallTutorial/Audios/Middle/US.play()
+			
+		elif ObjectSeen == $Rooms/Hallway/WallFront/HyperWallTutorial/Node3D/DashBoard/MeshInstance3D2/SouthAmerica:
+			print("SouthAmerica")
+			$Rooms/Hallway/WallFront/HyperWallTutorial/Audios/Middle/US.stop()
+			$Rooms/Hallway/WallFront/HyperWallTutorial/Audios/Middle/Asia.stop()
+			$Rooms/Hallway/WallFront/HyperWallTutorial/Audios/Middle/SouthAmerica.play()
+		
+		elif ObjectSeen == $Rooms/Hallway/WallFront/HyperWallTutorial/Node3D/DashBoard/MeshInstance3D2/Asia:
+			print("Asia")
+			$Rooms/Hallway/WallFront/HyperWallTutorial/Audios/Middle/SouthAmerica.stop()
+			$Rooms/Hallway/WallFront/HyperWallTutorial/Audios/Middle/US.stop()
+			$Rooms/Hallway/WallFront/HyperWallTutorial/Audios/Middle/Asia.play()
