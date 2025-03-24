@@ -69,23 +69,20 @@ albedo_texture = SubResource("ViewportTexture_lwej3")
 [sub_resource type="QuadMesh" id="QuadMesh_xs6pa"]
 size = Vector2(1.729, 0.721)
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_l65in"]
-height = 0.1
-radius = 0.175324
+[sub_resource type="BoxShape3D" id="BoxShape3D_apd2t"]
+size = Vector3(0.3, 0.01, 0.15)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wgv6e"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lyl6b"]
 transparency = 1
 blend_mode = 1
 albedo_color = Color(1, 0.392157, 0.0941176, 0.27451)
 
-[sub_resource type="CylinderMesh" id="CylinderMesh_te10a"]
-material = SubResource("StandardMaterial3D_wgv6e")
-top_radius = 0.175
-bottom_radius = 0.175
-height = 0.01
+[sub_resource type="BoxMesh" id="BoxMesh_pcxtv"]
+material = SubResource("StandardMaterial3D_lyl6b")
+size = Vector3(0.3, 0.01, 0.15)
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_mq1lf"]
-height = 0.1
+height = 0.01
 radius = 0.2
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_57fiy"]
@@ -100,8 +97,8 @@ bottom_radius = 0.2
 height = 0.01
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_2mw3v"]
-height = 0.1
-radius = 0.2
+height = 0.01
+radius = 0.15
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tcggb"]
 transparency = 1
@@ -110,8 +107,8 @@ albedo_color = Color(1, 0.392157, 0.0941176, 0.27451)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_a625i"]
 material = SubResource("StandardMaterial3D_tcggb")
-top_radius = 0.2
-bottom_radius = 0.2
+top_radius = 0.15
+bottom_radius = 0.15
 height = 0.01
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_c0wip"]
@@ -445,7 +442,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.4, 33, 35),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(1, 1, 1), Vector3(1.2, 1.2, 1.2), Vector3(1.2, 1.2, 1.2), Vector3(1, 1, 1)]
+"values": [Vector3(1, 1, 1), Vector3(1.5, 1.5, 1.5), Vector3(1.5, 1.5, 1.5), Vector3(1, 1, 1)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -562,7 +559,7 @@ tracks/10/path = NodePath("DashBoard/MeshInstance3D/AtlanticOcean2:spot_attenuat
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
-"times": PackedFloat32Array(23.4667, 24.5667, 25.3333, 26.1333, 26.7333, 27.6333, 28.2667, 29),
+"times": PackedFloat32Array(23.3333, 24.5667, 25.3333, 26.1333, 26.7333, 27.6333, 28.2667, 29),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [0.0, 2.0, 0.5, 2.0, 0.5, 2.0, 0.5, 0.0]
@@ -577,7 +574,7 @@ tracks/11/keys = {
 "times": PackedFloat32Array(0, 23.3, 30),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [false, true, false]
+"values": [true, true, false]
 }
 tracks/12/type = "value"
 tracks/12/imported = false
@@ -589,7 +586,7 @@ tracks/12/keys = {
 "times": PackedFloat32Array(0.1, 23.2, 30),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [false, true, false]
+"values": [true, true, false]
 }
 tracks/13/type = "value"
 tracks/13/imported = false
@@ -610,38 +607,10 @@ tracks/14/path = NodePath("DashBoard/MeshInstance3D/AtlanticOcean3:visible")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
-"times": PackedFloat32Array(0.166667, 23.4),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0.166667, 23.4, 30),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [false, true]
-}
-
-[sub_resource type="Animation" id="Animation_b1f86"]
-resource_name = "PlayRight"
-length = 15.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("DashBoard/MeshInstance3D3:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1, 3.03333, 4),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(1.43, 0.231, 0.01), Vector3(1.43, 0, 1), Vector3(1.43, 0, 1), Vector3(1.43, 0.231, 0.01)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("DashBoard/MeshInstance3D3:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1, 3.03333, 4),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(1, 1, 1), Vector3(1.3, 1.3, 1.3), Vector3(1.3, 1.3, 1.3), Vector3(1, 1, 1)]
+"values": [true, true, false]
 }
 
 [sub_resource type="Animation" id="Animation_wje1f"]
@@ -657,7 +626,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(1.98333, 2.98333, 5.01667, 5.68333),
 "transitions": PackedFloat32Array(1, 0.999999, 0.999999, 1),
 "update": 0,
-"values": [Vector3(-1.527, -0.137, 0.01), Vector3(0, 0, 3.5), Vector3(0, 0, 3.5), Vector3(-1.527, -0.137, 0.01)]
+"values": [Vector3(-1.527, -0.137, 0.01), Vector3(0, 0, 1.75), Vector3(0, 0, 1.75), Vector3(-1.527, -0.137, 0.01)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -681,7 +650,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(4.98333, 6.48333, 9.98333, 10.4833),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(-0.092, 0.01, 0.01), Vector3(0, 0, 3.5), Vector3(0, 0, 3.5), Vector3(-0.092, 0.01, 0.01)]
+"values": [Vector3(-0.092, 0.01, 0.01), Vector3(0, 0, 1.75), Vector3(0, 0, 1.75), Vector3(-0.092, 0.01, 0.01)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -693,7 +662,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(9.98333, 10.9833, 12.9833, 13.4833),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(1.43, 0.231, 0.01), Vector3(0, 0.3, 3.5), Vector3(0, 0.3, 3.5), Vector3(1.43, 0.231, 0.01)]
+"values": [Vector3(1.43, 0.231, 0.01), Vector3(0, 0.3, 1.75), Vector3(0, 0.3, 1.75), Vector3(1.43, 0.231, 0.01)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -717,7 +686,7 @@ tracks/5/keys = {
 "times": PackedFloat32Array(9.98333, 10.9833, 12.9833, 13.4833),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(1.43, -0.225703, 0.0100021), Vector3(0, -0.3, 3.5), Vector3(0, -0.3, 3.5), Vector3(1.43, -0.225703, 0.0100021)]
+"values": [Vector3(1.43, -0.225703, 0.0100021), Vector3(0, -0.3, 1.75), Vector3(0, -0.3, 1.75), Vector3(1.43, -0.225703, 0.0100021)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
@@ -815,12 +784,40 @@ tracks/13/keys = {
 "values": []
 }
 
+[sub_resource type="Animation" id="Animation_b1f86"]
+resource_name = "PlayRight"
+length = 15.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DashBoard/MeshInstance3D3:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 3.03333, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(1.43, 0.231, 0.01), Vector3(1.43, 0, 1), Vector3(1.43, 0, 1), Vector3(1.43, 0.231, 0.01)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DashBoard/MeshInstance3D3:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 3.03333, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(1.3, 1.3, 1.3), Vector3(1.3, 1.3, 1.3), Vector3(1, 1, 1)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2a5q2"]
 _data = {
 &"RESET": SubResource("Animation_ild8r"),
-&"PlayLeft": SubResource("Animation_abrki"),
+&"Introduction": SubResource("Animation_wje1f"),
 &"PlayRight": SubResource("Animation_b1f86"),
-&"Introduction": SubResource("Animation_wje1f")
+&"PlayLeft": SubResource("Animation_abrki")
 }
 
 [node name="HyperWall" type="Node3D"]
@@ -839,7 +836,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.43043)
 visible = false
 
 [node name="SubViewport" type="SubViewport" parent="."]
-scaling_3d_scale = 1.5
 size = Vector2i(2048, 1024)
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="SubViewport"]
@@ -850,11 +846,9 @@ autoplay = true
 loop = true
 
 [node name="SubViewport3" type="SubViewport" parent="."]
-scaling_3d_scale = 1.5
 size = Vector2i(2048, 1024)
 
 [node name="SubViewport2" type="SubViewport" parent="SubViewport3"]
-scaling_3d_scale = 1.5
 size = Vector2i(2048, 1024)
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="SubViewport3/SubViewport2"]
@@ -872,7 +866,6 @@ autoplay = true
 loop = true
 
 [node name="SubViewport4" type="SubViewport" parent="."]
-scaling_3d_scale = 1.5
 size = Vector2i(2048, 1024)
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="SubViewport4"]
@@ -922,15 +915,14 @@ sides = 20
 material = SubResource("StandardMaterial3D_2wbim")
 
 [node name="AtlanticOcean" type="SpotLight3D" parent="Node3D/DashBoard/MeshInstance3D"]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.0808706, 0.0745559, 0.0756784)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0808706, 0.0745559, 0.0756784)
 visible = false
 light_color = Color(1, 0, 0, 1)
-light_specular = 0.0
-spot_range = 0.243482
-spot_angle = 44.6227
+light_energy = 16.0
+spot_range = 0.3
 
 [node name="AtlanticOcean2" type="SpotLight3D" parent="Node3D/DashBoard/MeshInstance3D"]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.150098, -0.0233745, 0.0756784)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.150098, -0.0233745, 0.0756784)
 visible = false
 light_color = Color(1, 0, 0, 1)
 light_specular = 0.0
@@ -939,7 +931,7 @@ spot_attenuation = 0.0
 spot_angle = 49.8294
 
 [node name="AtlanticOcean3" type="SpotLight3D" parent="Node3D/DashBoard/MeshInstance3D"]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.305828, 0.088, 0.076)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.305828, 0.088, 0.076)
 visible = false
 light_color = Color(1, 0, 0, 1)
 light_specular = 0.0
@@ -953,19 +945,22 @@ material_override = SubResource("StandardMaterial3D_66lgr")
 mesh = SubResource("QuadMesh_xs6pa")
 
 [node name="US" type="Area3D" parent="Node3D/DashBoard/MeshInstance3D2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.496475, 0.164616, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.469817, 0.164616, 0)
+visible = false
 collision_layer = 512
 collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/DashBoard/MeshInstance3D2/US"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
-shape = SubResource("CylinderShape3D_l65in")
+shape = SubResource("BoxShape3D_apd2t")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/DashBoard/MeshInstance3D2/US/CollisionShape3D"]
-mesh = SubResource("CylinderMesh_te10a")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.00288978)
+mesh = SubResource("BoxMesh_pcxtv")
 
 [node name="Asia" type="Area3D" parent="Node3D/DashBoard/MeshInstance3D2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.488347, 0.10939, 0)
+visible = false
 collision_layer = 512
 collision_mask = 0
 
@@ -977,7 +972,8 @@ shape = SubResource("CylinderShape3D_mq1lf")
 mesh = SubResource("CylinderMesh_y7nvp")
 
 [node name="SouthAmerica" type="Area3D" parent="Node3D/DashBoard/MeshInstance3D2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.289345, -0.146024, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.278626, -0.0833085, 0)
+visible = false
 collision_layer = 512
 collision_mask = 0
 

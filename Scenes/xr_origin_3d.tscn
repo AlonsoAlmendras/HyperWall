@@ -17,7 +17,7 @@ script = ExtResource("1_xo5b2")
 [node name="XRCamera3D" type="XRCamera3D" parent="."]
 
 [node name="RayCast3D" type="RayCast3D" parent="XRCamera3D"]
-target_position = Vector3(0, 0, -3)
+target_position = Vector3(0, 0, -2)
 collision_mask = 512
 collide_with_areas = true
 debug_shape_thickness = 5

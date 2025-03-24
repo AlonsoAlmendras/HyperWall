@@ -142,7 +142,7 @@ spot_range = 9.792
 spot_attenuation = -10.0
 
 [node name="CarouselRoot" parent="." node_paths=PackedStringArray("xr_origin") instance=ExtResource("14_0hukr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, -9.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, -9.387)
 xr_origin = NodePath("../XROrigin3D")
 
 [node name="Text" type="Node3D" parent="."]
@@ -174,7 +174,6 @@ material_override = SubResource("StandardMaterial3D_bsoam")
 mesh = SubResource("SphereMesh_2qlpe")
 
 [node name="SubViewport" type="SubViewport" parent="SphereVideo"]
-scaling_3d_scale = 1.5
 size = Vector2i(2048, 1024)
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="SphereVideo/SubViewport"]
@@ -201,7 +200,6 @@ material_override = SubResource("StandardMaterial3D_x8yjs")
 mesh = SubResource("SphereMesh_c80hj")
 
 [node name="SubViewport" type="SubViewport" parent="SphereVideo2"]
-scaling_3d_scale = 1.5
 size = Vector2i(2048, 1024)
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="SphereVideo2/SubViewport"]

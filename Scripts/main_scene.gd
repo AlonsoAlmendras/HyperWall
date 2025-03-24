@@ -40,6 +40,9 @@ func _process(_delta: float) -> void:
 	
 func InicialStates()-> void:
 	ActualStage = 1
+	$Rooms/Hallway/WallFront/HyperWallTutorial/Node3D/DashBoard/MeshInstance3D2/US.visible = false
+	$Rooms/Hallway/WallFront/HyperWallTutorial/Node3D/DashBoard/MeshInstance3D2/Asia.visible = false
+	$Rooms/Hallway/WallFront/HyperWallTutorial/Node3D/DashBoard/MeshInstance3D2/SouthAmerica.visible = false
 	$CarouselRoot.visible = false
 	#Lights
 	#$Lights/FirstLight.visible = true
@@ -54,10 +57,9 @@ func InicialStates()-> void:
 	$Rooms/Hallway/Path.visible = true
 	$Rooms/RoomDoor/CSGBox3D/Label3D.visible = true
 	$Rooms/RoomDoor/CSGBox3D/Label3D2.visible = true
-	$Rooms/Hallway/Path.visible = true
 	$Lights/FirstLight.visible = true
 	
-	$Rooms/Hallway/Path.visible = true
+	
 	
 	
 func LightSwitch() -> void:
@@ -73,8 +75,8 @@ func LightSwitch() -> void:
 func Phase2In() -> void:
 	print("FASE 2 IN")
 	ActualStage = 2
-	$Rooms/Hallway/WallFront/HyperWallTutorial/Node3D/DashBoard/MeshInstance3D/EastAsia.visible = false
 	$Rooms/Hallway/WallFront/HyperWallTutorial.visible = true
+	$Rooms/Hallway/WallFront/HyperWallTutorial/Node3D/DashBoard/MeshInstance3D/EastAsia.visible = false
 	$Rooms/Hallway/WallFront/HyperWallTutorial/Node3D/DashBoard/MeshInstance3D/SouthAsia.visible = false
 	$Rooms/Hallway/WallFront/HyperWallTutorial/Animation.play("Introduction")
 	
@@ -92,7 +94,6 @@ func Phase2Out() -> void:
 func Phase3In() -> void:
 	$Rooms/Hallway/WallFront/HyperWallTutorial.visible = false
 	select_dashboard.play()
-	$Rooms/Hallway/WallFront/HyperWallTutorial.visible = false
 	$CarouselRoot.visible = true
 	$Text.visible = false
 	select_topic.stop()
@@ -108,6 +109,11 @@ func Phase3Out() -> void:
 
 func Phase4In() -> void:
 	ActualStage = 4
+	if ActualDashboard == "Tutorial":
+		$Rooms/Hallway/WallFront/HyperWallTutorial/Node3D/DashBoard/MeshInstance3D2/US.visible = true
+		$Rooms/Hallway/WallFront/HyperWallTutorial/Node3D/DashBoard/MeshInstance3D2/Asia.visible = true
+		$Rooms/Hallway/WallFront/HyperWallTutorial/Node3D/DashBoard/MeshInstance3D2/SouthAmerica.visible = true
+		
 
 func Phase4Out() -> void:
 	pass
@@ -200,7 +206,8 @@ func XROrigin_ObjectSeen(object: Variant) -> void:
 
 func Introduction_finish() -> void:
 	await get_tree().create_timer(1).timeout 
-	select_topic.play()
+	if ActualStage == 2:
+		select_topic.play()
 	
 	await get_tree().create_timer(1).timeout 
 	if ActualStage == 2:
