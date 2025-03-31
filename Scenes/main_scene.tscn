@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://ctwo5lb1pn5x6"]
+[gd_scene load_steps=30 format=3 uid="uid://ctwo5lb1pn5x6"]
 
 [ext_resource type="Script" path="res://Scripts/main_scene.gd" id="1_g6g71"]
 [ext_resource type="PackedScene" uid="uid://1cglsstr7xwf" path="res://Scenes/xr_origin_3d.tscn" id="2_ofuuo"]
@@ -100,6 +100,16 @@ albedo_texture = SubResource("ViewportTexture_lnnao")
 file = "res://Materials/Videos/video3.ogv"
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ibcf2"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_acobp"]
+viewport_path = NodePath("MeshInstance3D/SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kticx"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_acobp")
+
+[sub_resource type="QuadMesh" id="QuadMesh_gj3im"]
+size = Vector2(3, 2)
 
 [node name="MainScene" type="Node3D"]
 script = ExtResource("1_g6g71")
@@ -214,6 +224,22 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.851136)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SphereVideo2/Area3D"]
 shape = SubResource("BoxShape3D_ibcf2")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.653, 0.913029, -3.499)
+visible = false
+material_override = SubResource("StandardMaterial3D_kticx")
+mesh = SubResource("QuadMesh_gj3im")
+
+[node name="SubViewport" type="SubViewport" parent="MeshInstance3D"]
+size = Vector2i(1920, 1080)
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="MeshInstance3D/SubViewport"]
+visible = false
+offset_right = 40.0
+offset_bottom = 40.0
+autoplay = true
+loop = true
 
 [connection signal="object_seen" from="XROrigin3D" to="." method="XROrigin_ObjectSeen"]
 [connection signal="status_changed" from="Button" to="." method="ButtonPressed"]

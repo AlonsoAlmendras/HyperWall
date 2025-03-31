@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://1cglsstr7xwf"]
 
-[ext_resource type="Script" path="res://Scenes/xr_origin_3d.gd" id="1_xo5b2"]
+[ext_resource type="Script" path="res://Scripts/xr_origin_3d.gd" id="1_xo5b2"]
 [ext_resource type="PackedScene" uid="uid://nqiyqnx42m61" path="res://addons/godot-xr-tools/hands/scenes/highpoly/left_fullglove_physics_hand.tscn" id="2_fite4"]
 [ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="2_icvry"]
 [ext_resource type="PackedScene" uid="uid://kcqomcjq52np" path="res://addons/godot-xr-tools/hands/scenes/highpoly/right_physics_hand.tscn" id="3_e3nux"]
