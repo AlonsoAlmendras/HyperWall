@@ -1,0 +1,70 @@
+[gd_scene load_steps=2 format=3 uid="uid://dmp2m6rol8kq0"]
+
+[ext_resource type="ArrayMesh" uid="uid://4f52j5hcwpnq" path="res://Scenes/items/lamps.obj" id="1_ctev4"]
+
+[node name="Lamps" type="Node3D"]
+
+[node name="Lamps" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -0.775223, -5.28592, 1.007)
+mesh = ExtResource("1_ctev4")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.23378, -0.321026, -0.0160472)
+light_energy = 0.01
+shadow_enabled = true
+omni_range = 0.1
+omni_attenuation = 9.283
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.739445, -0.321026, -0.0551267)
+light_energy = 0.01
+omni_range = 0.1
+omni_attenuation = 10.0
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.784364, -0.321026, -0.0355908)
+light_energy = 0.01
+omni_range = 0.1
+omni_attenuation = 7.03
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.28602, -0.321026, 0.0175685)
+light_energy = 0.01
+omni_range = 0.1
+omni_attenuation = 9.485
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -2.289, -0.25, 0)
+light_energy = 0.8
+shadow_enabled = true
+spot_range = 30.0
+spot_attenuation = 2.0
+spot_angle = 80.0
+spot_angle_attenuation = 12.0
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.798, -0.25, 0)
+light_energy = 0.8
+shadow_enabled = true
+spot_range = 30.0
+spot_attenuation = 2.0
+spot_angle = 80.0
+spot_angle_attenuation = 12.0
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.732, -0.25, 0)
+light_energy = 0.8
+shadow_enabled = true
+spot_range = 30.0
+spot_attenuation = 2.0
+spot_angle = 80.0
+spot_angle_attenuation = 12.0
+
+[node name="SpotLight3D4" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 2.23, -0.25, 0)
+light_energy = 0.8
+shadow_enabled = true
+spot_range = 30.0
+spot_attenuation = 2.0
+spot_angle = 80.0
+spot_angle_attenuation = 12.0

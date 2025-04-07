@@ -1,28 +1,41 @@
-[gd_scene load_steps=77 format=3 uid="uid://mnqhir54em6u"]
+[gd_scene load_steps=145 format=3 uid="uid://mnqhir54em6u"]
 
 [ext_resource type="PackedScene" uid="uid://1cglsstr7xwf" path="res://Scenes/xr_origin_3d.tscn" id="1_4jhd4"]
 [ext_resource type="Script" path="res://Scripts/demo_2.gd" id="1_iv2wo"]
-[ext_resource type="PackedScene" uid="uid://bes6fl7nhtgm6" path="res://Scenes/roomHallway.tscn" id="2_01p7y"]
-[ext_resource type="VideoStream" path="res://Videos/NasaSatelite.ogv" id="3_6cxgq"]
+[ext_resource type="Material" uid="uid://ymekg2f8n1vn" path="res://assets/textures/ceiling.tres" id="3_pqb7p"]
 [ext_resource type="VideoStream" path="res://Videos/AirQuality.ogv" id="4_18ybd"]
-[ext_resource type="VideoStream" path="res://Materials/Audio/Demo2/videos/FiresDashboard.ogv" id="4_usa0l"]
+[ext_resource type="VideoStream" path="res://Materials/Audio/Demo2/videos/GreenNOx.ogv" id="4_bweqj"]
+[ext_resource type="Material" uid="uid://c1nju0758gjqe" path="res://assets/textures/terminal.tres" id="4_kjklc"]
 [ext_resource type="VideoStream" path="res://Videos/WildFires.ogv" id="4_xnpma"]
 [ext_resource type="VideoStream" path="res://Videos/Weather.ogv" id="5_1ondk"]
 [ext_resource type="AudioStream" uid="uid://fyyi7jt0u3yj" path="res://Materials/Audio/Demo2/Audio/FireSound.mp3" id="5_1t8b0"]
-[ext_resource type="VideoStream" path="res://Materials/Audio/Demo2/videos/WeatherDashboard.ogv" id="5_q1f30"]
-[ext_resource type="VideoStream" path="res://Materials/Audio/Demo2/videos/AirQualityDashboard.ogv" id="6_g4c71"]
+[ext_resource type="VideoStream" path="res://Materials/Audio/Demo2/videos/OrangePM.ogv" id="5_sor2i"]
+[ext_resource type="VideoStream" path="res://Materials/Audio/Demo2/videos/PurpleO3.ogv" id="6_4aby8"]
+[ext_resource type="VideoStream" path="res://Materials/Audio/Demo2/videos/RedCO.ogv" id="7_jen7e"]
+[ext_resource type="PackedScene" uid="uid://ba1s3cmbt8idk" path="res://Scenes/items/SmallPlanter.tscn" id="8_5cvjv"]
 [ext_resource type="AudioStream" uid="uid://d3au48uxpi08w" path="res://Materials/Audio/Demo2/Audio/WeatherSound.mp3" id="8_dq5ke"]
 [ext_resource type="AudioStream" uid="uid://bgglsbwiv4oiq" path="res://Materials/Audio/Demo2/Audio/WindSound.mp3" id="9_4y74a"]
 [ext_resource type="Texture2D" uid="uid://cl72i0isobxo4" path="res://Materials/Audio/Demo2/StandHere.jpg" id="9_6hpvm"]
+[ext_resource type="Material" uid="uid://c7c48j23p78pk" path="res://assets/textures/wood_2.tres" id="9_k4swx"]
 [ext_resource type="AudioStream" uid="uid://ds1yw75beh4rb" path="res://Materials/Audio/Demo2/Audio/Intro.mp3" id="11_ospbb"]
 [ext_resource type="AudioStream" uid="uid://bekf1b036n6p8" path="res://Materials/Audio/Demo2/Audio/Overview.mp3" id="13_k846q"]
 [ext_resource type="AudioStream" uid="uid://byuw13ihsd1cx" path="res://Materials/Audio/Demo2/Audio/OverviewLeft.mp3" id="14_aluj7"]
 [ext_resource type="AudioStream" uid="uid://ccjh8pi2ciuhh" path="res://Materials/Audio/Demo2/Audio/OverviewAhead.mp3" id="15_hbmub"]
 [ext_resource type="AudioStream" uid="uid://b1evfvkpf0c1x" path="res://Materials/Audio/Demo2/Audio/OverviewRight.mp3" id="16_fy6bw"]
 [ext_resource type="AudioStream" uid="uid://bkdw3klw3s3do" path="res://Materials/Audio/Demo2/Audio/OverviewEnd.mp3" id="17_g3hwf"]
+[ext_resource type="AudioStream" uid="uid://b72oocxd0bdp4" path="res://Materials/Audio/Demo2/Audio/Right/AirQualitySelection.mp3" id="21_ybfc6"]
+[ext_resource type="AudioStream" uid="uid://bmyn0do4gh46y" path="res://Materials/Audio/Demo2/Audio/Right/NitrogenExplain.mp3" id="23_1wyng"]
+[ext_resource type="AudioStream" uid="uid://v2y3oh7lrgw" path="res://Materials/Audio/Demo2/Audio/Right/ExplainRightIntro.mp3" id="23_qtbbh"]
+[ext_resource type="AudioStream" uid="uid://b8efartdaw3an" path="res://Materials/Audio/Demo2/Audio/Right/OzoneExplainPurple.mp3" id="24_6j5jb"]
+[ext_resource type="PackedScene" uid="uid://dud83jv8dhywy" path="res://Scenes/items/Speaker.tscn" id="27_8mh5o"]
+[ext_resource type="Material" uid="uid://du6jmkigkjxg4" path="res://assets/textures/marble.tres" id="28_e3sr4"]
+[ext_resource type="ArrayMesh" uid="uid://bdwl17nle5t4p" path="res://Scenes/items/bench_legged.obj" id="29_iigj6"]
+[ext_resource type="Material" uid="uid://datvvi6j3c0kp" path="res://assets/textures/white.tres" id="30_2a77m"]
+[ext_resource type="PackedScene" uid="uid://dmp2m6rol8kq0" path="res://Scenes/items/Lamp.tscn" id="32_6fysp"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_atrkp"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+sky_energy_multiplier = 2.0
 ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
 
 [sub_resource type="Sky" id="Sky_crvon"]
@@ -30,47 +43,16 @@ sky_material = SubResource("ProceduralSkyMaterial_atrkp")
 
 [sub_resource type="Environment" id="Environment_ncqx0"]
 background_mode = 2
+background_energy_multiplier = 1.4
 sky = SubResource("Sky_crvon")
-tonemap_mode = 2
-
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_8umo6"]
-data = PackedVector3Array(-0.25, 2, 5, 0.25, 2, 5, -0.25, -2, 5, 0.25, 2, 5, 0.25, -2, 5, -0.25, -2, 5, 0.25, 2, -5, -0.25, 2, -5, 0.25, -2, -5, -0.25, 2, -5, -0.25, -2, -5, 0.25, -2, -5, 0.25, 2, 5, 0.25, 2, -5, 0.25, -2, 5, 0.25, 2, -5, 0.25, -2, -5, 0.25, -2, 5, -0.25, 2, -5, -0.25, 2, 5, -0.25, -2, -5, -0.25, 2, 5, -0.25, -2, 5, -0.25, -2, -5, 0.25, 2, 5, -0.25, 2, 5, 0.25, 2, -5, -0.25, 2, 5, -0.25, 2, -5, 0.25, 2, -5, -0.25, -2, 5, 0.25, -2, 5, -0.25, -2, -5, 0.25, -2, 5, 0.25, -2, -5, -0.25, -2, -5)
+ambient_light_source = 3
+tonemap_exposure = 0.8
+glow_enabled = true
+glow_intensity = 1.5
 
 [sub_resource type="BoxMesh" id="BoxMesh_hx5iq"]
-size = Vector3(0.5, 4, 10)
-
-[sub_resource type="ViewportTexture" id="ViewportTexture_dhjxo"]
-viewport_path = NodePath("Room/WallFront/CollisionShape3D/MeshInstance3D/Visualizations/Fires/SubViewport")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8u3ks"]
-resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_dhjxo")
-
-[sub_resource type="QuadMesh" id="QuadMesh_r2v83"]
-size = Vector2(2, 1)
-orientation = 0
-
-[sub_resource type="ViewportTexture" id="ViewportTexture_cg6ml"]
-viewport_path = NodePath("Room/WallFront/CollisionShape3D/MeshInstance3D/Visualizations/Weather/SubViewport")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8lin5"]
-resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_cg6ml")
-
-[sub_resource type="QuadMesh" id="QuadMesh_1lxet"]
-size = Vector2(2, 1)
-orientation = 0
-
-[sub_resource type="ViewportTexture" id="ViewportTexture_f5ht6"]
-viewport_path = NodePath("Room/WallFront/CollisionShape3D/MeshInstance3D/Visualizations/AirQuality/SubViewport")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tgrpu"]
-resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_f5ht6")
-
-[sub_resource type="QuadMesh" id="QuadMesh_b7yob"]
-size = Vector2(2, 1)
-orientation = 0
+material = ExtResource("4_kjklc")
+size = Vector3(0.5, 6, 20)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ruu6n"]
 albedo_color = Color(0.196078, 0.196078, 0.196078, 1)
@@ -79,66 +61,226 @@ albedo_color = Color(0.196078, 0.196078, 0.196078, 1)
 material = SubResource("StandardMaterial3D_ruu6n")
 size = Vector2(8, 2)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_q687c"]
-viewport_path = NodePath("Selection/Fire/SubViewport")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m45t1"]
+albedo_color = Color(0, 0, 0, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xu6tp"]
+[sub_resource type="QuadMesh" id="QuadMesh_30q7r"]
+material = SubResource("StandardMaterial3D_m45t1")
+size = Vector2(3, 2)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_s7wmh"]
+viewport_path = NodePath("Room/WallFront/MeshInstance3D/Dashboard/Left/Fires/SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3485e"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_q687c")
+albedo_texture = SubResource("ViewportTexture_s7wmh")
 
-[sub_resource type="QuadMesh" id="QuadMesh_ie4ig"]
-size = Vector2(2.5, 1.5)
+[sub_resource type="QuadMesh" id="QuadMesh_cadsw"]
+size = Vector2(1.2, 0.7)
+orientation = 0
+
+[sub_resource type="VideoStreamTheora" id="VideoStreamTheora_a3xwi"]
+file = "res://Materials/Audio/Demo2/videos/FiresDashboard.ogv"
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_dhjxo"]
+viewport_path = NodePath("Room/WallFront/MeshInstance3D/Dashboard/Left/Fires3/SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fovi3"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_dhjxo")
+
+[sub_resource type="QuadMesh" id="QuadMesh_lpay4"]
+size = Vector2(1.2, 0.7)
+orientation = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c0nb6"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_dhjxo")
+
+[sub_resource type="QuadMesh" id="QuadMesh_8ff3a"]
+size = Vector2(1.2, 0.7)
+orientation = 0
+
+[sub_resource type="VideoStreamTheora" id="VideoStreamTheora_1famr"]
+file = "res://Materials/Audio/Demo2/videos/FiresDashboard.ogv"
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_yjmbi"]
+viewport_path = NodePath("Room/WallFront/MeshInstance3D/Dashboard/Left/Fires4/SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bnu5s"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_yjmbi")
+
+[sub_resource type="QuadMesh" id="QuadMesh_r56l6"]
+size = Vector2(1.2, 0.7)
+orientation = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nb6bg"]
+albedo_color = Color(0.172833, 0.172833, 0.172833, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_v2fjw"]
+material = SubResource("StandardMaterial3D_nb6bg")
+size = Vector2(2, 2)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_vr6se"]
+viewport_path = NodePath("Room/WallFront/MeshInstance3D/Dashboard/Middle/Weather/SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qh7hh"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_vr6se")
+
+[sub_resource type="QuadMesh" id="QuadMesh_g1f7f"]
+size = Vector2(1.2, 0.7)
+orientation = 0
+
+[sub_resource type="VideoStreamTheora" id="VideoStreamTheora_tjtme"]
+file = "res://Materials/Audio/Demo2/videos/WeatherDashboard.ogv"
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_phu8i"]
+viewport_path = NodePath("Room/WallFront/MeshInstance3D/Dashboard/Middle/Weather2/SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mx3dr"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_phu8i")
+
+[sub_resource type="QuadMesh" id="QuadMesh_macyl"]
+size = Vector2(0.7, 0.7)
+orientation = 0
+
+[sub_resource type="VideoStreamTheora" id="VideoStreamTheora_dq3t7"]
+file = "res://Materials/Audio/Demo2/videos/WeatherDashboard.ogv"
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_n0syr"]
+viewport_path = NodePath("Room/WallFront/MeshInstance3D/Dashboard/Middle/Weather3/SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pudn7"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_n0syr")
+
+[sub_resource type="QuadMesh" id="QuadMesh_cywwa"]
+size = Vector2(0.7, 0.7)
+orientation = 0
+
+[sub_resource type="VideoStreamTheora" id="VideoStreamTheora_5fl4e"]
+file = "res://Materials/Audio/Demo2/videos/WeatherDashboard.ogv"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h8f4w"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_fd87c"]
+material = SubResource("StandardMaterial3D_h8f4w")
+size = Vector2(3, 2)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_6osrk"]
+viewport_path = NodePath("Room/WallFront/MeshInstance3D/Dashboard/Right/AirQuality/SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l5hys"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_6osrk")
+
+[sub_resource type="QuadMesh" id="QuadMesh_m2rwm"]
+size = Vector2(1.2, 0.7)
+orientation = 0
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_ie7oa"]
+viewport_path = NodePath("Room/WallFront/MeshInstance3D/Dashboard/Right/AirQuality2/SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h1nl5"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_ie7oa")
+
+[sub_resource type="QuadMesh" id="QuadMesh_x4r3q"]
+size = Vector2(1.2, 0.7)
+orientation = 0
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_gwsgd"]
+viewport_path = NodePath("Room/WallFront/MeshInstance3D/Dashboard/Right/AirQuality3/SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_usw2t"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_gwsgd")
+
+[sub_resource type="QuadMesh" id="QuadMesh_wg3sk"]
+size = Vector2(1.2, 0.7)
+orientation = 0
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_krrhd"]
+viewport_path = NodePath("Room/WallFront/MeshInstance3D/Dashboard/Right/AirQuality4/SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vopp1"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_krrhd")
+
+[sub_resource type="QuadMesh" id="QuadMesh_ogg6x"]
+size = Vector2(1.2, 0.7)
+orientation = 0
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_idk22"]
+data = PackedVector3Array(-0.25, 3, 10, 0.25, 3, 10, -0.25, -3, 10, 0.25, 3, 10, 0.25, -3, 10, -0.25, -3, 10, 0.25, 3, -10, -0.25, 3, -10, 0.25, -3, -10, -0.25, 3, -10, -0.25, -3, -10, 0.25, -3, -10, 0.25, 3, 10, 0.25, 3, -10, 0.25, -3, 10, 0.25, 3, -10, 0.25, -3, -10, 0.25, -3, 10, -0.25, 3, -10, -0.25, 3, 10, -0.25, -3, -10, -0.25, 3, 10, -0.25, -3, 10, -0.25, -3, -10, 0.25, 3, 10, -0.25, 3, 10, 0.25, 3, -10, -0.25, 3, 10, -0.25, 3, -10, 0.25, 3, -10, -0.25, -3, 10, 0.25, -3, 10, -0.25, -3, -10, 0.25, -3, 10, 0.25, -3, -10, -0.25, -3, -10)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yhmd3"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_b2t0c"]
+material = SubResource("StandardMaterial3D_yhmd3")
+size = Vector3(20, 0.1, 15)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_q811i"]
+bounce = 0.5
+absorbent = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_l25y5"]
+material = ExtResource("9_k4swx")
+size = Vector2(20, 15)
 orientation = 1
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_f50s2"]
-size = Vector3(2.5, 1, 4)
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_mv4f1"]
+data = PackedVector3Array(10, 0, 10, -10, 0, 10, 10, 0, -10, -10, 0, 10, -10, 0, -10, 10, 0, -10)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n6m64"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i6f42"]
 
-[sub_resource type="QuadMesh" id="QuadMesh_juuws"]
-material = SubResource("StandardMaterial3D_n6m64")
-size = Vector2(2.5, 1)
+[sub_resource type="BoxMesh" id="BoxMesh_0hyes"]
+material = SubResource("StandardMaterial3D_i6f42")
+size = Vector3(0.1, 6, 15)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_qn0no"]
+data = PackedVector3Array(-0.05, 3, 7.5, 0.05, 3, 7.5, -0.05, -3, 7.5, 0.05, 3, 7.5, 0.05, -3, 7.5, -0.05, -3, 7.5, 0.05, 3, -7.5, -0.05, 3, -7.5, 0.05, -3, -7.5, -0.05, 3, -7.5, -0.05, -3, -7.5, 0.05, -3, -7.5, 0.05, 3, 7.5, 0.05, 3, -7.5, 0.05, -3, 7.5, 0.05, 3, -7.5, 0.05, -3, -7.5, 0.05, -3, 7.5, -0.05, 3, -7.5, -0.05, 3, 7.5, -0.05, -3, -7.5, -0.05, 3, 7.5, -0.05, -3, 7.5, -0.05, -3, -7.5, 0.05, 3, 7.5, -0.05, 3, 7.5, 0.05, 3, -7.5, -0.05, 3, 7.5, -0.05, 3, -7.5, 0.05, 3, -7.5, -0.05, -3, 7.5, 0.05, -3, 7.5, -0.05, -3, -7.5, 0.05, -3, 7.5, 0.05, -3, -7.5, -0.05, -3, -7.5)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_5ao0l"]
+data = PackedVector3Array(-0.05, 3, 7.5, 0.05, 3, 7.5, -0.05, -3, 7.5, 0.05, 3, 7.5, 0.05, -3, 7.5, -0.05, -3, 7.5, 0.05, 3, -7.5, -0.05, 3, -7.5, 0.05, -3, -7.5, -0.05, 3, -7.5, -0.05, -3, -7.5, 0.05, -3, -7.5, 0.05, 3, 7.5, 0.05, 3, -7.5, 0.05, -3, 7.5, 0.05, 3, -7.5, 0.05, -3, -7.5, 0.05, -3, 7.5, -0.05, 3, -7.5, -0.05, 3, 7.5, -0.05, -3, -7.5, -0.05, 3, 7.5, -0.05, -3, 7.5, -0.05, -3, -7.5, 0.05, 3, 7.5, -0.05, 3, 7.5, 0.05, 3, -7.5, -0.05, 3, 7.5, -0.05, 3, -7.5, 0.05, 3, -7.5, -0.05, -3, 7.5, 0.05, -3, 7.5, -0.05, -3, -7.5, 0.05, -3, 7.5, 0.05, -3, -7.5, -0.05, -3, -7.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nq0pd"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_pgqqt"]
+material = SubResource("StandardMaterial3D_nq0pd")
+size = Vector3(20, 6, 0.1)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_ectw7"]
+data = PackedVector3Array(-10, 3, 0.05, 10, 3, 0.05, -10, -3, 0.05, 10, 3, 0.05, 10, -3, 0.05, -10, -3, 0.05, 10, 3, -0.05, -10, 3, -0.05, 10, -3, -0.05, -10, 3, -0.05, -10, -3, -0.05, 10, -3, -0.05, 10, 3, 0.05, 10, 3, -0.05, 10, -3, 0.05, 10, 3, -0.05, 10, -3, -0.05, 10, -3, 0.05, -10, 3, -0.05, -10, 3, 0.05, -10, -3, -0.05, -10, 3, 0.05, -10, -3, 0.05, -10, -3, -0.05, 10, 3, 0.05, -10, 3, 0.05, 10, 3, -0.05, -10, 3, 0.05, -10, 3, -0.05, 10, 3, -0.05, -10, -3, 0.05, 10, -3, 0.05, -10, -3, -0.05, 10, -3, 0.05, 10, -3, -0.05, -10, -3, -0.05)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_67erf"]
+size = Vector3(5, 1, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p3fi5"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_xygd2"]
+material = SubResource("StandardMaterial3D_p3fi5")
+size = Vector2(5, 1)
 orientation = 1
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3e0pf"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_44n12"]
 albedo_texture = ExtResource("9_6hpvm")
 
-[sub_resource type="QuadMesh" id="QuadMesh_t7f26"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hvwt0"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_6mxhe"]
+material = SubResource("StandardMaterial3D_hvwt0")
 orientation = 1
-
-[sub_resource type="ViewportTexture" id="ViewportTexture_nr1tp"]
-viewport_path = NodePath("Selection/Weather/SubViewport")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3eyfc"]
-resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_nr1tp")
-
-[sub_resource type="QuadMesh" id="QuadMesh_itkgi"]
-size = Vector2(2.5, 1.5)
-orientation = 1
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_fei6j"]
-size = Vector3(2.5, 1, 4)
-
-[sub_resource type="ViewportTexture" id="ViewportTexture_5l6nt"]
-viewport_path = NodePath("Selection/AirQuality/SubViewport")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pc1hh"]
-resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_5l6nt")
-
-[sub_resource type="QuadMesh" id="QuadMesh_dgodu"]
-size = Vector2(2.5, 1.5)
-orientation = 1
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_k2k5w"]
-size = Vector3(2.5, 1, 4)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4e37r"]
 size = Vector3(8, 1, 2)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_10wc1"]
-albedo_color = Color(0.529067, 0.529067, 0.529067, 1)
 
 [sub_resource type="QuadMesh" id="QuadMesh_40ed2"]
 material = SubResource("StandardMaterial3D_10wc1")
@@ -250,8 +392,8 @@ length = 10.0
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mujxs"]
 _data = {
-&"Select Topic": SubResource("Animation_ptq7t"),
-&"RESET": SubResource("Animation_6ln8l")
+&"RESET": SubResource("Animation_6ln8l"),
+&"Select Topic": SubResource("Animation_ptq7t")
 }
 
 [sub_resource type="Curve3D" id="Curve3D_h176u"]
@@ -299,35 +441,564 @@ material = SubResource("StandardMaterial3D_pm6pu")
 size = Vector2(0.2, 0.4)
 orientation = 1
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_fop2p"]
-viewport_path = NodePath("Attention/SubViewport")
+[sub_resource type="ViewportTexture" id="ViewportTexture_q687c"]
+viewport_path = NodePath("Selection/Fire/Video/SubViewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uln6k"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xu6tp"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_fop2p")
+albedo_texture = SubResource("ViewportTexture_q687c")
 
-[sub_resource type="QuadMesh" id="QuadMesh_m25xs"]
-size = Vector2(5, 2.5)
+[sub_resource type="QuadMesh" id="QuadMesh_ie4ig"]
+size = Vector2(2.5, 1.5)
 orientation = 1
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_67erf"]
-size = Vector3(5, 1, 4)
+[sub_resource type="BoxShape3D" id="BoxShape3D_f50s2"]
+size = Vector3(2.5, 1, 2)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p3fi5"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n6m64"]
 
-[sub_resource type="QuadMesh" id="QuadMesh_xygd2"]
-material = SubResource("StandardMaterial3D_p3fi5")
-size = Vector2(5, 1)
+[sub_resource type="QuadMesh" id="QuadMesh_juuws"]
+material = SubResource("StandardMaterial3D_n6m64")
+size = Vector2(2.5, 1)
 orientation = 1
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_44n12"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3e0pf"]
 albedo_texture = ExtResource("9_6hpvm")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hvwt0"]
-
-[sub_resource type="QuadMesh" id="QuadMesh_6mxhe"]
-material = SubResource("StandardMaterial3D_hvwt0")
+[sub_resource type="QuadMesh" id="QuadMesh_t7f26"]
 orientation = 1
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_nr1tp"]
+viewport_path = NodePath("Selection/Weather/Video/SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3eyfc"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_nr1tp")
+
+[sub_resource type="QuadMesh" id="QuadMesh_itkgi"]
+size = Vector2(2.5, 1.5)
+orientation = 1
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fei6j"]
+size = Vector3(2.5, 1, 2)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_5l6nt"]
+viewport_path = NodePath("Selection/AirQuality/Video/SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pc1hh"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_5l6nt")
+
+[sub_resource type="QuadMesh" id="QuadMesh_dgodu"]
+size = Vector2(2.5, 1.5)
+orientation = 1
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_k2k5w"]
+size = Vector3(2.5, 1, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rjhh0"]
+size = Vector3(2, 1, 1)
+
+[sub_resource type="Animation" id="Animation_ddvhr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../Room/WallFront/MeshInstance3D/Dashboard/Left/Fires:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.7, 0.275, 0.001)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../Room/WallFront/MeshInstance3D/Dashboard/Left/Fires:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../Room/WallFront/MeshInstance3D/Dashboard/Left/Fires2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.7, 0.275, 0.001)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../../Room/WallFront/MeshInstance3D/Dashboard/Left/Fires2:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../../Room/WallFront/MeshInstance3D/Dashboard/Left/Fires3:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.7, -0.525, 0.001)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../../Room/WallFront/MeshInstance3D/Dashboard/Left/Fires3:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../../Room/WallFront/MeshInstance3D/Dashboard/Left/Fires4:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.7, -0.525, 0.001)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../../Room/WallFront/MeshInstance3D/Dashboard/Left/Fires4:scale")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_bn03k"]
+resource_name = "Left"
+length = 30.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../Room/WallFront/MeshInstance3D/Dashboard/Left/Fires:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(4, 5, 9, 10, 15, 16, 21, 22, 26, 28),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.7, 0.275, 0.001), Vector3(0, 0, 0.001), Vector3(0, 0, 0.001), Vector3(1, -0.75, 0.001), Vector3(1, -0.75, 0.001), Vector3(0, -0.75, 0.001), Vector3(0, -0.75, 0.001), Vector3(-1, -0.75, 0.001), Vector3(-1, -0.75, 0.001), Vector3(-0.7, 0.275, 0.001)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../Room/WallFront/MeshInstance3D/Dashboard/Left/Fires:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(4, 5, 9, 10, 15, 16, 21, 22, 26, 28),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(1.5, 1.5, 1.5), Vector3(1.5, 1.5, 1.5), Vector3(0.5, 0.5, 0.5), Vector3(0.5, 0.5, 0.5), Vector3(0.5, 0.5, 0.5), Vector3(0.5, 0.5, 0.5), Vector3(0.5, 0.5, 0.5), Vector3(0.5, 0.5, 0.5), Vector3(1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../Room/WallFront/MeshInstance3D/Dashboard/Left/Fires2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(4, 5, 9, 10, 15, 16, 21, 22, 26, 28),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.7, 0.275, 0.001), Vector3(1, -0.75, 0.001), Vector3(1, -0.75, 0.001), Vector3(0, -0.75, 0.001), Vector3(0, -0.75, 0.001), Vector3(-1, -0.75, 0.001), Vector3(-1, -0.75, 0.001), Vector3(0, 0, 0.001), Vector3(0, 0, 0.001), Vector3(0.7, 0.275, 0.001)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../../Room/WallFront/MeshInstance3D/Dashboard/Left/Fires2:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(4, 5, 9, 10, 15, 16, 21, 22, 26, 28),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(0.5, 0.5, 0.5), Vector3(0.5, 0.5, 0.5), Vector3(0.5, 0.5, 0.5), Vector3(0.5, 0.5, 0.5), Vector3(0.5, 0.5, 0.5), Vector3(0.5, 0.5, 0.5), Vector3(1.5, 1.5, 1.5), Vector3(1.5, 1.5, 1.5), Vector3(1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../../Room/WallFront/MeshInstance3D/Dashboard/Left/Fires3:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(4, 5, 9, 10, 15, 16, 21, 22, 26, 28),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.7, -0.525, 0.001), Vector3(-1, -0.75, 0.001), Vector3(-1, -0.75, 0.001), Vector3(0, 0, 0.001), Vector3(0, 0, 0.001), Vector3(1, -0.75, 0.001), Vector3(1, -0.75, 0.001), Vector3(0, -0.75, 0.001), Vector3(0, -0.75, 0.001), Vector3(-0.7, -0.525, 0.001)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../../Room/WallFront/MeshInstance3D/Dashboard/Left/Fires3:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(4, 5, 9, 10, 15, 16, 21, 22, 26, 28),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(0.5, 0.5, 0.5), Vector3(0.5, 0.5, 0.5), Vector3(1.5, 1.5, 1.5), Vector3(1.5, 1.5, 1.5), Vector3(0.5, 0.5, 0.5), Vector3(0.5, 0.5, 0.5), Vector3(0.5, 0.5, 0.5), Vector3(0.5, 0.5, 0.5), Vector3(1, 1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../../Room/WallFront/MeshInstance3D/Dashboard/Left/Fires4:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(4, 5, 9, 10, 15, 16, 21, 22, 26, 28),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.7, -0.525, 0.001), Vector3(0, -0.75, 0.001), Vector3(0, -0.75, 0.001), Vector3(-1, -0.75, 0.001), Vector3(-1, -0.75, 0.001), Vector3(0, 0, 0.001), Vector3(0, 0, 0.001), Vector3(1, -0.75, 0.001), Vector3(1, -0.75, 0.001), Vector3(0.7, -0.525, 0.001)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../../Room/WallFront/MeshInstance3D/Dashboard/Left/Fires4:scale")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(4, 5, 9, 10, 15, 16, 21, 22, 26, 28),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(0.5, 0.5, 0.5), Vector3(0.5, 0.5, 0.5), Vector3(0.5, 0.5, 0.5), Vector3(0.5, 0.5, 0.5), Vector3(1.5, 1.5, 1.5), Vector3(1.5, 1.5, 1.5), Vector3(0.5, 0.5, 0.5), Vector3(0.5, 0.5, 0.5), Vector3(1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hjf56"]
+_data = {
+&"RESET": SubResource("Animation_ddvhr"),
+&"Left": SubResource("Animation_bn03k")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ojuu3"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_blkkf"]
+size = Vector3(2, 1, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7vgp8"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_viaec"]
+material = SubResource("StandardMaterial3D_7vgp8")
+size = Vector2(2, 1)
+orientation = 1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rxduh"]
+albedo_texture = ExtResource("9_6hpvm")
+
+[sub_resource type="QuadMesh" id="QuadMesh_b3wi6"]
+material = SubResource("StandardMaterial3D_rxduh")
+orientation = 1
+
+[sub_resource type="Animation" id="Animation_0dp21"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../Room/WallFront/MeshInstance3D/Dashboard/Right/AirQuality:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.7, 0.275, 0.001)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../Room/WallFront/MeshInstance3D/Dashboard/Right/AirQuality:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../Room/WallFront/MeshInstance3D/Dashboard/Right/AirQuality2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.7, 0.275, 0.001)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../../Room/WallFront/MeshInstance3D/Dashboard/Right/AirQuality2:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../../Room/WallFront/MeshInstance3D/Dashboard/Right/AirQuality3:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.7, -0.525, 0.001)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../../Room/WallFront/MeshInstance3D/Dashboard/Right/AirQuality3:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../../Room/WallFront/MeshInstance3D/Dashboard/Right/AirQuality4:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.7, -0.525, 0.001)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../../Room/WallFront/MeshInstance3D/Dashboard/Right/AirQuality4:scale")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("NitrogenGreen:playing")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("OzonePurple:playing")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Start:playing")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_lq3wr"]
+resource_name = "Tutorial"
+length = 100.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../Room/WallFront/MeshInstance3D/Dashboard/Right/AirQuality:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(15.8, 17.1, 58.0333, 60.1333, 111.2, 112.2, 118.2, 119.2, 124.2, 125.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.7, 0.275, 0.001), Vector3(0, 0, 0.001), Vector3(0, 0, 0.001), Vector3(1, -0.75, 0.001), Vector3(1, -0.75, 0.001), Vector3(0, -0.75, 0.001), Vector3(0, -0.75, 0.001), Vector3(-1, -0.75, 0.001), Vector3(-1, -0.75, 0.001), Vector3(-0.7, 0.275, 0.001)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../Room/WallFront/MeshInstance3D/Dashboard/Right/AirQuality2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(15.8, 17.1, 58.0333, 60.1333, 111.2, 112.2, 118.2, 119.2, 124.2, 125.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.7, 0.275, 0.001), Vector3(1, -0.75, 0.001), Vector3(1, -0.75, 0.001), Vector3(0, -0.75, 0.001), Vector3(0, -0.75, 0.001), Vector3(-1, -0.75, 0.001), Vector3(-1, -0.75, 0.001), Vector3(0, 0, 0.001), Vector3(0, 0, 0.001), Vector3(0.7, 0.275, 0.001)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../Room/WallFront/MeshInstance3D/Dashboard/Right/AirQuality3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(15.8, 17.1, 58.0333, 60.1333, 111.2, 112.2, 118.2, 119.2, 124.2, 125.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.7, -0.525, 0.001), Vector3(-1, -0.75, 0.001), Vector3(-1, -0.75, 0.001), Vector3(0, 0, 0.001), Vector3(0, 0, 0.001), Vector3(1, -0.75, 0.001), Vector3(1, -0.75, 0.001), Vector3(0, -0.75, 0.001), Vector3(0, -0.75, 0.001), Vector3(-0.7, -0.525, 0.001)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../../Room/WallFront/MeshInstance3D/Dashboard/Right/AirQuality3:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(15.8, 17.1, 58.0333, 60.1333, 111.2, 112.2, 118.2, 119.2, 124.2, 125.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(0.5, 0.5, 0.5), Vector3(0.5, 0.5, 0.5), Vector3(1.5, 1.5, 1.5), Vector3(1.5, 1.5, 1.5), Vector3(0.5, 0.5, 0.5), Vector3(0.5, 0.5, 0.5), Vector3(0.5, 0.5, 0.5), Vector3(0.5, 0.5, 0.5), Vector3(1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../../Room/WallFront/MeshInstance3D/Dashboard/Right/AirQuality:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(15.7667, 15.8, 17.1, 58.0333, 60.1333, 111.2, 112.2, 118.2, 119.2, 124.2, 125.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(1, 1, 1), Vector3(1.5, 1.5, 1.5), Vector3(1.5, 1.5, 1.5), Vector3(0.5, 0.5, 0.5), Vector3(0.5, 0.5, 0.5), Vector3(0.5, 0.5, 0.5), Vector3(0.5, 0.5, 0.5), Vector3(0.5, 0.5, 0.5), Vector3(0.5, 0.5, 0.5), Vector3(1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../../Room/WallFront/MeshInstance3D/Dashboard/Right/AirQuality2:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(15.8, 17.1, 58.0333, 60.1333, 111.2, 112.2, 118.2, 119.2, 124.2, 125.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(0.5, 0.5, 0.5), Vector3(0.5, 0.5, 0.5), Vector3(0.5, 0.5, 0.5), Vector3(0.5, 0.5, 0.5), Vector3(0.5, 0.5, 0.5), Vector3(0.5, 0.5, 0.5), Vector3(1.5, 1.5, 1.5), Vector3(1.5, 1.5, 1.5), Vector3(1, 1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../../Room/WallFront/MeshInstance3D/Dashboard/Right/AirQuality4:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(15.8, 17.1, 58.0333, 60.1333, 111.2, 112.2, 118.2, 119.2, 124.2, 125.667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.7, -0.525, 0.001), Vector3(0, -0.75, 0.001), Vector3(0, -0.75, 0.001), Vector3(-1, -0.75, 0.001), Vector3(-1, -0.75, 0.001), Vector3(0, 0, 0.001), Vector3(0, 0, 0.001), Vector3(1, -0.75, 0.001), Vector3(1, -0.75, 0.001), Vector3(0.7, -0.525, 0.001)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../../Room/WallFront/MeshInstance3D/Dashboard/Right/AirQuality4:scale")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(15.8, 17.1, 58.0333, 60.1333, 111.2, 112.2, 118.2, 119.2, 124.2, 125.667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(0.5, 0.5, 0.5), Vector3(0.5, 0.5, 0.5), Vector3(0.5, 0.5, 0.5), Vector3(0.5, 0.5, 0.5), Vector3(1.5, 1.5, 1.5), Vector3(1.5, 1.5, 1.5), Vector3(0.5, 0.5, 0.5), Vector3(0.5, 0.5, 0.5), Vector3(1, 1, 1)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Start:playing")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("NitrogenGreen:playing")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(18.5667),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("OzonePurple:playing")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(59.5),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vuvrn"]
+_data = {
+&"RESET": SubResource("Animation_0dp21"),
+&"Tutorial": SubResource("Animation_lq3wr")
+}
 
 [node name="Demo2" type="Node3D"]
 script = ExtResource("1_iv2wo")
@@ -336,219 +1007,311 @@ script = ExtResource("1_iv2wo")
 environment = SubResource("Environment_ncqx0")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 6.67497, 3.13216)
+transform = Transform3D(-0.866024, -0.433016, 0.250001, 0.46048, -0.495881, 0.736247, -0.194836, 0.752728, 0.62884, 13.15, 2.23742, 16.2288)
+visible = false
+light_energy = 0.5
 shadow_enabled = true
 
 [node name="XROrigin3D" parent="." instance=ExtResource("1_4jhd4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.196, 17.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.196, 12.1174)
 
 [node name="Room" type="Node3D" parent="."]
 
-[node name="RoomHallway" parent="Room" instance=ExtResource("2_01p7y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
-
-[node name="RoomHallway2" parent="Room" instance=ExtResource("2_01p7y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.5)
-
-[node name="RoomHallway3" parent="Room" instance=ExtResource("2_01p7y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
-
-[node name="RoomHallway4" parent="Room" instance=ExtResource("2_01p7y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7.5)
-
-[node name="RoomHallway5" parent="Room" instance=ExtResource("2_01p7y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10)
-
-[node name="RoomHallway6" parent="Room" instance=ExtResource("2_01p7y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12.5)
-
-[node name="RoomHallway7" parent="Room" instance=ExtResource("2_01p7y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15)
-
-[node name="RoomHallway8" parent="Room" instance=ExtResource("2_01p7y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 17.5)
-
-[node name="RoomHallway9" parent="Room" instance=ExtResource("2_01p7y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 20)
-
 [node name="WallFront" type="StaticBody3D" parent="Room"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 1.5, -1.25)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 2.5, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/WallFront"]
-shape = SubResource("ConcavePolygonShape3D_8umo6")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Room/WallFront/CollisionShape3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Room/WallFront"]
 layers = 2
+material_override = ExtResource("3_pqb7p")
 mesh = SubResource("BoxMesh_hx5iq")
-skeleton = NodePath("../..")
 
-[node name="Visualizations" type="Node3D" parent="Room/WallFront/CollisionShape3D/MeshInstance3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.265, 0.5, 0)
+[node name="Dashboard" type="MeshInstance3D" parent="Room/WallFront/MeshInstance3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.26, -1, 0)
+mesh = SubResource("QuadMesh_1bvhk")
+skeleton = NodePath("../../../..")
 
-[node name="Fires" type="MeshInstance3D" parent="Room/WallFront/CollisionShape3D/MeshInstance3D/Visualizations"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 2.5)
-material_override = SubResource("StandardMaterial3D_8u3ks")
-mesh = SubResource("QuadMesh_r2v83")
+[node name="Left" type="MeshInstance3D" parent="Room/WallFront/MeshInstance3D/Dashboard"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 0.001)
+mesh = SubResource("QuadMesh_30q7r")
 
-[node name="SubViewport" type="SubViewport" parent="Room/WallFront/CollisionShape3D/MeshInstance3D/Visualizations/Fires"]
+[node name="Label3D" type="Label3D" parent="Room/WallFront/MeshInstance3D/Dashboard/Left"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0.001)
+text = "WildFires
+"
+
+[node name="Fires" type="MeshInstance3D" parent="Room/WallFront/MeshInstance3D/Dashboard/Left"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.7, 0.275, 0.001)
+material_override = SubResource("StandardMaterial3D_3485e")
+mesh = SubResource("QuadMesh_cadsw")
+skeleton = NodePath("")
+
+[node name="SubViewport" type="SubViewport" parent="Room/WallFront/MeshInstance3D/Dashboard/Left/Fires"]
 size = Vector2i(1120, 480)
 
-[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="Room/WallFront/CollisionShape3D/MeshInstance3D/Visualizations/Fires/SubViewport"]
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="Room/WallFront/MeshInstance3D/Dashboard/Left/Fires/SubViewport"]
 offset_right = 1120.0
 offset_bottom = 480.0
-stream = ExtResource("4_usa0l")
+stream = SubResource("VideoStreamTheora_a3xwi")
 autoplay = true
 loop = true
 
-[node name="Weather" type="MeshInstance3D" parent="Room/WallFront/CollisionShape3D/MeshInstance3D/Visualizations"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
-material_override = SubResource("StandardMaterial3D_8lin5")
-mesh = SubResource("QuadMesh_1lxet")
+[node name="Fires2" type="MeshInstance3D" parent="Room/WallFront/MeshInstance3D/Dashboard/Left"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.7, 0.275, 0.001)
+material_override = SubResource("StandardMaterial3D_fovi3")
+mesh = SubResource("QuadMesh_lpay4")
+skeleton = NodePath("")
 
-[node name="SubViewport" type="SubViewport" parent="Room/WallFront/CollisionShape3D/MeshInstance3D/Visualizations/Weather"]
-size = Vector2i(852, 480)
-
-[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="Room/WallFront/CollisionShape3D/MeshInstance3D/Visualizations/Weather/SubViewport"]
-offset_right = 40.0
-offset_bottom = 40.0
-stream = ExtResource("5_q1f30")
-autoplay = true
-loop = true
-
-[node name="AirQuality" type="MeshInstance3D" parent="Room/WallFront/CollisionShape3D/MeshInstance3D/Visualizations"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, -2.5)
-material_override = SubResource("StandardMaterial3D_tgrpu")
-mesh = SubResource("QuadMesh_b7yob")
-
-[node name="SubViewport" type="SubViewport" parent="Room/WallFront/CollisionShape3D/MeshInstance3D/Visualizations/AirQuality"]
+[node name="SubViewport" type="SubViewport" parent="Room/WallFront/MeshInstance3D/Dashboard/Left/Fires2"]
 size = Vector2i(1120, 480)
 
-[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="Room/WallFront/CollisionShape3D/MeshInstance3D/Visualizations/AirQuality/SubViewport"]
-offset_right = 40.0
-offset_bottom = 40.0
-stream = ExtResource("6_g4c71")
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="Room/WallFront/MeshInstance3D/Dashboard/Left/Fires2/SubViewport"]
+offset_right = 1120.0
+offset_bottom = 480.0
 autoplay = true
 loop = true
 
-[node name="Dashboard" type="MeshInstance3D" parent="Room/WallFront"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.26, 0, -1.1365e-08)
-mesh = SubResource("QuadMesh_1bvhk")
-skeleton = NodePath("../../..")
+[node name="Fires3" type="MeshInstance3D" parent="Room/WallFront/MeshInstance3D/Dashboard/Left"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.7, -0.525, 0.001)
+material_override = SubResource("StandardMaterial3D_c0nb6")
+mesh = SubResource("QuadMesh_8ff3a")
+skeleton = NodePath("")
 
-[node name="Selection" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.495, 3)
+[node name="SubViewport" type="SubViewport" parent="Room/WallFront/MeshInstance3D/Dashboard/Left/Fires3"]
+size = Vector2i(1120, 480)
 
-[node name="Fire" type="MeshInstance3D" parent="Selection"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)
-material_override = SubResource("StandardMaterial3D_xu6tp")
-mesh = SubResource("QuadMesh_ie4ig")
-skeleton = NodePath("../..")
-
-[node name="SubViewport" type="SubViewport" parent="Selection/Fire"]
-size = Vector2i(1920, 1080)
-
-[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="Selection/Fire/SubViewport"]
-offset_right = 40.0
-offset_bottom = 40.0
-stream = ExtResource("4_xnpma")
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="Room/WallFront/MeshInstance3D/Dashboard/Left/Fires3/SubViewport"]
+offset_right = 1120.0
+offset_bottom = 480.0
+stream = SubResource("VideoStreamTheora_1famr")
 autoplay = true
 loop = true
 
-[node name="Area3D" type="Area3D" parent="Selection/Fire"]
+[node name="Fires4" type="MeshInstance3D" parent="Room/WallFront/MeshInstance3D/Dashboard/Left"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.7, -0.525, 0.001)
+material_override = SubResource("StandardMaterial3D_bnu5s")
+mesh = SubResource("QuadMesh_r56l6")
+skeleton = NodePath("")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Selection/Fire/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.51, 1)
-shape = SubResource("BoxShape3D_f50s2")
+[node name="SubViewport" type="SubViewport" parent="Room/WallFront/MeshInstance3D/Dashboard/Left/Fires4"]
+size = Vector2i(1120, 480)
 
-[node name="Fire" type="AudioStreamPlayer" parent="Selection/Fire"]
-stream = ExtResource("5_1t8b0")
-volume_db = -10.0
-parameters/looping = true
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Selection/Fire"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.5)
-mesh = SubResource("QuadMesh_juuws")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Selection/Fire/MeshInstance3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01, 0)
-material_override = SubResource("StandardMaterial3D_3e0pf")
-mesh = SubResource("QuadMesh_t7f26")
-
-[node name="Weather" type="MeshInstance3D" parent="Selection"]
-material_override = SubResource("StandardMaterial3D_3eyfc")
-mesh = SubResource("QuadMesh_itkgi")
-skeleton = NodePath("../..")
-
-[node name="SubViewport" type="SubViewport" parent="Selection/Weather"]
-size = Vector2i(1920, 1080)
-
-[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="Selection/Weather/SubViewport"]
-offset_right = 40.0
-offset_bottom = 40.0
-stream = ExtResource("5_1ondk")
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="Room/WallFront/MeshInstance3D/Dashboard/Left/Fires4/SubViewport"]
+offset_right = 1120.0
+offset_bottom = 480.0
 autoplay = true
 loop = true
 
-[node name="Area3D" type="Area3D" parent="Selection/Weather"]
+[node name="Middle" type="MeshInstance3D" parent="Room/WallFront/MeshInstance3D/Dashboard"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.001)
+mesh = SubResource("QuadMesh_v2fjw")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Selection/Weather/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.51, 1)
-shape = SubResource("BoxShape3D_fei6j")
+[node name="Label3D" type="Label3D" parent="Room/WallFront/MeshInstance3D/Dashboard/Middle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0.001)
+text = "Weather"
 
-[node name="Weather" type="AudioStreamPlayer" parent="Selection/Weather"]
-stream = ExtResource("8_dq5ke")
-volume_db = -10.0
-parameters/looping = true
+[node name="Weather" type="MeshInstance3D" parent="Room/WallFront/MeshInstance3D/Dashboard/Middle"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0.275, 0.001)
+material_override = SubResource("StandardMaterial3D_qh7hh")
+mesh = SubResource("QuadMesh_g1f7f")
+skeleton = NodePath("")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="Selection/Weather"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.5)
-mesh = SubResource("QuadMesh_juuws")
-skeleton = NodePath("../../Fire")
+[node name="SubViewport" type="SubViewport" parent="Room/WallFront/MeshInstance3D/Dashboard/Middle/Weather"]
+size = Vector2i(852, 480)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Selection/Weather/MeshInstance3D2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01, 0)
-material_override = SubResource("StandardMaterial3D_3e0pf")
-mesh = SubResource("QuadMesh_t7f26")
-
-[node name="AirQuality" type="MeshInstance3D" parent="Selection"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
-material_override = SubResource("StandardMaterial3D_pc1hh")
-mesh = SubResource("QuadMesh_dgodu")
-skeleton = NodePath("../..")
-
-[node name="SubViewport" type="SubViewport" parent="Selection/AirQuality"]
-size = Vector2i(1920, 1080)
-
-[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="Selection/AirQuality/SubViewport"]
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="Room/WallFront/MeshInstance3D/Dashboard/Middle/Weather/SubViewport"]
 offset_right = 40.0
 offset_bottom = 40.0
-stream = ExtResource("4_18ybd")
+stream = SubResource("VideoStreamTheora_tjtme")
 autoplay = true
 loop = true
 
-[node name="Area3D" type="Area3D" parent="Selection/AirQuality"]
+[node name="Weather2" type="MeshInstance3D" parent="Room/WallFront/MeshInstance3D/Dashboard/Middle"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.5, -0.525, 0.001)
+material_override = SubResource("StandardMaterial3D_mx3dr")
+mesh = SubResource("QuadMesh_macyl")
+skeleton = NodePath("")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Selection/AirQuality/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.51, 1)
-shape = SubResource("BoxShape3D_k2k5w")
+[node name="SubViewport" type="SubViewport" parent="Room/WallFront/MeshInstance3D/Dashboard/Middle/Weather2"]
+size = Vector2i(852, 480)
 
-[node name="Wind" type="AudioStreamPlayer" parent="Selection/AirQuality"]
-stream = ExtResource("9_4y74a")
-volume_db = 5.0
-parameters/looping = true
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="Room/WallFront/MeshInstance3D/Dashboard/Middle/Weather2/SubViewport"]
+offset_right = 40.0
+offset_bottom = 40.0
+stream = SubResource("VideoStreamTheora_dq3t7")
+autoplay = true
+loop = true
 
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="Selection/AirQuality"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.5)
-mesh = SubResource("QuadMesh_juuws")
-skeleton = NodePath("../../Fire")
+[node name="Weather3" type="MeshInstance3D" parent="Room/WallFront/MeshInstance3D/Dashboard/Middle"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.5, -0.525, 0.001)
+material_override = SubResource("StandardMaterial3D_pudn7")
+mesh = SubResource("QuadMesh_cywwa")
+skeleton = NodePath("")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Selection/AirQuality/MeshInstance3D3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01, 0)
-material_override = SubResource("StandardMaterial3D_3e0pf")
-mesh = SubResource("QuadMesh_t7f26")
+[node name="SubViewport" type="SubViewport" parent="Room/WallFront/MeshInstance3D/Dashboard/Middle/Weather3"]
+size = Vector2i(852, 480)
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="Room/WallFront/MeshInstance3D/Dashboard/Middle/Weather3/SubViewport"]
+offset_right = 40.0
+offset_bottom = 40.0
+stream = SubResource("VideoStreamTheora_5fl4e")
+autoplay = true
+loop = true
+
+[node name="Right" type="MeshInstance3D" parent="Room/WallFront/MeshInstance3D/Dashboard"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 0.001)
+mesh = SubResource("QuadMesh_fd87c")
+
+[node name="Label3D" type="Label3D" parent="Room/WallFront/MeshInstance3D/Dashboard/Right"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0.001)
+text = "Air Quality"
+
+[node name="AirQuality" type="MeshInstance3D" parent="Room/WallFront/MeshInstance3D/Dashboard/Right"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.7, 0.275, 0.001)
+material_override = SubResource("StandardMaterial3D_l5hys")
+mesh = SubResource("QuadMesh_m2rwm")
+skeleton = NodePath("")
+
+[node name="SubViewport" type="SubViewport" parent="Room/WallFront/MeshInstance3D/Dashboard/Right/AirQuality"]
+size = Vector2i(2048, 1024)
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="Room/WallFront/MeshInstance3D/Dashboard/Right/AirQuality/SubViewport"]
+offset_right = 40.0
+offset_bottom = 40.0
+stream = ExtResource("4_bweqj")
+autoplay = true
+loop = true
+
+[node name="AirQuality2" type="MeshInstance3D" parent="Room/WallFront/MeshInstance3D/Dashboard/Right"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.7, 0.275, 0.001)
+material_override = SubResource("StandardMaterial3D_h1nl5")
+mesh = SubResource("QuadMesh_x4r3q")
+skeleton = NodePath("")
+
+[node name="SubViewport" type="SubViewport" parent="Room/WallFront/MeshInstance3D/Dashboard/Right/AirQuality2"]
+size = Vector2i(2048, 1024)
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="Room/WallFront/MeshInstance3D/Dashboard/Right/AirQuality2/SubViewport"]
+offset_right = 40.0
+offset_bottom = 40.0
+stream = ExtResource("5_sor2i")
+autoplay = true
+loop = true
+
+[node name="AirQuality3" type="MeshInstance3D" parent="Room/WallFront/MeshInstance3D/Dashboard/Right"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.7, -0.525, 0.001)
+material_override = SubResource("StandardMaterial3D_usw2t")
+mesh = SubResource("QuadMesh_wg3sk")
+skeleton = NodePath("")
+
+[node name="SubViewport" type="SubViewport" parent="Room/WallFront/MeshInstance3D/Dashboard/Right/AirQuality3"]
+size = Vector2i(2048, 1024)
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="Room/WallFront/MeshInstance3D/Dashboard/Right/AirQuality3/SubViewport"]
+offset_right = 40.0
+offset_bottom = 40.0
+stream = ExtResource("6_4aby8")
+autoplay = true
+loop = true
+
+[node name="AirQuality4" type="MeshInstance3D" parent="Room/WallFront/MeshInstance3D/Dashboard/Right"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.7, -0.525, 0.001)
+material_override = SubResource("StandardMaterial3D_vopp1")
+mesh = SubResource("QuadMesh_ogg6x")
+skeleton = NodePath("")
+
+[node name="SubViewport" type="SubViewport" parent="Room/WallFront/MeshInstance3D/Dashboard/Right/AirQuality4"]
+size = Vector2i(2048, 1024)
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="Room/WallFront/MeshInstance3D/Dashboard/Right/AirQuality4/SubViewport"]
+offset_right = 40.0
+offset_bottom = 40.0
+stream = ExtResource("7_jen7e")
+autoplay = true
+loop = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/WallFront"]
+shape = SubResource("ConcavePolygonShape3D_idk22")
+
+[node name="Roof" type="Node3D" parent="Room"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.5, 7.75)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Room/Roof"]
+material_override = ExtResource("3_pqb7p")
+mesh = SubResource("BoxMesh_b2t0c")
+
+[node name="Floor" type="StaticBody3D" parent="Room"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 7.75)
+physics_material_override = SubResource("PhysicsMaterial_q811i")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Room/Floor"]
+mesh = SubResource("QuadMesh_l25y5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Floor"]
+shape = SubResource("ConcavePolygonShape3D_mv4f1")
+
+[node name="WallLeft" type="StaticBody3D" parent="Room"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 2.5, 7.75)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Room/WallLeft"]
+material_override = ExtResource("3_pqb7p")
+mesh = SubResource("BoxMesh_0hyes")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/WallLeft"]
+shape = SubResource("ConcavePolygonShape3D_qn0no")
+
+[node name="WallRight" type="StaticBody3D" parent="Room"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 2.5, 7.75)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Room/WallRight"]
+material_override = ExtResource("3_pqb7p")
+mesh = SubResource("BoxMesh_0hyes")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/WallRight"]
+shape = SubResource("ConcavePolygonShape3D_5ao0l")
+
+[node name="WallBack" type="StaticBody3D" parent="Room"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 15.25)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Room/WallBack"]
+material_override = ExtResource("3_pqb7p")
+mesh = SubResource("BoxMesh_pgqqt")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/WallBack"]
+shape = SubResource("ConcavePolygonShape3D_ectw7")
+
+[node name="Attention" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.495, 10.443)
+
+[node name="Area3D" type="Area3D" parent="Attention"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Attention/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.51, 0)
+shape = SubResource("BoxShape3D_67erf")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Attention"]
+mesh = SubResource("QuadMesh_xygd2")
+skeleton = NodePath("")
+
+[node name="StandHere" type="MeshInstance3D" parent="Attention/MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.56579, 0.000999987, 0)
+material_override = SubResource("StandardMaterial3D_44n12")
+mesh = SubResource("QuadMesh_6mxhe")
+
+[node name="Label3D" type="Label3D" parent="Attention/MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.197017, 0.000999987, 0)
+text = "Welcome"
+font_size = 100
+outline_size = 20
+
+[node name="Speaker" parent="Attention" instance=ExtResource("27_8mh5o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="Intro" type="AudioStreamPlayer3D" parent="Attention/Speaker"]
+stream = ExtResource("11_ospbb")
 
 [node name="Overview" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.495, 9.51135)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.495, 7.79096)
+visible = false
 
 [node name="Area3D" type="Area3D" parent="Overview"]
 monitorable = false
@@ -572,6 +1335,7 @@ libraries = {
 }
 
 [node name="Path3DLeft" type="Path3D" parent="Overview"]
+visible = false
 curve = SubResource("Curve3D_h176u")
 
 [node name="PathFollow3DLeft" type="PathFollow3D" parent="Overview/Path3DLeft"]
@@ -592,7 +1356,7 @@ mesh = SubResource("QuadMesh_1a384")
 skeleton = NodePath("../../..")
 
 [node name="PathFollow3DLeft3" type="PathFollow3D" parent="Overview/Path3DLeft"]
-transform = Transform3D(0.167547, 1.35524e-06, 0.985761, 2.47566e-05, 0.999978, -5.58239e-06, -0.98576, 2.5344e-05, 0.167547, -1.30394, 2.09908e-05, -1.51832)
+transform = Transform3D(0.167547, 1.35524e-06, 0.985761, 2.47566e-05, 0.999978, -5.58239e-06, -0.985759, 2.5344e-05, 0.167547, -1.30394, 2.09908e-05, -1.51832)
 progress = 2.40382
 
 [node name="Path" type="MeshInstance3D" parent="Overview/Path3DLeft/PathFollow3DLeft3"]
@@ -610,7 +1374,7 @@ mesh = SubResource("QuadMesh_1a384")
 skeleton = NodePath("../../..")
 
 [node name="PathFollow3DLeft5" type="PathFollow3D" parent="Overview/Path3DLeft"]
-transform = Transform3D(0.999603, -6.41387e-05, 0.0242337, 6.36474e-05, 0.999978, 2.08275e-05, -0.0242336, -1.92804e-05, 0.999604, -3.0163, -1.40107e-05, -2.70168)
+transform = Transform3D(0.999605, -6.41387e-05, 0.0242337, 6.36475e-05, 0.999978, 2.08275e-05, -0.0242337, -1.92804e-05, 0.999605, -3.0163, -1.40107e-05, -2.70168)
 progress = 4.80763
 
 [node name="Path" type="MeshInstance3D" parent="Overview/Path3DLeft/PathFollow3DLeft5"]
@@ -619,6 +1383,7 @@ mesh = SubResource("QuadMesh_1a384")
 skeleton = NodePath("../../..")
 
 [node name="Path3DAhead" type="Path3D" parent="Overview"]
+visible = false
 curve = SubResource("Curve3D_jhh51")
 
 [node name="PathFollow3DAhead" type="PathFollow3D" parent="Overview/Path3DAhead"]
@@ -666,6 +1431,7 @@ mesh = SubResource("QuadMesh_0epbk")
 skeleton = NodePath("../../..")
 
 [node name="Path3DRight" type="Path3D" parent="Overview"]
+visible = false
 curve = SubResource("Curve3D_un5ko")
 
 [node name="PathFollow3DRight" type="PathFollow3D" parent="Overview/Path3DRight"]
@@ -695,7 +1461,7 @@ mesh = SubResource("QuadMesh_b6mot")
 skeleton = NodePath("../../..")
 
 [node name="PathFollow3DRight4" type="PathFollow3D" parent="Overview/Path3DRight"]
-transform = Transform3D(0.325721, 1.70996e-05, -0.945376, -2.52525e-05, 0.999978, 9.38446e-06, 0.945376, 2.08195e-05, 0.325721, 2.4954, 2.04726e-05, -1.75642)
+transform = Transform3D(0.325721, 1.70996e-05, -0.945376, -2.52525e-05, 0.999978, 9.38445e-06, 0.945376, 2.08195e-05, 0.325721, 2.4954, 2.04726e-05, -1.75642)
 progress = 3.61496
 
 [node name="Path" type="MeshInstance3D" parent="Overview/Path3DRight/PathFollow3DRight4"]
@@ -704,7 +1470,7 @@ mesh = SubResource("QuadMesh_b6mot")
 skeleton = NodePath("../../..")
 
 [node name="PathFollow3DRight5" type="PathFollow3D" parent="Overview/Path3DRight"]
-transform = Transform3D(0.999617, 6.53585e-05, 0.0243854, -6.5885e-05, 0.999978, 2.09579e-05, -0.0243854, -2.25599e-05, 0.999617, 2.98376, -1.39571e-05, -2.6991)
+transform = Transform3D(0.999605, 6.53585e-05, 0.0243851, -6.58842e-05, 0.999978, 2.09577e-05, -0.0243851, -2.25599e-05, 0.999605, 2.98376, -1.39571e-05, -2.6991)
 progress = 4.81995
 
 [node name="Path" type="MeshInstance3D" parent="Overview/Path3DRight/PathFollow3DRight5"]
@@ -729,47 +1495,254 @@ stream = ExtResource("16_fy6bw")
 [node name="End" type="AudioStreamPlayer" parent="Overview/Audio"]
 stream = ExtResource("17_g3hwf")
 
-[node name="Attention" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.49, 12.5)
-material_override = SubResource("StandardMaterial3D_uln6k")
-mesh = SubResource("QuadMesh_m25xs")
+[node name="Speaker" parent="Overview" instance=ExtResource("27_8mh5o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
 
-[node name="SubViewport" type="SubViewport" parent="Attention"]
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Overview/Speaker"]
+stream = ExtResource("13_k846q")
+
+[node name="Selection" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.495, 1.64554)
+visible = false
+
+[node name="Fire" type="Node3D" parent="Selection"]
+
+[node name="Video" type="MeshInstance3D" parent="Selection/Fire"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)
+visible = false
+material_override = SubResource("StandardMaterial3D_xu6tp")
+mesh = SubResource("QuadMesh_ie4ig")
+skeleton = NodePath("../../..")
+
+[node name="SubViewport" type="SubViewport" parent="Selection/Fire/Video"]
 size = Vector2i(1920, 1080)
 
-[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="Attention/SubViewport"]
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="Selection/Fire/Video/SubViewport"]
 offset_right = 40.0
 offset_bottom = 40.0
-stream = ExtResource("3_6cxgq")
+stream = ExtResource("4_xnpma")
 autoplay = true
 loop = true
 
-[node name="Intro" type="AudioStreamPlayer3D" parent="Attention"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
-stream = ExtResource("11_ospbb")
+[node name="Fire" type="AudioStreamPlayer" parent="Selection/Fire/Video"]
+stream = ExtResource("5_1t8b0")
+volume_db = -10.0
+parameters/looping = true
 
-[node name="Area3D" type="Area3D" parent="Attention"]
+[node name="Area3D" type="Area3D" parent="Selection/Fire"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 1.5)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Attention/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Selection/Fire/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.51, 1)
-shape = SubResource("BoxShape3D_67erf")
+shape = SubResource("BoxShape3D_f50s2")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Attention"]
+[node name="StandHere" type="MeshInstance3D" parent="Selection/Fire"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 2.5)
+mesh = SubResource("QuadMesh_juuws")
+skeleton = NodePath("../Video")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Selection/Fire/StandHere"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01, 0)
+material_override = SubResource("StandardMaterial3D_3e0pf")
+mesh = SubResource("QuadMesh_t7f26")
+
+[node name="Weather" type="Node3D" parent="Selection"]
+
+[node name="Video" type="MeshInstance3D" parent="Selection/Weather"]
+visible = false
+material_override = SubResource("StandardMaterial3D_3eyfc")
+mesh = SubResource("QuadMesh_itkgi")
+skeleton = NodePath("../../..")
+
+[node name="SubViewport" type="SubViewport" parent="Selection/Weather/Video"]
+size = Vector2i(1920, 1080)
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="Selection/Weather/Video/SubViewport"]
+offset_right = 40.0
+offset_bottom = 40.0
+stream = ExtResource("5_1ondk")
+autoplay = true
+loop = true
+
+[node name="Weather" type="AudioStreamPlayer" parent="Selection/Weather/Video"]
+stream = ExtResource("8_dq5ke")
+volume_db = -10.0
+parameters/looping = true
+
+[node name="Area3D" type="Area3D" parent="Selection/Weather"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.5)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Selection/Weather/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.51, 1)
+shape = SubResource("BoxShape3D_fei6j")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Selection/Weather"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.5)
-mesh = SubResource("QuadMesh_xygd2")
+mesh = SubResource("QuadMesh_juuws")
+skeleton = NodePath("../../Fire/Video")
 
-[node name="StandHere" type="MeshInstance3D" parent="Attention/MeshInstance3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Selection/Weather/MeshInstance3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01, 0)
+material_override = SubResource("StandardMaterial3D_3e0pf")
+mesh = SubResource("QuadMesh_t7f26")
+
+[node name="AirQuality" type="Node3D" parent="Selection"]
+
+[node name="Video" type="MeshInstance3D" parent="Selection/AirQuality"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+visible = false
+material_override = SubResource("StandardMaterial3D_pc1hh")
+mesh = SubResource("QuadMesh_dgodu")
+skeleton = NodePath("../../..")
+
+[node name="SubViewport" type="SubViewport" parent="Selection/AirQuality/Video"]
+size = Vector2i(1920, 1080)
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="Selection/AirQuality/Video/SubViewport"]
+offset_right = 40.0
+offset_bottom = 40.0
+stream = ExtResource("4_18ybd")
+autoplay = true
+loop = true
+
+[node name="Intro" type="AudioStreamPlayer" parent="Selection/AirQuality/Video"]
+stream = ExtResource("21_ybfc6")
+
+[node name="Wind" type="AudioStreamPlayer" parent="Selection/AirQuality/Video"]
+stream = ExtResource("9_4y74a")
+volume_db = 10.0
+parameters/looping = true
+
+[node name="Area3D" type="Area3D" parent="Selection/AirQuality"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 1.5)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Selection/AirQuality/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.51, 1)
+shape = SubResource("BoxShape3D_k2k5w")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Selection/AirQuality"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 2.5)
+mesh = SubResource("QuadMesh_juuws")
+skeleton = NodePath("../../Fire/Video")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Selection/AirQuality/MeshInstance3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01, 0)
+material_override = SubResource("StandardMaterial3D_3e0pf")
+mesh = SubResource("QuadMesh_t7f26")
+
+[node name="Explain" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0041914, -0.504908, 1.47496)
+visible = false
+
+[node name="Left" type="Node3D" parent="Explain"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.75, 0, 0)
+
+[node name="Area3D" type="Area3D" parent="Explain/Left"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Explain/Left/Area3D"]
+shape = SubResource("BoxShape3D_rjhh0")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Explain/Left"]
+libraries = {
+&"": SubResource("AnimationLibrary_hjf56")
+}
+
+[node name="Middle" type="Node3D" parent="Explain"]
+
+[node name="Area3D" type="Area3D" parent="Explain/Middle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Explain/Middle/Area3D"]
+shape = SubResource("BoxShape3D_ojuu3")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Explain/Middle"]
+
+[node name="Right" type="Node3D" parent="Explain"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.75, 0, 0)
+
+[node name="Area3D" type="Area3D" parent="Explain/Right"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Explain/Right/Area3D"]
+shape = SubResource("BoxShape3D_blkkf")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Explain/Right/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+mesh = SubResource("QuadMesh_viaec")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Explain/Right/Area3D/MeshInstance3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.001, 0)
-material_override = SubResource("StandardMaterial3D_44n12")
-mesh = SubResource("QuadMesh_6mxhe")
+mesh = SubResource("QuadMesh_b3wi6")
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Explain/Right"]
+libraries = {
+&"": SubResource("AnimationLibrary_vuvrn")
+}
+
+[node name="Start" type="AudioStreamPlayer" parent="Explain/Right"]
+stream = ExtResource("23_qtbbh")
+
+[node name="NitrogenGreen" type="AudioStreamPlayer" parent="Explain/Right"]
+stream = ExtResource("23_1wyng")
+
+[node name="OzonePurple" type="AudioStreamPlayer" parent="Explain/Right"]
+stream = ExtResource("24_6j5jb")
+
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="Explain/Right"]
+
+[node name="Decoration" type="Node3D" parent="."]
+
+[node name="Planter" parent="Decoration" instance=ExtResource("8_5cvjv")]
+transform = Transform3D(-0.99825, 0, 0.0591321, 0, 1, 0, -0.0591321, 0, -0.99825, -9, -0.5, 11)
+
+[node name="Planter2" parent="Decoration" instance=ExtResource("8_5cvjv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, -0.5, 11)
+
+[node name="Planter3" parent="Decoration" instance=ExtResource("8_5cvjv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, -0.5, 5)
+
+[node name="Planter4" parent="Decoration" instance=ExtResource("8_5cvjv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, -0.5, 5)
+
+[node name="BenchLegged" type="MeshInstance3D" parent="Decoration"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -0.5, 14)
+material_override = ExtResource("28_e3sr4")
+mesh = ExtResource("29_iigj6")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("30_2a77m")
+
+[node name="BenchLegged2" type="MeshInstance3D" parent="Decoration"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -0.5, 14)
+material_override = ExtResource("28_e3sr4")
+mesh = ExtResource("29_iigj6")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("30_2a77m")
+
+[node name="Lamps" type="Node3D" parent="."]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 5.09609, 7.69841)
+
+[node name="Lamps" parent="Lamps" instance=ExtResource("32_6fysp")]
+transform = Transform3D(1, 0, 0, 0, 0.766044, 0.642788, 0, -0.642788, 0.766044, 0, 0, 3.25)
+
+[node name="Lamps2" parent="Lamps" instance=ExtResource("32_6fysp")]
+transform = Transform3D(-4.37114e-08, -0.642788, 0.766044, 0, 0.766044, 0.642788, -1, 2.80971e-08, -3.34849e-08, 3, 0, 0)
+
+[node name="Lamps3" parent="Lamps" instance=ExtResource("32_6fysp")]
+transform = Transform3D(1, 0, 0, 0, 0.766045, -0.642788, 0, 0.642788, 0.766045, 0, 0, -3.25)
+
+[node name="Lamps4" parent="Lamps" instance=ExtResource("32_6fysp")]
+transform = Transform3D(-4.37114e-08, 0.642788, -0.766045, 0, 0.766045, 0.642788, 1, 2.80971e-08, -3.34849e-08, -3, 0, 0)
+
+[connection signal="body_entered" from="Attention/Area3D" to="." method="Intro_body_entered"]
+[connection signal="body_exited" from="Attention/Area3D" to="." method="Intro_body_exited"]
+[connection signal="body_entered" from="Overview/Area3D" to="." method="Overview_body_entered"]
+[connection signal="body_exited" from="Overview/Area3D" to="." method="Overview_body_exited"]
 [connection signal="body_entered" from="Selection/Fire/Area3D" to="." method="Fire_body_entered"]
 [connection signal="body_exited" from="Selection/Fire/Area3D" to="." method="Fire_body_exited"]
 [connection signal="body_entered" from="Selection/Weather/Area3D" to="." method="Weather_body_entered"]
 [connection signal="body_exited" from="Selection/Weather/Area3D" to="." method="Weather_body_exited"]
 [connection signal="body_entered" from="Selection/AirQuality/Area3D" to="." method="Air_body_entered"]
 [connection signal="body_exited" from="Selection/AirQuality/Area3D" to="." method="Air_body_exited"]
-[connection signal="body_entered" from="Overview/Area3D" to="." method="Overview_body_entered"]
-[connection signal="body_exited" from="Overview/Area3D" to="." method="Overview_body_exited"]
-[connection signal="body_entered" from="Attention/Area3D" to="." method="Intro_body_entered"]
-[connection signal="body_exited" from="Attention/Area3D" to="." method="Intro_body_exited"]
+[connection signal="body_entered" from="Explain/Right/Area3D" to="." method="ExplainRight_body_entered"]
+[connection signal="body_exited" from="Explain/Right/Area3D" to="." method="ExplainRight_body_exited"]

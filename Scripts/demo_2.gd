@@ -36,6 +36,51 @@ func _process(delta: float) -> void:
 	$Overview/Path3DRight/PathFollow3DRight4.progress += move_speed*delta
 	$Overview/Path3DRight/PathFollow3DRight5.progress += move_speed*delta
 
+
+
+
+func Intro_body_entered(_body: Node3D) -> void:
+	print("Intro")
+	$Attention/Speaker/Intro.play()
+
+
+func Intro_body_exited(_body: Node3D) -> void:
+	#$Attention/Speaker/Intro.stop()
+	print("Intro")
+	
+	
+
+	
+func Overview_body_entered(_body: Node3D) -> void:
+	print("Overview")
+	$Overview/AnimationPlayer.play("RESET")
+
+
+func Overview_body_exited(_body: Node3D) -> void:
+	print("Overview Out")
+	$Overview/AnimationPlayer.stop()
+	$Overview/AnimationPlayer.seek(0)
+	$Overview/Audio/Intro.stop()
+	$Overview/Audio/Left.stop()
+	$Overview/Audio/Ahead.stop()
+	$Overview/Audio/Right.stop()
+	$Overview/Audio/End.stop()
+	$Overview/Path3DLeft.visible = false
+	$Overview/Path3DAhead.visible = false
+	$Overview/Path3DRight.visible = false
+
+
+func ExplainRight_body_entered(_body: Node3D) -> void:
+	print("YEA")
+	$Explain/Right/AnimationPlayer.play("Tutorial")
+	
+func ExplainRight_body_exited(_body: Node3D) -> void:
+	
+	$Explain/Right/AnimationPlayer.stop()
+	$Explain/Right/AnimationPlayer.seek(0)
+
+	
+	
 func Fire_body_entered(_body: Node3D) -> void:
 	$Selection/Fire/Fire.play()
 
@@ -54,34 +99,9 @@ func Weather_body_exited(_body: Node3D) -> void:
 
 func Air_body_entered(_body: Node3D) -> void:
 	$Selection/AirQuality/Wind.play()
+	$Selection/AirQuality/Intro.play()
 
 
 func Air_body_exited(_body: Node3D) -> void:
 	$Selection/AirQuality/Wind.stop()
-
-
-func Intro_body_entered(_body: Node3D) -> void:
-	print("Intro")
-	$Attention/Intro.play()
-
-
-func Intro_body_exited(_body: Node3D) -> void:
-	$Attention/Intro.stop()
-
-func Overview_body_entered(_body: Node3D) -> void:
-	print("Overview")
-	$Overview/AnimationPlayer.play("RESET")
-
-
-func Overview_body_exited(_body: Node3D) -> void:
-	print("Overview Out")
-	$Overview/AnimationPlayer.stop()
-	$Overview/AnimationPlayer.seek(0)
-	$Overview/Audio/Intro.stop()
-	$Overview/Audio/Left.stop()
-	$Overview/Audio/Ahead.stop()
-	$Overview/Audio/Right.stop()
-	$Overview/Audio/End.stop()
-	$Overview/Path3DLeft.visible = false
-	$Overview/Path3DAhead.visible = false
-	$Overview/Path3DRight.visible = false
+	$Selection/AirQuality/Intro.stop()
