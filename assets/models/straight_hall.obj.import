@@ -4,14 +4,14 @@ importer="wavefront_obj"
 importer_version=1
 type="Mesh"
 uid="uid://dmoul6rrdv75k"
-path="res://.godot/imported/straight_hall.obj-147bfe3ba4cbdb9b60d9d6549871e859.mesh"
+path="res://.godot/imported/straight_hall.obj-b7ae913643ce0de3d9a6da92a3a216bc.mesh"
 
 [deps]
 
-files=["res://.godot/imported/straight_hall.obj-147bfe3ba4cbdb9b60d9d6549871e859.mesh"]
+files=["res://.godot/imported/straight_hall.obj-b7ae913643ce0de3d9a6da92a3a216bc.mesh"]
 
-source_file="res://assets/models/straight_hall.obj"
-dest_files=["res://.godot/imported/straight_hall.obj-147bfe3ba4cbdb9b60d9d6549871e859.mesh", "res://.godot/imported/straight_hall.obj-147bfe3ba4cbdb9b60d9d6549871e859.mesh"]
+source_file="res://Assets/models/straight_hall.obj"
+dest_files=["res://.godot/imported/straight_hall.obj-b7ae913643ce0de3d9a6da92a3a216bc.mesh", "res://.godot/imported/straight_hall.obj-b7ae913643ce0de3d9a6da92a3a216bc.mesh"]
 
 [params]
 

@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bl2w4k5ae0arj"
-path.s3tc="res://.godot/imported/hall_lock.png-e6c2c806b2a1fced25f902ac682f8cf2.s3tc.ctex"
+path.s3tc="res://.godot/imported/hall_lock.png-b52d5d036080acb33ec4a3fe591c0766.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/textures/hall_lock.png"
-dest_files=["res://.godot/imported/hall_lock.png-e6c2c806b2a1fced25f902ac682f8cf2.s3tc.ctex"]
+source_file="res://Assets/textures/hall_lock.png"
+dest_files=["res://.godot/imported/hall_lock.png-b52d5d036080acb33ec4a3fe591c0766.s3tc.ctex"]
 
 [params]
 

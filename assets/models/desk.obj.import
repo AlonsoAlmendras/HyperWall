@@ -4,14 +4,14 @@ importer="wavefront_obj"
 importer_version=1
 type="Mesh"
 uid="uid://be5huwdp6vv03"
-path="res://.godot/imported/desk.obj-3937a762f7f05deec87d42ac76832844.mesh"
+path="res://.godot/imported/desk.obj-bf2e3bc30aa6ea1dcd73427ecaa01d8c.mesh"
 
 [deps]
 
-files=["res://.godot/imported/desk.obj-3937a762f7f05deec87d42ac76832844.mesh"]
+files=["res://.godot/imported/desk.obj-bf2e3bc30aa6ea1dcd73427ecaa01d8c.mesh"]
 
-source_file="res://assets/models/desk.obj"
-dest_files=["res://.godot/imported/desk.obj-3937a762f7f05deec87d42ac76832844.mesh", "res://.godot/imported/desk.obj-3937a762f7f05deec87d42ac76832844.mesh"]
+source_file="res://Assets/models/desk.obj"
+dest_files=["res://.godot/imported/desk.obj-bf2e3bc30aa6ea1dcd73427ecaa01d8c.mesh", "res://.godot/imported/desk.obj-bf2e3bc30aa6ea1dcd73427ecaa01d8c.mesh"]
 
 [params]
 

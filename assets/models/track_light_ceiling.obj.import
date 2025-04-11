@@ -4,14 +4,14 @@ importer="wavefront_obj"
 importer_version=1
 type="Mesh"
 uid="uid://w7n601qqnrhk"
-path="res://.godot/imported/track_light_ceiling.obj-5c2b791343feb964b489ad041ad07d78.mesh"
+path="res://.godot/imported/track_light_ceiling.obj-cf563577b89f583b51bbcfa5e580a12d.mesh"
 
 [deps]
 
-files=["res://.godot/imported/track_light_ceiling.obj-5c2b791343feb964b489ad041ad07d78.mesh"]
+files=["res://.godot/imported/track_light_ceiling.obj-cf563577b89f583b51bbcfa5e580a12d.mesh"]
 
-source_file="res://assets/models/track_light_ceiling.obj"
-dest_files=["res://.godot/imported/track_light_ceiling.obj-5c2b791343feb964b489ad041ad07d78.mesh", "res://.godot/imported/track_light_ceiling.obj-5c2b791343feb964b489ad041ad07d78.mesh"]
+source_file="res://Assets/models/track_light_ceiling.obj"
+dest_files=["res://.godot/imported/track_light_ceiling.obj-cf563577b89f583b51bbcfa5e580a12d.mesh", "res://.godot/imported/track_light_ceiling.obj-cf563577b89f583b51bbcfa5e580a12d.mesh"]
 
 [params]
 

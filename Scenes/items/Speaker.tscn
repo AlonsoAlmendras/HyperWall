@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=4 uid="uid://dud83jv8dhywy"]
+[gd_scene load_steps=8 format=4 uid="uid://dud83jv8dhywy"]
 
-[ext_resource type="Material" uid="uid://4bp64rsyyvv5" path="res://assets/textures/lamp.tres" id="2_0hmyb"]
+[ext_resource type="Material" uid="uid://4bp64rsyyvv5" path="res://Assets/textures/lamp.tres" id="2_0hmyb"]
+[ext_resource type="Texture2D" uid="uid://cqs8h0f6ohfm8" path="res://DemoProjections/materials/MicrophoneTexture.JPG" id="2_c4db8"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s4s68"]
 resource_name = "Material.017"
@@ -38,9 +39,23 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o84ev"]
+albedo_texture = ExtResource("2_c4db8")
+uv1_scale = Vector3(7, 7, 7)
+
+[sub_resource type="SphereMesh" id="SphereMesh_6pjwx"]
+material = SubResource("StandardMaterial3D_o84ev")
+radius = 0.16
+height = 0.5
+
 [node name="Speaker" type="Node3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000166535, 0.00803399, 0.00124025)
+transform = Transform3D(1, 0, 0, 0, 0.7, 0, 0, 0, 1, 0.000166535, 0.00803399, 0.00124025)
 mesh = SubResource("ArrayMesh_87qcc")
 surface_material_override/0 = ExtResource("2_0hmyb")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000166535, 0.00587132, 0.00124025)
+mesh = SubResource("SphereMesh_6pjwx")
+skeleton = NodePath("../MeshInstance3D")

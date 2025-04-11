@@ -4,14 +4,14 @@ importer="wavefront_obj"
 importer_version=1
 type="Mesh"
 uid="uid://blqsbuit050n4"
-path="res://.godot/imported/railing_rail.obj-f56ff8de2e9b63eb062732acc5d483e7.mesh"
+path="res://.godot/imported/railing_rail.obj-d6d527985e83a7c6c0cebbb4ed119c89.mesh"
 
 [deps]
 
-files=["res://.godot/imported/railing_rail.obj-f56ff8de2e9b63eb062732acc5d483e7.mesh"]
+files=["res://.godot/imported/railing_rail.obj-d6d527985e83a7c6c0cebbb4ed119c89.mesh"]
 
-source_file="res://assets/models/railing_rail.obj"
-dest_files=["res://.godot/imported/railing_rail.obj-f56ff8de2e9b63eb062732acc5d483e7.mesh", "res://.godot/imported/railing_rail.obj-f56ff8de2e9b63eb062732acc5d483e7.mesh"]
+source_file="res://Assets/models/railing_rail.obj"
+dest_files=["res://.godot/imported/railing_rail.obj-d6d527985e83a7c6c0cebbb4ed119c89.mesh", "res://.godot/imported/railing_rail.obj-d6d527985e83a7c6c0cebbb4ed119c89.mesh"]
 
 [params]
 

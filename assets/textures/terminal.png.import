@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c8a14x5v5tayo"
-path.s3tc="res://.godot/imported/terminal.png-925fe0fcf12f889100f50fea16b2be39.s3tc.ctex"
+path.s3tc="res://.godot/imported/terminal.png-f6a230df0b9da40381d564f2d7692582.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/textures/terminal.png"
-dest_files=["res://.godot/imported/terminal.png-925fe0fcf12f889100f50fea16b2be39.s3tc.ctex"]
+source_file="res://Assets/textures/terminal.png"
+dest_files=["res://.godot/imported/terminal.png-f6a230df0b9da40381d564f2d7692582.s3tc.ctex"]
 
 [params]
 

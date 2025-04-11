@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bumsvrhtx1rvn"
-path="res://.godot/imported/lobby_plaque.png-bde23ce038efe1d57227413454a11cc4.ctex"
+path="res://.godot/imported/lobby_plaque.png-8e512e69569a438523bae3c8b0c6d88d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/lobby_plaque.png"
-dest_files=["res://.godot/imported/lobby_plaque.png-bde23ce038efe1d57227413454a11cc4.ctex"]
+source_file="res://Assets/textures/lobby_plaque.png"
+dest_files=["res://.godot/imported/lobby_plaque.png-8e512e69569a438523bae3c8b0c6d88d.ctex"]
 
 [params]
 

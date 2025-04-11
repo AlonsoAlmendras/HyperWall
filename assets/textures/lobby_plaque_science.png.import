@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://rekyh3y36puy"
-path.s3tc="res://.godot/imported/lobby_plaque_science.png-61e5b9473a3246b10d6bcc8ef4b0f176.s3tc.ctex"
+path.s3tc="res://.godot/imported/lobby_plaque_science.png-db82ec600114e65933856ac39778ba2d.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/textures/lobby_plaque_science.png"
-dest_files=["res://.godot/imported/lobby_plaque_science.png-61e5b9473a3246b10d6bcc8ef4b0f176.s3tc.ctex"]
+source_file="res://Assets/textures/lobby_plaque_science.png"
+dest_files=["res://.godot/imported/lobby_plaque_science.png-db82ec600114e65933856ac39778ba2d.s3tc.ctex"]
 
 [params]
 

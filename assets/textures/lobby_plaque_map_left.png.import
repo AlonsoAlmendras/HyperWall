@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cmqpejwvbqtex"
-path.s3tc="res://.godot/imported/lobby_plaque_map_left.png-37a4452784ad6a3f1532274f4ff4449d.s3tc.ctex"
+path.s3tc="res://.godot/imported/lobby_plaque_map_left.png-10b94c92698b90b9c545360db994344f.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/textures/lobby_plaque_map_left.png"
-dest_files=["res://.godot/imported/lobby_plaque_map_left.png-37a4452784ad6a3f1532274f4ff4449d.s3tc.ctex"]
+source_file="res://Assets/textures/lobby_plaque_map_left.png"
+dest_files=["res://.godot/imported/lobby_plaque_map_left.png-10b94c92698b90b9c545360db994344f.s3tc.ctex"]
 
 [params]
 

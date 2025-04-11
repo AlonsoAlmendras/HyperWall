@@ -4,14 +4,14 @@ importer="wavefront_obj"
 importer_version=1
 type="Mesh"
 uid="uid://dfalfeatlgtod"
-path="res://.godot/imported/lobby_plaque.obj-b63752ddb8a3f6659d1247bfabcfb1e0.mesh"
+path="res://.godot/imported/lobby_plaque.obj-51671c1332ac6f42465104c6de70c54f.mesh"
 
 [deps]
 
-files=["res://.godot/imported/lobby_plaque.obj-b63752ddb8a3f6659d1247bfabcfb1e0.mesh"]
+files=["res://.godot/imported/lobby_plaque.obj-51671c1332ac6f42465104c6de70c54f.mesh"]
 
-source_file="res://assets/models/lobby_plaque.obj"
-dest_files=["res://.godot/imported/lobby_plaque.obj-b63752ddb8a3f6659d1247bfabcfb1e0.mesh", "res://.godot/imported/lobby_plaque.obj-b63752ddb8a3f6659d1247bfabcfb1e0.mesh"]
+source_file="res://Assets/models/lobby_plaque.obj"
+dest_files=["res://.godot/imported/lobby_plaque.obj-51671c1332ac6f42465104c6de70c54f.mesh", "res://.godot/imported/lobby_plaque.obj-51671c1332ac6f42465104c6de70c54f.mesh"]
 
 [params]
 

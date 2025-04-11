@@ -1,0 +1,31 @@
+[gd_scene load_steps=7 format=3 uid="uid://dg6rwe8ilags5"]
+
+[ext_resource type="Texture2D" uid="uid://cl72i0isobxo4" path="res://DemoProjections/StandHere.jpg" id="1_nyguu"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fr4ur"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_3545m"]
+material = SubResource("StandardMaterial3D_fr4ur")
+radius = 1.0
+height = 0.001
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bkpq4"]
+albedo_texture = ExtResource("1_nyguu")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cam7f"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_fr0iu"]
+material = SubResource("StandardMaterial3D_cam7f")
+orientation = 1
+
+[node name="StandHere" type="Node3D"]
+
+[node name="Circle" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_3545m")
+skeleton = NodePath("")
+
+[node name="Icon" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.001, 0)
+material_override = SubResource("StandardMaterial3D_bkpq4")
+mesh = SubResource("QuadMesh_fr0iu")
+skeleton = NodePath("")

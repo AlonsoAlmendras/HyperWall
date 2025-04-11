@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://ba1s3cmbt8idk"]
 
-[ext_resource type="ArrayMesh" uid="uid://drgsdd0ymsi1t" path="res://assets/models/planter.obj" id="1_rqa18"]
-[ext_resource type="Material" uid="uid://datvvi6j3c0kp" path="res://assets/textures/white.tres" id="2_auvs0"]
-[ext_resource type="Material" uid="uid://dhxahpk8guw31" path="res://assets/textures/dirt.tres" id="3_p4dr5"]
-[ext_resource type="PackedScene" uid="uid://4r06ri8mf5fi" path="res://scenes/items/Plants.tscn" id="4_uihfg"]
+[ext_resource type="ArrayMesh" uid="uid://drgsdd0ymsi1t" path="res://Assets/models/planter.obj" id="1_rqa18"]
+[ext_resource type="Material" uid="uid://datvvi6j3c0kp" path="res://Assets/textures/white.tres" id="2_n3ipj"]
+[ext_resource type="Material" uid="uid://dhxahpk8guw31" path="res://Assets/textures/dirt.tres" id="3_tfh2u"]
+[ext_resource type="PackedScene" uid="uid://4r06ri8mf5fi" path="res://Scenes/items/Plants.tscn" id="4_uihfg"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_sg5i6"]
 points = PackedVector3Array(0.75, 0.6, 4, -0.75, 0.6, 4, 0.75, 0, 4, 0.75, 0.6, -4, -0.75, 0, 4, -0.75, 0.6, -4, 0.75, 0, -4, -0.75, 0, -4)
@@ -14,8 +14,8 @@ points = PackedVector3Array(0.75, 0.6, 4, -0.75, 0.6, 4, 0.75, 0, 4, 0.75, 0.6, 
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.5, 0, 0, 0)
 visibility_range_end = 50.0
 mesh = ExtResource("1_rqa18")
-surface_material_override/0 = ExtResource("2_auvs0")
-surface_material_override/1 = ExtResource("3_p4dr5")
+surface_material_override/0 = ExtResource("2_n3ipj")
+surface_material_override/1 = ExtResource("3_tfh2u")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" groups=["footstep_dirt"]]
 collision_layer = 3

@@ -4,14 +4,14 @@ importer="wavefront_obj"
 importer_version=1
 type="Mesh"
 uid="uid://roqc52kigyn"
-path="res://.godot/imported/hanginglamp.obj-b10f2d1c4472d289b90c856b5521dd90.mesh"
+path="res://.godot/imported/hanginglamp.obj-2fcca8af16ec4e5e3c2d97d839f7b315.mesh"
 
 [deps]
 
-files=["res://.godot/imported/hanginglamp.obj-b10f2d1c4472d289b90c856b5521dd90.mesh"]
+files=["res://.godot/imported/hanginglamp.obj-2fcca8af16ec4e5e3c2d97d839f7b315.mesh"]
 
-source_file="res://assets/models/hanginglamp.obj"
-dest_files=["res://.godot/imported/hanginglamp.obj-b10f2d1c4472d289b90c856b5521dd90.mesh", "res://.godot/imported/hanginglamp.obj-b10f2d1c4472d289b90c856b5521dd90.mesh"]
+source_file="res://Assets/models/hanginglamp.obj"
+dest_files=["res://.godot/imported/hanginglamp.obj-2fcca8af16ec4e5e3c2d97d839f7b315.mesh", "res://.godot/imported/hanginglamp.obj-2fcca8af16ec4e5e3c2d97d839f7b315.mesh"]
 
 [params]
 

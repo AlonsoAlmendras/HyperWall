@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cryumg1318fxi"
-path.s3tc="res://.godot/imported/Ground048_1K-PNG_Color.png-b266fab4fa99254bac66f8efe93408dd.s3tc.ctex"
+path.s3tc="res://.godot/imported/Ground048_1K-PNG_Color.png-ed215ec1b82ed5f9335d6a18b514af25.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/textures/Ground048_1K-PNG_Color.png"
-dest_files=["res://.godot/imported/Ground048_1K-PNG_Color.png-b266fab4fa99254bac66f8efe93408dd.s3tc.ctex"]
+source_file="res://Assets/textures/Ground048_1K-PNG_Color.png"
+dest_files=["res://.godot/imported/Ground048_1K-PNG_Color.png-ed215ec1b82ed5f9335d6a18b514af25.s3tc.ctex"]
 
 [params]
 

@@ -4,14 +4,14 @@ importer="wavefront_obj"
 importer_version=1
 type="Mesh"
 uid="uid://wbso87dqiion"
-path="res://.godot/imported/hall_lock.obj-f6350e67c475b511a06a6d7df35d2297.mesh"
+path="res://.godot/imported/hall_lock.obj-2b3e54ae79ecd216defb19f1fd0d4376.mesh"
 
 [deps]
 
-files=["res://.godot/imported/hall_lock.obj-f6350e67c475b511a06a6d7df35d2297.mesh"]
+files=["res://.godot/imported/hall_lock.obj-2b3e54ae79ecd216defb19f1fd0d4376.mesh"]
 
-source_file="res://assets/models/hall_lock.obj"
-dest_files=["res://.godot/imported/hall_lock.obj-f6350e67c475b511a06a6d7df35d2297.mesh", "res://.godot/imported/hall_lock.obj-f6350e67c475b511a06a6d7df35d2297.mesh"]
+source_file="res://Assets/models/hall_lock.obj"
+dest_files=["res://.godot/imported/hall_lock.obj-2b3e54ae79ecd216defb19f1fd0d4376.mesh", "res://.godot/imported/hall_lock.obj-2b3e54ae79ecd216defb19f1fd0d4376.mesh"]
 
 [params]
 
