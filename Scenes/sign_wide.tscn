@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://d4ndimcjk1xlb"]
+
+[ext_resource type="ArrayMesh" uid="uid://ckd1r4li80v78" path="res://Assets/models/sign_wide.obj" id="1_sub2a"]
+[ext_resource type="Texture2D" uid="uid://6s001c6me5bj" path="res://Assets/textures/sign.png" id="2_40deo"]
+[ext_resource type="Material" uid="uid://me7rtp53de2k" path="res://Assets/textures/black.tres" id="3_skr33"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7hira"]
+albedo_texture = ExtResource("2_40deo")
+
+[node name="Node3D" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_sub2a")
+surface_material_override/0 = SubResource("StandardMaterial3D_7hira")
+surface_material_override/1 = ExtResource("3_skr33")
+
+[node name="Text" type="Label3D" parent="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 0.975149, 0.221548, 0, -0.221548, 0.975149, 0, 1.07645, 0.031006)
+pixel_size = 0.002
+modulate = Color(0, 0, 0, 1)
+text = "This dashboard show WildFires
+"
+outline_size = 0

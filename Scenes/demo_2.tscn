@@ -37,168 +37,168 @@ sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
 sky_energy_multiplier = 2.0
 ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
 
-[sub_resource type="Sky" id="Sky_crvon"]
+[sub_resource type="Sky" id="Sky_ittpa"]
 sky_material = SubResource("ProceduralSkyMaterial_atrkp")
 
 [sub_resource type="Environment" id="Environment_ncqx0"]
 background_mode = 2
 background_energy_multiplier = 1.4
-sky = SubResource("Sky_crvon")
+sky = SubResource("Sky_ittpa")
 ambient_light_source = 3
 tonemap_exposure = 0.8
 glow_enabled = true
 glow_intensity = 1.5
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2ogga"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ny27k"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_hx5iq"]
-material = SubResource("StandardMaterial3D_2ogga")
+material = SubResource("StandardMaterial3D_ny27k")
 size = Vector3(0.5, 6, 20)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ruu6n"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hvm3e"]
 albedo_color = Color(0.196078, 0.196078, 0.196078, 1)
 
 [sub_resource type="QuadMesh" id="QuadMesh_1bvhk"]
-material = SubResource("StandardMaterial3D_ruu6n")
+material = SubResource("StandardMaterial3D_hvm3e")
 size = Vector2(8, 2)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m45t1"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mpj53"]
 albedo_color = Color(0, 0, 0, 1)
 
 [sub_resource type="QuadMesh" id="QuadMesh_30q7r"]
-material = SubResource("StandardMaterial3D_m45t1")
+material = SubResource("StandardMaterial3D_mpj53")
 size = Vector2(3, 2)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_31mw1"]
 load_path = "res://.godot/imported/FireIndex.png-a0e5a001d041ddfbf433b7529afb34bb.s3tc.ctex"
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o2yie"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mm5ry"]
 albedo_texture = SubResource("CompressedTexture2D_31mw1")
 
 [sub_resource type="QuadMesh" id="QuadMesh_cadsw"]
-material = SubResource("StandardMaterial3D_o2yie")
+material = SubResource("StandardMaterial3D_mm5ry")
 size = Vector2(1.2, 0.7)
 orientation = 0
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_4ad0q"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_n7oym"]
 viewport_path = NodePath("Room/WallFront/MeshInstance3D/Dashboard/Left/Fires2/SubViewport")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t2thc"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_4ad0q")
+albedo_texture = SubResource("ViewportTexture_n7oym")
 
 [sub_resource type="QuadMesh" id="QuadMesh_lpay4"]
 size = Vector2(1.2, 0.7)
 orientation = 0
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_uvi0t"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_80d7p"]
 viewport_path = NodePath("Room/WallFront/MeshInstance3D/Dashboard/Left/Fires3/SubViewport")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k5s2h"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_uvi0t")
+albedo_texture = SubResource("ViewportTexture_80d7p")
 
 [sub_resource type="QuadMesh" id="QuadMesh_qvcrv"]
 size = Vector2(1.2, 0.7)
 orientation = 0
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_yjmbi"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_q8lxt"]
 viewport_path = NodePath("Room/WallFront/MeshInstance3D/Dashboard/Left/Fires4/SubViewport")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bnu5s"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_yjmbi")
+albedo_texture = SubResource("ViewportTexture_q8lxt")
 
 [sub_resource type="QuadMesh" id="QuadMesh_r56l6"]
 size = Vector2(1.2, 0.7)
 orientation = 0
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nb6bg"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nrii4"]
 albedo_color = Color(0.172833, 0.172833, 0.172833, 1)
 
 [sub_resource type="QuadMesh" id="QuadMesh_v2fjw"]
-material = SubResource("StandardMaterial3D_nb6bg")
+material = SubResource("StandardMaterial3D_nrii4")
 size = Vector2(2, 2)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_vr6se"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_1anqn"]
 viewport_path = NodePath("Room/WallFront/MeshInstance3D/Dashboard/Middle/Weather/SubViewport")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qh7hh"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_vr6se")
+albedo_texture = SubResource("ViewportTexture_1anqn")
 
 [sub_resource type="QuadMesh" id="QuadMesh_g1f7f"]
 size = Vector2(1.2, 0.7)
 orientation = 0
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_phu8i"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_bwrpj"]
 viewport_path = NodePath("Room/WallFront/MeshInstance3D/Dashboard/Middle/Weather2/SubViewport")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mx3dr"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_phu8i")
+albedo_texture = SubResource("ViewportTexture_bwrpj")
 
 [sub_resource type="QuadMesh" id="QuadMesh_macyl"]
 size = Vector2(0.7, 0.7)
 orientation = 0
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_n0syr"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_438n0"]
 viewport_path = NodePath("Room/WallFront/MeshInstance3D/Dashboard/Middle/Weather3/SubViewport")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pudn7"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_n0syr")
+albedo_texture = SubResource("ViewportTexture_438n0")
 
 [sub_resource type="QuadMesh" id="QuadMesh_cywwa"]
 size = Vector2(0.7, 0.7)
 orientation = 0
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h8f4w"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aqn8h"]
 albedo_color = Color(0, 0, 0, 1)
 
 [sub_resource type="QuadMesh" id="QuadMesh_fd87c"]
-material = SubResource("StandardMaterial3D_h8f4w")
+material = SubResource("StandardMaterial3D_aqn8h")
 size = Vector2(3, 2)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_6osrk"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_p3koh"]
 viewport_path = NodePath("Room/WallFront/MeshInstance3D/Dashboard/Right/AirQuality/SubViewport")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l5hys"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_6osrk")
+albedo_texture = SubResource("ViewportTexture_p3koh")
 
 [sub_resource type="QuadMesh" id="QuadMesh_m2rwm"]
 size = Vector2(1.2, 0.7)
 orientation = 0
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_ie7oa"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_ytf3j"]
 viewport_path = NodePath("Room/WallFront/MeshInstance3D/Dashboard/Right/AirQuality2/SubViewport")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h1nl5"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_ie7oa")
+albedo_texture = SubResource("ViewportTexture_ytf3j")
 
 [sub_resource type="QuadMesh" id="QuadMesh_x4r3q"]
 size = Vector2(1.2, 0.7)
 orientation = 0
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_gwsgd"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_v2mj5"]
 viewport_path = NodePath("Room/WallFront/MeshInstance3D/Dashboard/Right/AirQuality3/SubViewport")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_usw2t"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_gwsgd")
+albedo_texture = SubResource("ViewportTexture_v2mj5")
 
 [sub_resource type="QuadMesh" id="QuadMesh_wg3sk"]
 size = Vector2(1.2, 0.7)
 orientation = 0
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_krrhd"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_idf60"]
 viewport_path = NodePath("Room/WallFront/MeshInstance3D/Dashboard/Right/AirQuality4/SubViewport")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vopp1"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_krrhd")
+albedo_texture = SubResource("ViewportTexture_idf60")
 
 [sub_resource type="QuadMesh" id="QuadMesh_ogg6x"]
 size = Vector2(1.2, 0.7)
@@ -223,10 +223,10 @@ orientation = 1
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_0xrih"]
 data = PackedVector3Array(10, 0, 10, -10, 0, 10, 10, 0, -10, -10, 0, 10, -10, 0, -10, 10, 0, -10)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i6f42"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cwsd6"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_0hyes"]
-material = SubResource("StandardMaterial3D_i6f42")
+material = SubResource("StandardMaterial3D_cwsd6")
 size = Vector3(0.1, 6, 20)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_cw4y6"]
@@ -235,10 +235,10 @@ data = PackedVector3Array(-0.05, 3, 10, 0.05, 3, 10, -0.05, -3, 10, 0.05, 3, 10,
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_ifw28"]
 data = PackedVector3Array(-0.05, 3, 10, 0.05, 3, 10, -0.05, -3, 10, 0.05, 3, 10, 0.05, -3, 10, -0.05, -3, 10, 0.05, 3, -10, -0.05, 3, -10, 0.05, -3, -10, -0.05, 3, -10, -0.05, -3, -10, 0.05, -3, -10, 0.05, 3, 10, 0.05, 3, -10, 0.05, -3, 10, 0.05, 3, -10, 0.05, -3, -10, 0.05, -3, 10, -0.05, 3, -10, -0.05, 3, 10, -0.05, -3, -10, -0.05, 3, 10, -0.05, -3, 10, -0.05, -3, -10, 0.05, 3, 10, -0.05, 3, 10, 0.05, 3, -10, -0.05, 3, 10, -0.05, 3, -10, 0.05, 3, -10, -0.05, -3, 10, 0.05, -3, 10, -0.05, -3, -10, 0.05, -3, 10, 0.05, -3, -10, -0.05, -3, -10)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nq0pd"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mkmgr"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_pgqqt"]
-material = SubResource("StandardMaterial3D_nq0pd")
+material = SubResource("StandardMaterial3D_mkmgr")
 size = Vector3(20, 6, 0.1)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_ectw7"]
@@ -262,93 +262,6 @@ size = Vector3(8, 1, 2)
 material = SubResource("StandardMaterial3D_10wc1")
 size = Vector2(8, 2)
 orientation = 1
-
-[sub_resource type="Animation" id="Animation_6ln8l"]
-length = 25.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Path3DLeft:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Path3DAhead:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Path3DRight:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Speaker/Voice:playing")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("../Selection/Fire/StandHere:visible")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("../Selection/Weather/StandHere:visible")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("../Selection/AirQuality/StandHere:visible")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
 
 [sub_resource type="Animation" id="Animation_ptq7t"]
 resource_name = "Overview"
@@ -438,10 +351,97 @@ tracks/6/keys = {
 "values": [false, true]
 }
 
+[sub_resource type="Animation" id="Animation_6ln8l"]
+length = 25.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Path3DLeft:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Path3DAhead:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Path3DRight:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Speaker/Voice:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Selection/Fire/StandHere:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Selection/Weather/StandHere:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../Selection/AirQuality/StandHere:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mujxs"]
 _data = {
-&"RESET": SubResource("Animation_6ln8l"),
-&"Overview": SubResource("Animation_ptq7t")
+&"Overview": SubResource("Animation_ptq7t"),
+&"RESET": SubResource("Animation_6ln8l")
 }
 
 [sub_resource type="Curve3D" id="Curve3D_h176u"]
@@ -500,105 +500,6 @@ size = Vector3(2.5, 1, 2)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rjhh0"]
 size = Vector3(2, 1, 1)
-
-[sub_resource type="Animation" id="Animation_ddvhr"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../../Room/WallFront/MeshInstance3D/Dashboard/Left/Fires:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(-0.7, 0.275, 0.001)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../../Room/WallFront/MeshInstance3D/Dashboard/Left/Fires:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(1, 1, 1)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../../Room/WallFront/MeshInstance3D/Dashboard/Left/Fires2:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0.7, 0.275, 0.001)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("../../Room/WallFront/MeshInstance3D/Dashboard/Left/Fires2:scale")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(1, 1, 1)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("../../Room/WallFront/MeshInstance3D/Dashboard/Left/Fires3:position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(-0.7, -0.525, 0.001)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("../../Room/WallFront/MeshInstance3D/Dashboard/Left/Fires3:scale")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(1, 1, 1)]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("../../Room/WallFront/MeshInstance3D/Dashboard/Left/Fires4:position")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0.7, -0.525, 0.001)]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("../../Room/WallFront/MeshInstance3D/Dashboard/Left/Fires4:scale")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(1, 1, 1)]
-}
 
 [sub_resource type="Animation" id="Animation_bn03k"]
 resource_name = "Left"
@@ -700,16 +601,299 @@ tracks/7/keys = {
 "values": [Vector3(1, 1, 1), Vector3(0.5, 0.5, 0.5), Vector3(0.5, 0.5, 0.5), Vector3(0.5, 0.5, 0.5), Vector3(0.5, 0.5, 0.5), Vector3(1.5, 1.5, 1.5), Vector3(1.5, 1.5, 1.5), Vector3(0.5, 0.5, 0.5), Vector3(0.5, 0.5, 0.5), Vector3(1, 1, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_ddvhr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../Room/WallFront/MeshInstance3D/Dashboard/Left/Fires:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.7, 0.275, 0.001)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../Room/WallFront/MeshInstance3D/Dashboard/Left/Fires:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../Room/WallFront/MeshInstance3D/Dashboard/Left/Fires2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.7, 0.275, 0.001)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../../Room/WallFront/MeshInstance3D/Dashboard/Left/Fires2:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../../Room/WallFront/MeshInstance3D/Dashboard/Left/Fires3:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.7, -0.525, 0.001)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../../Room/WallFront/MeshInstance3D/Dashboard/Left/Fires3:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../../Room/WallFront/MeshInstance3D/Dashboard/Left/Fires4:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.7, -0.525, 0.001)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../../Room/WallFront/MeshInstance3D/Dashboard/Left/Fires4:scale")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hjf56"]
 _data = {
-&"RESET": SubResource("Animation_ddvhr"),
-&"Left": SubResource("Animation_bn03k")
+&"Left": SubResource("Animation_bn03k"),
+&"RESET": SubResource("Animation_ddvhr")
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ojuu3"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_blkkf"]
 size = Vector3(2, 1, 2)
+
+[sub_resource type="Animation" id="Animation_lq3wr"]
+resource_name = "Tutorial"
+length = 170.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Start:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("NitrogenGreen:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(18.5667),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../Room/WallFront/MeshInstance3D/Dashboard/Right/AirQuality/SubViewport/VideoStreamPlayer:paused")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.633333, 16.9333, 58.0333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../../Room/WallFront/MeshInstance3D/Dashboard/Right/AirQuality:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(15.8, 17.1, 58.0333, 60.1333, 111.2, 112.2, 138.833, 139.833, 161.133, 162.633),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.7, 0.275, 0.001), Vector3(0, 0, 0.001), Vector3(0, 0, 0.001), Vector3(1, -0.75, 0.001), Vector3(1, -0.75, 0.001), Vector3(0, -0.75, 0.001), Vector3(0, -0.75, 0.001), Vector3(-1, -0.75, 0.001), Vector3(-1, -0.75, 0.001), Vector3(-0.7, 0.275, 0.001)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../../Room/WallFront/MeshInstance3D/Dashboard/Right/AirQuality:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(15.7667, 15.8, 17.1, 58.0333, 60.1333, 111.2, 112.2, 138.833, 139.833, 161.133, 162.633),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(1, 1, 1), Vector3(1.5, 1.5, 1.5), Vector3(1.5, 1.5, 1.5), Vector3(0.5, 0.5, 0.5), Vector3(0.5, 0.5, 0.5), Vector3(0.5, 0.5, 0.5), Vector3(0.5, 0.5, 0.5), Vector3(0.5, 0.5, 0.5), Vector3(0.5, 0.5, 0.5), Vector3(1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("OzonePurple:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(59.5),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../../Room/WallFront/MeshInstance3D/Dashboard/Right/AirQuality2/SubViewport/VideoStreamPlayer:paused")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 59.4333, 110.233),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../../Room/WallFront/MeshInstance3D/Dashboard/Right/AirQuality2:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(15.8, 17.1, 58.0333, 60.1333, 111.2, 112.2, 138.833, 139.833, 161.133, 162.633),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.7, 0.275, 0.001), Vector3(1, -0.75, 0.001), Vector3(1, -0.75, 0.001), Vector3(0, -0.75, 0.001), Vector3(0, -0.75, 0.001), Vector3(-1, -0.75, 0.001), Vector3(-1, -0.75, 0.001), Vector3(0, 0, 0.001), Vector3(0, 0, 0.001), Vector3(0.7, 0.275, 0.001)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../../Room/WallFront/MeshInstance3D/Dashboard/Right/AirQuality2:scale")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(15.8, 17.1, 58.0333, 60.1333, 111.2, 112.2, 138.833, 139.833, 161.133, 162.633),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(0.5, 0.5, 0.5), Vector3(0.5, 0.5, 0.5), Vector3(0.5, 0.5, 0.5), Vector3(0.5, 0.5, 0.5), Vector3(0.5, 0.5, 0.5), Vector3(0.5, 0.5, 0.5), Vector3(1.5, 1.5, 1.5), Vector3(1.5, 1.5, 1.5), Vector3(1, 1, 1)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("../../Room/WallFront/MeshInstance3D/Dashboard/Right/AirQuality3/SubViewport/VideoStreamPlayer:paused")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 111.067, 139.167),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("../../Room/WallFront/MeshInstance3D/Dashboard/Right/AirQuality3:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(15.8, 17.1, 58.0333, 60.1333, 111.2, 112.2, 138.833, 139.833, 161.133, 162.633),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.7, -0.525, 0.001), Vector3(-1, -0.75, 0.001), Vector3(-1, -0.75, 0.001), Vector3(0, 0, 0.001), Vector3(0, 0, 0.001), Vector3(1, -0.75, 0.001), Vector3(1, -0.75, 0.001), Vector3(0, -0.75, 0.001), Vector3(0, -0.75, 0.001), Vector3(-0.7, -0.525, 0.001)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("../../Room/WallFront/MeshInstance3D/Dashboard/Right/AirQuality3:scale")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(15.8, 17.1, 58.0333, 60.1333, 111.2, 112.2, 138.833, 139.833, 161.133, 162.633),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(0.5, 0.5, 0.5), Vector3(0.5, 0.5, 0.5), Vector3(1.5, 1.5, 1.5), Vector3(1.5, 1.5, 1.5), Vector3(0.5, 0.5, 0.5), Vector3(0.5, 0.5, 0.5), Vector3(0.5, 0.5, 0.5), Vector3(0.5, 0.5, 0.5), Vector3(1, 1, 1)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("../../Room/WallFront/MeshInstance3D/Dashboard/Right/AirQuality4/SubViewport/VideoStreamPlayer:paused")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 140.2, 161.667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("../../Room/WallFront/MeshInstance3D/Dashboard/Right/AirQuality4:position")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(15.8, 17.1, 58.0333, 60.1333, 111.2, 112.2, 138.833, 139.833, 161.133, 162.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.7, -0.525, 0.001), Vector3(0, -0.75, 0.001), Vector3(0, -0.75, 0.001), Vector3(-1, -0.75, 0.001), Vector3(-1, -0.75, 0.001), Vector3(0, 0, 0.001), Vector3(0, 0, 0.001), Vector3(1, -0.75, 0.001), Vector3(1, -0.75, 0.001), Vector3(0.7, -0.525, 0.001)]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("../../Room/WallFront/MeshInstance3D/Dashboard/Right/AirQuality4:scale")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(15.8, 17.1, 58.0333, 60.1333, 111.2, 112.2, 138.833, 139.833, 161.133, 162.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(0.5, 0.5, 0.5), Vector3(0.5, 0.5, 0.5), Vector3(0.5, 0.5, 0.5), Vector3(0.5, 0.5, 0.5), Vector3(1.5, 1.5, 1.5), Vector3(1.5, 1.5, 1.5), Vector3(0.5, 0.5, 0.5), Vector3(0.5, 0.5, 0.5), Vector3(1, 1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_0dp21"]
 length = 0.001
@@ -845,147 +1029,59 @@ tracks/10/keys = {
 "update": 1,
 "values": [false]
 }
-
-[sub_resource type="Animation" id="Animation_lq3wr"]
-resource_name = "Tutorial"
-length = 100.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../../Room/WallFront/MeshInstance3D/Dashboard/Right/AirQuality:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(15.8, 17.1, 58.0333, 60.1333, 111.2, 112.2, 118.2, 119.2, 124.2, 125.7),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(-0.7, 0.275, 0.001), Vector3(0, 0, 0.001), Vector3(0, 0, 0.001), Vector3(1, -0.75, 0.001), Vector3(1, -0.75, 0.001), Vector3(0, -0.75, 0.001), Vector3(0, -0.75, 0.001), Vector3(-1, -0.75, 0.001), Vector3(-1, -0.75, 0.001), Vector3(-0.7, 0.275, 0.001)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../../Room/WallFront/MeshInstance3D/Dashboard/Right/AirQuality2:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(15.8, 17.1, 58.0333, 60.1333, 111.2, 112.2, 118.2, 119.2, 124.2, 125.7),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(0.7, 0.275, 0.001), Vector3(1, -0.75, 0.001), Vector3(1, -0.75, 0.001), Vector3(0, -0.75, 0.001), Vector3(0, -0.75, 0.001), Vector3(-1, -0.75, 0.001), Vector3(-1, -0.75, 0.001), Vector3(0, 0, 0.001), Vector3(0, 0, 0.001), Vector3(0.7, 0.275, 0.001)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../../Room/WallFront/MeshInstance3D/Dashboard/Right/AirQuality3:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(15.8, 17.1, 58.0333, 60.1333, 111.2, 112.2, 118.2, 119.2, 124.2, 125.7),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(-0.7, -0.525, 0.001), Vector3(-1, -0.75, 0.001), Vector3(-1, -0.75, 0.001), Vector3(0, 0, 0.001), Vector3(0, 0, 0.001), Vector3(1, -0.75, 0.001), Vector3(1, -0.75, 0.001), Vector3(0, -0.75, 0.001), Vector3(0, -0.75, 0.001), Vector3(-0.7, -0.525, 0.001)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("../../Room/WallFront/MeshInstance3D/Dashboard/Right/AirQuality3:scale")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(15.8, 17.1, 58.0333, 60.1333, 111.2, 112.2, 118.2, 119.2, 124.2, 125.7),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(1, 1, 1), Vector3(0.5, 0.5, 0.5), Vector3(0.5, 0.5, 0.5), Vector3(1.5, 1.5, 1.5), Vector3(1.5, 1.5, 1.5), Vector3(0.5, 0.5, 0.5), Vector3(0.5, 0.5, 0.5), Vector3(0.5, 0.5, 0.5), Vector3(0.5, 0.5, 0.5), Vector3(1, 1, 1)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("../../Room/WallFront/MeshInstance3D/Dashboard/Right/AirQuality:scale")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(15.7667, 15.8, 17.1, 58.0333, 60.1333, 111.2, 112.2, 118.2, 119.2, 124.2, 125.7),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(1, 1, 1), Vector3(1, 1, 1), Vector3(1.5, 1.5, 1.5), Vector3(1.5, 1.5, 1.5), Vector3(0.5, 0.5, 0.5), Vector3(0.5, 0.5, 0.5), Vector3(0.5, 0.5, 0.5), Vector3(0.5, 0.5, 0.5), Vector3(0.5, 0.5, 0.5), Vector3(0.5, 0.5, 0.5), Vector3(1, 1, 1)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("../../Room/WallFront/MeshInstance3D/Dashboard/Right/AirQuality2:scale")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(15.8, 17.1, 58.0333, 60.1333, 111.2, 112.2, 118.2, 119.2, 124.2, 125.7),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(1, 1, 1), Vector3(0.5, 0.5, 0.5), Vector3(0.5, 0.5, 0.5), Vector3(0.5, 0.5, 0.5), Vector3(0.5, 0.5, 0.5), Vector3(0.5, 0.5, 0.5), Vector3(0.5, 0.5, 0.5), Vector3(1.5, 1.5, 1.5), Vector3(1.5, 1.5, 1.5), Vector3(1, 1, 1)]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("../../Room/WallFront/MeshInstance3D/Dashboard/Right/AirQuality4:position")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(15.8, 17.1, 58.0333, 60.1333, 111.2, 112.2, 118.2, 119.2, 124.2, 125.667),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(0.7, -0.525, 0.001), Vector3(0, -0.75, 0.001), Vector3(0, -0.75, 0.001), Vector3(-1, -0.75, 0.001), Vector3(-1, -0.75, 0.001), Vector3(0, 0, 0.001), Vector3(0, 0, 0.001), Vector3(1, -0.75, 0.001), Vector3(1, -0.75, 0.001), Vector3(0.7, -0.525, 0.001)]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("../../Room/WallFront/MeshInstance3D/Dashboard/Right/AirQuality4:scale")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(15.8, 17.1, 58.0333, 60.1333, 111.2, 112.2, 118.2, 119.2, 124.2, 125.667),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(1, 1, 1), Vector3(0.5, 0.5, 0.5), Vector3(0.5, 0.5, 0.5), Vector3(0.5, 0.5, 0.5), Vector3(0.5, 0.5, 0.5), Vector3(1.5, 1.5, 1.5), Vector3(1.5, 1.5, 1.5), Vector3(0.5, 0.5, 0.5), Vector3(0.5, 0.5, 0.5), Vector3(1, 1, 1)]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("Start:playing")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(0.1),
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("../../Room/WallFront/MeshInstance3D/Dashboard/Right/AirQuality/SubViewport/VideoStreamPlayer:paused")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
 }
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("NitrogenGreen:playing")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"times": PackedFloat32Array(18.5667),
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("../../Room/WallFront/MeshInstance3D/Dashboard/Right/AirQuality2/SubViewport/VideoStreamPlayer:paused")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
 }
-tracks/10/type = "value"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("OzonePurple:playing")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
-"times": PackedFloat32Array(59.5),
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("../../Room/WallFront/MeshInstance3D/Dashboard/Right/AirQuality4/SubViewport/VideoStreamPlayer:paused")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [false]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("../../Room/WallFront/MeshInstance3D/Dashboard/Right/AirQuality3/SubViewport/VideoStreamPlayer:paused")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vuvrn"]
 _data = {
-&"RESET": SubResource("Animation_0dp21"),
-&"Tutorial": SubResource("Animation_lq3wr")
+&"Tutorial": SubResource("Animation_lq3wr"),
+&"RESET": SubResource("Animation_0dp21")
 }
 
 [sub_resource type="AudioStreamMP3" id="AudioStreamMP3_fkhss"]
@@ -1154,6 +1250,7 @@ size = Vector2i(2048, 1024)
 offset_right = 40.0
 offset_bottom = 40.0
 stream = ExtResource("10_h1g1p")
+paused = true
 
 [node name="AirQuality2" type="MeshInstance3D" parent="Room/WallFront/MeshInstance3D/Dashboard/Right"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.7, 0.275, 0.001)
@@ -1168,6 +1265,7 @@ size = Vector2i(2048, 1024)
 offset_right = 40.0
 offset_bottom = 40.0
 stream = ExtResource("11_isli7")
+paused = true
 
 [node name="AirQuality3" type="MeshInstance3D" parent="Room/WallFront/MeshInstance3D/Dashboard/Right"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.7, -0.525, 0.001)
@@ -1202,7 +1300,6 @@ shape = SubResource("ConcavePolygonShape3D_idk22")
 
 [node name="Roof" type="Node3D" parent="Room"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.5, 10)
-visible = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Room/Roof"]
 mesh = SubResource("BoxMesh_b2t0c")
@@ -1258,7 +1355,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.51, 0)
 shape = SubResource("BoxShape3D_v1qnn")
 
 [node name="Speaker" parent="Attention" instance=ExtResource("27_8mh5o")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
 
 [node name="Voice" type="AudioStreamPlayer3D" parent="Attention/Speaker"]
 stream = SubResource("AudioStreamMP3_4ldbn")
@@ -1275,7 +1372,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.51, 0)
 shape = SubResource("BoxShape3D_cfird")
 
 [node name="Speaker" parent="Motivation" instance=ExtResource("27_8mh5o")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
 
 [node name="Voice" type="AudioStreamPlayer3D" parent="Motivation/Speaker"]
 stream = ExtResource("8_i052r")
@@ -1313,7 +1410,7 @@ visible = false
 curve = SubResource("Curve3D_h176u")
 
 [node name="PathFollow3DLeft" type="PathFollow3D" parent="Overview/Path3DLeft"]
-transform = Transform3D(0.0286476, 6.50032e-06, 0.999482, 2.90832e-05, 0.999978, -7.33603e-06, -0.999482, 2.92839e-05, 0.0286477, -1.1061, 1.97045e-05, -1.31044)
+transform = Transform3D(0.028646, 6.50036e-06, 0.999482, 2.90832e-05, 0.999978, -7.33602e-06, -0.999482, 2.92839e-05, 0.028646, -1.1061, 1.97045e-05, -1.31044)
 progress = 2.14603
 
 [node name="Path" type="MeshInstance3D" parent="Overview/Path3DLeft/PathFollow3DLeft"]
@@ -1322,7 +1419,7 @@ mesh = SubResource("QuadMesh_1a384")
 skeleton = NodePath("../../..")
 
 [node name="PathFollow3DLeft2" type="PathFollow3D" parent="Overview/Path3DLeft"]
-transform = Transform3D(0.532799, 5.64634e-06, 0.846122, 2.09419e-05, 0.999978, -1.98591e-05, -0.84612, 2.83055e-05, 0.532801, -0.181584, 7.91265e-06, -1.14674)
+transform = Transform3D(0.532798, 5.64637e-06, 0.846123, 2.0942e-05, 0.999978, -1.98591e-05, -0.84612, 2.83055e-05, 0.5328, -0.181584, 7.91265e-06, -1.14674)
 progress = 1.20191
 
 [node name="Path" type="MeshInstance3D" parent="Overview/Path3DLeft/PathFollow3DLeft2"]
@@ -1331,7 +1428,7 @@ mesh = SubResource("QuadMesh_1a384")
 skeleton = NodePath("../../..")
 
 [node name="PathFollow3DLeft3" type="PathFollow3D" parent="Overview/Path3DLeft"]
-transform = Transform3D(0.0118966, 4.80392e-06, 0.999824, 2.91913e-05, 0.999978, -5.1512e-06, -0.999822, 2.9253e-05, 0.0118966, -1.36408, 2.1316e-05, -1.31514)
+transform = Transform3D(0.0118949, 4.80396e-06, 0.999824, 2.91913e-05, 0.999978, -5.1512e-06, -0.999822, 2.92531e-05, 0.0118949, -1.36408, 2.1316e-05, -1.31514)
 progress = 2.40382
 
 [node name="Path" type="MeshInstance3D" parent="Overview/Path3DLeft/PathFollow3DLeft3"]
@@ -1340,7 +1437,7 @@ mesh = SubResource("QuadMesh_1a384")
 skeleton = NodePath("../../..")
 
 [node name="PathFollow3DLeft4" type="PathFollow3D" parent="Overview/Path3DLeft"]
-transform = Transform3D(0.2447, -1.9914e-05, 0.969495, 3.06581e-05, 0.999978, 1.27988e-05, -0.969494, 2.65958e-05, 0.2447, -2.556, 1.93071e-05, -1.39672)
+transform = Transform3D(0.244699, -1.9914e-05, 0.969495, 3.06581e-05, 0.999978, 1.27988e-05, -0.969494, 2.65959e-05, 0.244699, -2.556, 1.93071e-05, -1.39672)
 progress = 3.6
 
 [node name="Path" type="MeshInstance3D" parent="Overview/Path3DLeft/PathFollow3DLeft4"]
@@ -1349,7 +1446,7 @@ mesh = SubResource("QuadMesh_1a384")
 skeleton = NodePath("../../..")
 
 [node name="PathFollow3DLeft5" type="PathFollow3D" parent="Overview/Path3DLeft"]
-transform = Transform3D(0.999752, -7.48985e-05, 0.0170804, 7.46526e-05, 0.999978, 1.46796e-05, -0.0170804, -1.34033e-05, 0.999752, -3.01989, -1.70957e-05, -2.35572)
+transform = Transform3D(0.999752, -7.48986e-05, 0.0170803, 7.46527e-05, 0.999978, 1.46796e-05, -0.0170803, -1.34033e-05, 0.999752, -3.01989, -1.70957e-05, -2.35571)
 progress = 4.8
 
 [node name="Path" type="MeshInstance3D" parent="Overview/Path3DLeft/PathFollow3DLeft5"]
@@ -1379,7 +1476,7 @@ mesh = SubResource("QuadMesh_0epbk")
 skeleton = NodePath("../../..")
 
 [node name="PathFollow3DAhead3" type="PathFollow3D" parent="Overview/Path3DAhead"]
-transform = Transform3D(0.999899, 0, -0.00337091, 0, 0.999978, 0, 0.00337091, 0, 0.999899, -0.0044493, 0, -1.65948)
+transform = Transform3D(0.999899, 0, -0.00337091, 0, 0.999978, 0, 0.00337091, 0, 0.999899, -0.00444929, 0, -1.65948)
 progress = 1.6464
 
 [node name="Path" type="MeshInstance3D" parent="Overview/Path3DAhead/PathFollow3DAhead3"]
@@ -1445,7 +1542,7 @@ mesh = SubResource("QuadMesh_b6mot")
 skeleton = NodePath("../../..")
 
 [node name="PathFollow3DRight5" type="PathFollow3D" parent="Overview/Path3DRight"]
-transform = Transform3D(0.999478, 6.52429e-05, 0.0290585, -6.59914e-05, 0.999978, 2.49742e-05, -0.0290585, -2.68836e-05, 0.999478, 2.98154, -1.58658e-05, -2.69905)
+transform = Transform3D(0.999479, 6.52429e-05, 0.0290585, -6.59915e-05, 0.999978, 2.49742e-05, -0.0290585, -2.68836e-05, 0.999479, 2.98154, -1.58658e-05, -2.69905)
 progress = 4.81995
 
 [node name="Path" type="MeshInstance3D" parent="Overview/Path3DRight/PathFollow3DRight5"]
@@ -1454,7 +1551,7 @@ mesh = SubResource("QuadMesh_b6mot")
 skeleton = NodePath("../../..")
 
 [node name="Speaker" parent="Overview" instance=ExtResource("27_8mh5o")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
 
 [node name="Voice" type="AudioStreamPlayer3D" parent="Overview/Speaker"]
 stream = ExtResource("9_1gj2o")
@@ -1478,7 +1575,7 @@ shape = SubResource("BoxShape3D_f50s2")
 visible = false
 
 [node name="Speaker" parent="Selection/Fire" instance=ExtResource("27_8mh5o")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
 
 [node name="Voice" type="AudioStreamPlayer3D" parent="Selection/Fire/Speaker"]
 stream = ExtResource("10_iaamd")
@@ -1501,7 +1598,7 @@ shape = SubResource("BoxShape3D_fei6j")
 visible = false
 
 [node name="Speaker" parent="Selection/Weather" instance=ExtResource("27_8mh5o")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
 
 [node name="Voice" type="AudioStreamPlayer3D" parent="Selection/Weather/Speaker"]
 stream = ExtResource("12_lvboh")
@@ -1525,7 +1622,7 @@ shape = SubResource("BoxShape3D_k2k5w")
 visible = false
 
 [node name="Speaker" parent="Selection/AirQuality" instance=ExtResource("27_8mh5o")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
 
 [node name="Voice" type="AudioStreamPlayer3D" parent="Selection/AirQuality/Speaker"]
 stream = ExtResource("14_vsr7q")
@@ -1556,7 +1653,7 @@ libraries = {
 visible = false
 
 [node name="Speaker" parent="Explain/Left" instance=ExtResource("27_8mh5o")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
 
 [node name="Voice" type="AudioStreamPlayer3D" parent="Explain/Left/Speaker"]
 
@@ -1576,7 +1673,7 @@ shape = SubResource("BoxShape3D_ojuu3")
 visible = false
 
 [node name="Speaker" parent="Explain/Middle" instance=ExtResource("27_8mh5o")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
 
 [node name="Voice" type="AudioStreamPlayer3D" parent="Explain/Middle/Speaker"]
 
@@ -1611,7 +1708,7 @@ stream = SubResource("AudioStreamMP3_66aev")
 visible = false
 
 [node name="Speaker" parent="Explain/Right" instance=ExtResource("27_8mh5o")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
 
 [node name="Voice" type="AudioStreamPlayer3D" parent="Explain/Right/Speaker"]
 
@@ -1664,6 +1761,7 @@ transform = Transform3D(-4.37114e-08, 0.642788, -0.766045, 0, 0.766045, 0.642788
 stream = ExtResource("15_2k3ku")
 volume_db = -5.0
 autoplay = true
+parameters/looping = true
 
 [connection signal="body_entered" from="Attention/Area3D" to="." method="Attention_body_entered"]
 [connection signal="body_exited" from="Attention/Area3D" to="." method="Attention_body_exited"]
