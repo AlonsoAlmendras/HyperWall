@@ -1,42 +1,148 @@
-[gd_scene load_steps=5 format=3 uid="uid://bpvlsqkhpu5hj"]
+[gd_scene load_steps=21 format=3 uid="uid://d4eurqowkikdd"]
 
-[ext_resource type="Texture2D" uid="uid://cgvokhc60euox" path="res://Materials/DashboardFireExample.png" id="1_0784c"]
+[ext_resource type="Texture2D" uid="uid://s1ovclcbkfc5" path="res://videos/Fires/FireIndex.png" id="1_yfycd"]
+[ext_resource type="VideoStream" path="res://videos/Fires/YearActiveFires.ogv" id="2_2wdf5"]
+[ext_resource type="VideoStream" path="res://videos/Fires/MonthActiveFires.ogv" id="3_juqol"]
+[ext_resource type="VideoStream" path="res://videos/Fires/Smoke.ogv" id="4_fon80"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1bvrg"]
-albedo_texture = ExtResource("1_0784c")
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xjbys"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
 
-[sub_resource type="QuadMesh" id="QuadMesh_1qme7"]
-material = SubResource("StandardMaterial3D_1bvrg")
-size = Vector2(8, 2)
+[sub_resource type="Sky" id="Sky_xhcoa"]
+sky_material = SubResource("ProceduralSkyMaterial_xjbys")
 
-[sub_resource type="QuadMesh" id="QuadMesh_q1f81"]
+[sub_resource type="Environment" id="Environment_lypat"]
+background_mode = 2
+sky = SubResource("Sky_xhcoa")
+tonemap_mode = 2
 
-[node name="HyperWall" type="Node3D"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e4icw"]
+albedo_color = Color(0, 0, 0, 1)
 
-[node name="Dashboard" type="MeshInstance3D" parent="."]
-layers = 3
-mesh = SubResource("QuadMesh_1qme7")
+[sub_resource type="QuadMesh" id="QuadMesh_0oohm"]
+material = SubResource("StandardMaterial3D_e4icw")
+size = Vector2(4, 1)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Dashboard"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.01)
+[sub_resource type="ViewportTexture" id="ViewportTexture_4uckp"]
+viewport_path = NodePath("SubViewPorts/SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nxng6"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_4uckp")
+
+[sub_resource type="QuadMesh" id="QuadMesh_0xijm"]
+size = Vector2(0.777, 0.326)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_lwej3"]
+viewport_path = NodePath("SubViewPorts/SubViewport2")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nfhte"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_lwej3")
+
+[sub_resource type="QuadMesh" id="QuadMesh_bkw3o"]
+size = Vector2(1.729, 0.721)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_c0wip"]
+viewport_path = NodePath("SubViewPorts/SubViewport3")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_frcs1"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_c0wip")
+
+[sub_resource type="QuadMesh" id="QuadMesh_0pyd5"]
+size = Vector2(0.92, 0.36)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nwxoj"]
+albedo_texture = ExtResource("1_yfycd")
+
+[sub_resource type="QuadMesh" id="QuadMesh_mavlv"]
+material = SubResource("StandardMaterial3D_nwxoj")
+size = Vector2(0.92, 0.36)
+
+[node name="HyperWallFire" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.5)
 visible = false
-layers = 3
-mesh = SubResource("QuadMesh_q1f81")
 
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="Dashboard"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.01)
-visible = false
-layers = 3
-mesh = SubResource("QuadMesh_q1f81")
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_lypat")
 
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="Dashboard"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.01)
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.43043)
 visible = false
-layers = 3
-mesh = SubResource("QuadMesh_q1f81")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="Dashboard"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.01)
-visible = false
-layers = 3
-mesh = SubResource("QuadMesh_q1f81")
+[node name="Template" type="MeshInstance3D" parent="."]
+mesh = SubResource("QuadMesh_0oohm")
+
+[node name="Label3D2" type="Label3D" parent="Template"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.54223, 0.382893, 0.001)
+pixel_size = 0.0025
+text = "Wildland Fires"
+font_size = 35
+
+[node name="Label3D" type="Label3D" parent="Template"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.91354, 0.166, 0.001)
+pixel_size = 0.0025
+text = "Climate change continues to cause longer fire seasons and
+more severe wildfires. NASA's Earth observing satellites and
+its robust network of interagency partners work together to
+hel communities mage the impacts of fire, and reduce
+risks before, during, and agter events."
+font_size = 12
+outline_size = 3
+horizontal_alignment = 0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Template"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.527, -0.223893, 0.01)
+material_override = SubResource("StandardMaterial3D_nxng6")
+transparency = 1.0
+mesh = SubResource("QuadMesh_0xijm")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Template"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.092, -0.0466988, 0.01)
+material_override = SubResource("StandardMaterial3D_nfhte")
+mesh = SubResource("QuadMesh_bkw3o")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Template"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.43, 0.187339, 0.01)
+material_override = SubResource("StandardMaterial3D_frcs1")
+mesh = SubResource("QuadMesh_0pyd5")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Template"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.43, -0.237029, 0.0100021)
+mesh = SubResource("QuadMesh_mavlv")
+
+[node name="SubViewPorts" type="Node3D" parent="."]
+
+[node name="SubViewport" type="SubViewport" parent="SubViewPorts"]
+size = Vector2i(1280, 720)
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="SubViewPorts/SubViewport"]
+offset_right = 40.0
+offset_bottom = 40.0
+stream = ExtResource("2_2wdf5")
+autoplay = true
+loop = true
+
+[node name="SubViewport2" type="SubViewport" parent="SubViewPorts"]
+size = Vector2i(4096, 2048)
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="SubViewPorts/SubViewport2"]
+offset_right = 40.0
+offset_bottom = 40.0
+stream = ExtResource("3_juqol")
+autoplay = true
+loop = true
+
+[node name="SubViewport3" type="SubViewport" parent="SubViewPorts"]
+size = Vector2i(4096, 2048)
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="SubViewPorts/SubViewport3"]
+offset_right = 40.0
+offset_bottom = 40.0
+stream = ExtResource("4_fon80")
+autoplay = true
+loop = true

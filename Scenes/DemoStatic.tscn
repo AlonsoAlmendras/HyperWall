@@ -10,7 +10,7 @@
 [ext_resource type="ArrayMesh" uid="uid://bdwl17nle5t4p" path="res://Scenes/items/bench_legged.obj" id="8_oe2xb"]
 [ext_resource type="Material" uid="uid://datvvi6j3c0kp" path="res://Assets/textures/white.tres" id="9_ld8f6"]
 [ext_resource type="PackedScene" uid="uid://dmp2m6rol8kq0" path="res://Scenes/items/Lamp.tscn" id="10_vp775"]
-[ext_resource type="AudioStream" uid="uid://wg3i1vxfl85m" path="res://DemoProjections/audio/ambience/MuseumNoise.ogg" id="11_v6ebg"]
+[ext_resource type="AudioStream" uid="uid://wg3i1vxfl85m" path="res://DemoProjections/audio/noice/MuseumNoise.ogg" id="11_v6ebg"]
 [ext_resource type="PackedScene" uid="uid://c55din6ihs07i" path="res://Scenes/sign.tscn" id="12_0bjuh"]
 [ext_resource type="PackedScene" uid="uid://d4ndimcjk1xlb" path="res://Scenes/sign_wide.tscn" id="13_rqp4g"]
 

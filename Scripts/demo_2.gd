@@ -2,6 +2,9 @@ extends Node3D
 
 var xr_interface : XRInterface
 
+#Stage of the user
+var stage = null
+
 func _ready() -> void:
 	xr_interface = XRServer.find_interface("OpenXR")
 	if xr_interface and xr_interface.is_initialized():
@@ -14,8 +17,6 @@ func _ready() -> void:
 		print("OpenXR not initialialised, headset prbably desconnected")
 		
 	print("Posición global del XROrigin3D: ", global_transform.origin)
-	
-	
 	
 	
 	#Configuration to capture the first frame of every video
@@ -50,8 +51,10 @@ func _ready() -> void:
 
 	#$Room/WallFront/MeshInstance3D/Dashboard/Left/Fires2.texture = static_texture
 	#$Room/WallFront/MeshInstance3D/Dashboard/Middle/Weather3/SubViewport/VideoStreamPlayer.stop()
-
-
+	
+	$Node3D/Man/AnimationPlayer.play("ManAnimation/Walk")
+	
+	
 func _process(delta: float) -> void:
 	const move_speed := 2.0
 	#Left Path
@@ -77,22 +80,25 @@ func _process(delta: float) -> void:
 
 
 func Attention_body_entered(_body: Node3D) -> void:
-	print("Entra Attention")
+	stage = "attention"
 	$Attention/Speaker/Voice.play()
 	await get_tree().create_timer(15.0).timeout
-	$Motivation/StandHere.visible = true
+	if stage == "attention":
+		stage = "motivation"
+		$Motivation/StandHere.visible = true
 
 func Attention_body_exited(_body: Node3D) -> void:
 	$Attention/Speaker/Voice.stop()
 	$Attention/StandHere.visible = false
 	
 
-
 func Motivation_body_entered(body: Node3D) -> void:
-	print("Entra Motivation")
+	stage = "motivation"
 	$Motivation/Speaker/Voice.play()
 	await get_tree().create_timer(18.0).timeout
-	$Overview/StandHere.visible = true
+	if stage == "motivation":
+		stage = "overview"
+		$Overview/StandHere.visible = true
 
 func Motivation_body_exited(body: Node3D) -> void:
 	$Motivation/Speaker/Voice.stop()
@@ -100,9 +106,8 @@ func Motivation_body_exited(body: Node3D) -> void:
 
 	
 func Overview_body_entered(_body: Node3D) -> void:
-	print("Entra Overview")
+	stage = "overview"
 	$Overview/AnimationPlayer.play("Overview")
-
 
 func Overview_body_exited(_body: Node3D) -> void:
 	$Overview/AnimationPlayer.stop()
@@ -120,10 +125,9 @@ func Overview_body_exited(_body: Node3D) -> void:
 
 
 func Selection_Fire_body_entered(body: Node3D) -> void:
-	print("Entra Selection Fire")
+	stage = "selection_fire" 
 	$Selection/Fire/Speaker/Voice.play()
 	$Selection/Fire/Speaker/Ambient.play()
-	
 	await get_tree().create_timer(10.0).timeout
 	$Explain/Left/StandHere.visible = true
 
@@ -135,25 +139,24 @@ func Selection_Fire_body_exited(body: Node3D) -> void:
 
 
 func Selection_Weather_body_entered(body: Node3D) -> void:
-	print("Entra Selection Weather")
+	stage = "selection_weather"
 	$Selection/Weather/Speaker/Voice.play()
 	$Selection/Weather/Speaker/Ambient.play()
-	
 	await get_tree().create_timer(11.5).timeout
 	$Explain/Middle/StandHere.visible = true
 
 
 func Selection_Weather_body_exited(body: Node3D) -> void:
+	
 	$Selection/Weather/Speaker/Voice.stop()
 	$Selection/Weather/Speaker/Ambient.stop()
 	$Explain/Middle/StandHere.visible = false
 
 
 func Selection_Air_body_entered(body: Node3D) -> void:
-	print("Entra Selection AirQuality")
+	stage = "selection_air"
 	$Selection/AirQuality/Speaker/Voice.play()
 	$Selection/AirQuality/Speaker/Ambient.play()
-	
 	await get_tree().create_timer(10.0).timeout
 	$Explain/Right/StandHere.visible = true
 
@@ -166,33 +169,49 @@ func Selection_Air_body_exited(body: Node3D) -> void:
 
 
 func Explain_Fire_body_entered(body: Node3D) -> void:
-	print("Entra Explain Left")
-	$Explain/Right/AnimationPlayer.play("Left")
-
+	stage = "explain_fire"
+	$Explain/Left/AnimationPlayer.play("ExplainFire")
+	
 
 func Explain_Fire_body_exited(body: Node3D) -> void:
-	$Explain/Right/AnimationPlayer.stop()
+	$Explain/Left/AnimationPlayer.stop()
+	$Explain/Left/AnimationPlayer.seek(0)
+	#Stop Audios
+	$Explain/Left/Speaker/Intro.stop()
+	$Explain/Left/Speaker/Index.stop()
+	$Explain/Left/Speaker/ActiveYear.stop()
+	$Explain/Left/Speaker/ActiveMonth.stop()
+	$Explain/Left/Speaker/Smoke.stop()
+	
+	
 
 
 
 func Explain_Weather_body_entered(body: Node3D) -> void:
+	stage = "explain_weather"
+	$Explain/Middle/AnimationPlayer.play("ExplainWeather")
 	
-	print("Entra Explain Weather")
 
 
 func Explain_Weather_body_exited(body: Node3D) -> void:
-	pass # Replace with function body.
-
-
-
+	$Explain/Middle/AnimationPlayer.stop()
+	#Stop Audios
+	$Explain/Middle/Speaker/Intro.stop()
+	$Explain/Middle/Speaker/WaterExtremes.stop()
+	$Explain/Middle/Speaker/TemperatureIntro.stop()
+	$Explain/Middle/Speaker/TemperatureConclution.stop()
+	$Explain/Middle/Speaker/ArcticSea.stop()
+	
 
 func Explain_Air_body_entered(_body: Node3D) -> void:
-	
-	print("Entra Explain Air")
-	$Explain/Right/AnimationPlayer.play("Tutorial")
+	stage = "explain_air"
+	$Explain/Right/AnimationPlayer.play("ExplainAir")
 	
 func Explain_Air_body_exited(_body: Node3D) -> void:
 	$Explain/Right/AnimationPlayer.stop()
-	$Explain/Right/AnimationPlayer.seek(0)
-
-	
+	#Stop Audios
+	$Explain/Right/Speaker/Intro.stop()
+	$Explain/Right/Speaker/Nox.stop()
+	$Explain/Right/Speaker/CO.stop()
+	$Explain/Right/Speaker/Ozone.stop()
+	$Explain/Right/Speaker/PM.stop()

@@ -1,0 +1,169 @@
+[gd_scene load_steps=18 format=3 uid="uid://cfhrahmxq8orl"]
+
+[ext_resource type="VideoStream" path="res://videos/Weather/WaterExtremes.ogv" id="1_n10i8"]
+[ext_resource type="VideoStream" path="res://videos/Weather/ClimateSpiral.ogv" id="2_qympw"]
+[ext_resource type="VideoStream" path="res://videos/Weather/ArcticSpiral.ogv" id="3_bh612"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5q328"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_xhcoa"]
+sky_material = SubResource("ProceduralSkyMaterial_5q328")
+
+[sub_resource type="Environment" id="Environment_sv5or"]
+background_mode = 2
+sky = SubResource("Sky_xhcoa")
+tonemap_mode = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sqas0"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_4hlah"]
+material = SubResource("StandardMaterial3D_sqas0")
+size = Vector2(4, 1)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_4uckp"]
+viewport_path = NodePath("SubViewPort/SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l8c47"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_4uckp")
+
+[sub_resource type="QuadMesh" id="QuadMesh_t8djh"]
+size = Vector2(1.5, 0.7)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_c0wip"]
+viewport_path = NodePath("SubViewPort/SubViewport2")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_smbqv"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_c0wip")
+
+[sub_resource type="QuadMesh" id="QuadMesh_75irl"]
+size = Vector2(0.7, 0.7)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_lwej3"]
+viewport_path = NodePath("SubViewPort/SubViewport3")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_66lgr"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_lwej3")
+
+[sub_resource type="QuadMesh" id="QuadMesh_xs6pa"]
+size = Vector2(0.7, 0.7)
+
+[node name="HyperWallWeather" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.5)
+visible = false
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_sv5or")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.43043)
+visible = false
+
+[node name="SubViewPort" type="Node3D" parent="."]
+
+[node name="SubViewport" type="SubViewport" parent="SubViewPort"]
+size = Vector2i(3840, 2160)
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="SubViewPort/SubViewport"]
+offset_right = 40.0
+offset_bottom = 40.0
+stream = ExtResource("1_n10i8")
+autoplay = true
+loop = true
+
+[node name="SubViewport2" type="SubViewport" parent="SubViewPort"]
+size = Vector2i(2160, 2160)
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="SubViewPort/SubViewport2"]
+offset_right = 40.0
+offset_bottom = 40.0
+stream = ExtResource("2_qympw")
+autoplay = true
+loop = true
+
+[node name="SubViewport3" type="SubViewport" parent="SubViewPort"]
+size = Vector2i(2160, 2160)
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="SubViewPort/SubViewport3"]
+offset_right = 40.0
+offset_bottom = 40.0
+stream = ExtResource("3_bh612")
+autoplay = true
+loop = true
+
+[node name="Dashboard" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.003, 0, 0, 0)
+
+[node name="Background" type="MeshInstance3D" parent="Dashboard"]
+mesh = SubResource("QuadMesh_4hlah")
+skeleton = NodePath("../..")
+
+[node name="Title" type="Label3D" parent="Dashboard/Background"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.61916, 0.288932, 0.001)
+pixel_size = 0.0025
+text = "Weather"
+font_size = 64
+
+[node name="Text" type="Label3D" parent="Dashboard/Background"]
+transform = Transform3D(0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 1, -1.94898, -0.131701, 0.001)
+pixel_size = 0.001
+modulate = Color(0.593134, 0.593134, 0.593134, 1)
+text = "Explore how Earth’s climate has
+transformed over decades.
+
+This section reveals intensifying
+water extremes—devastating
+droughts and unprecedented
+rainfall events—alongside rising
+global temperatures and rapid
+Arctic ice loss."
+font_size = 40
+outline_size = 1
+horizontal_alignment = 0
+
+[node name="Water Extremes" type="Node3D" parent="Dashboard/Background"]
+
+[node name="Label3D" type="Label3D" parent="Dashboard/Background/Water Extremes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.35, 0.001)
+pixel_size = 0.0025
+text = "Droughts & Pluvials"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Dashboard/Background/Water Extremes"]
+transform = Transform3D(0.999998, 0, 0, 0, 0.999998, 0, 0, 0, 1, -0.5, -0.1, 0.001)
+material_override = SubResource("StandardMaterial3D_l8c47")
+mesh = SubResource("QuadMesh_t8djh")
+skeleton = NodePath("../..")
+
+[node name="Temperature" type="Node3D" parent="Dashboard/Background"]
+
+[node name="Label3D" type="Label3D" parent="Dashboard/Background/Temperature"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.716, 0.35, 0.001)
+pixel_size = 0.0025
+text = "Temperature anomalies"
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Dashboard/Background/Temperature"]
+transform = Transform3D(0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 1, 0.716, -0.1, 0.001)
+material_override = SubResource("StandardMaterial3D_smbqv")
+mesh = SubResource("QuadMesh_75irl")
+skeleton = NodePath("../..")
+
+[node name="Arctic" type="Node3D" parent="Dashboard/Background"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Label3D" type="Label3D" parent="Dashboard/Background/Arctic"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.538, 0.35, 0.001)
+pixel_size = 0.0025
+text = "Arctic Sea Ice"
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Dashboard/Background/Arctic"]
+transform = Transform3D(0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 1, 1.538, -0.1, 0.001)
+material_override = SubResource("StandardMaterial3D_66lgr")
+mesh = SubResource("QuadMesh_xs6pa")
+skeleton = NodePath("../..")
