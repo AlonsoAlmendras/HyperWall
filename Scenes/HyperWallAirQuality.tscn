@@ -1,23 +1,23 @@
 [gd_scene load_steps=54 format=3 uid="uid://b04mc3elohq87"]
 
 [ext_resource type="Script" path="res://Scripts/hyper_wall_tutorial.gd" id="1_m7a4t"]
-[ext_resource type="AudioStream" uid="uid://cvpbo8473647f" path="res://Materials/Audio/DashboardTutorial/Left/ExplanationLeftIntro.mp3" id="3_mlj2a"]
-[ext_resource type="AudioStream" uid="uid://cnld75q8ckpoa" path="res://Materials/Audio/DashboardTutorial/Left/ExplanationLeftFocus.mp3" id="4_bod8s"]
-[ext_resource type="AudioStream" uid="uid://c88miifqmh3a" path="res://Materials/Audio/DashboardTutorial/Left/ExplanationLeftReason.mp3" id="5_ky03g"]
-[ext_resource type="AudioStream" uid="uid://7aqf1gxltam1" path="res://Materials/Audio/DashboardTutorial/Left/ExplanationLeftFocus2.mp3" id="6_las1y"]
-[ext_resource type="AudioStream" uid="uid://d1g2kkdwwceuc" path="res://Materials/Audio/DashboardTutorial/Left/ExplanationLeftConclution.mp3" id="7_fdepo"]
-[ext_resource type="AudioStream" uid="uid://bq8csbgj4pkpv" path="res://Materials/Audio/DashboardTutorial/Middle/SouthAmerica.mp3" id="8_n8rd7"]
-[ext_resource type="AudioStream" uid="uid://bubuu0e0aymm0" path="res://Materials/Audio/DashboardTutorial/Middle/Asia.mp3" id="9_dpsvl"]
-[ext_resource type="AudioStream" uid="uid://ckm88juddw7hu" path="res://Materials/Audio/DashboardTutorial/Middle/US.mp3" id="10_2yp7b"]
-[ext_resource type="AudioStream" uid="uid://dgky2f0hdsjnn" path="res://Materials/Audio/DashboardTutorial/Middle/Conclution.mp3" id="11_a2bfs"]
+[ext_resource type="AudioStream" uid="uid://cvpbo8473647f" path="res://DemoVR/audio/Explore/Left/ExplanationLeftIntro.mp3" id="3_mlj2a"]
+[ext_resource type="AudioStream" uid="uid://cnld75q8ckpoa" path="res://DemoVR/audio/Explore/Left/ExplanationLeftFocus.mp3" id="4_bod8s"]
+[ext_resource type="AudioStream" uid="uid://c88miifqmh3a" path="res://DemoVR/audio/Explore/Left/ExplanationLeftReason.mp3" id="5_ky03g"]
+[ext_resource type="AudioStream" uid="uid://7aqf1gxltam1" path="res://DemoVR/audio/Explore/Left/ExplanationLeftFocus2.mp3" id="6_las1y"]
+[ext_resource type="AudioStream" uid="uid://d1g2kkdwwceuc" path="res://DemoVR/audio/Explore/Left/ExplanationLeftConclution.mp3" id="7_fdepo"]
+[ext_resource type="AudioStream" uid="uid://bq8csbgj4pkpv" path="res://DemoVR/audio/Explore/Middle/SouthAmerica.mp3" id="8_n8rd7"]
+[ext_resource type="AudioStream" uid="uid://bubuu0e0aymm0" path="res://DemoVR/audio/Explore/Middle/Asia.mp3" id="9_dpsvl"]
+[ext_resource type="AudioStream" uid="uid://ckm88juddw7hu" path="res://DemoVR/audio/Explore/Middle/US.mp3" id="10_2yp7b"]
+[ext_resource type="AudioStream" uid="uid://dgky2f0hdsjnn" path="res://DemoVR/audio/Explore/Middle/Conclution.mp3" id="11_a2bfs"]
 [ext_resource type="VideoStream" path="res://videos/Air/GreenNOx.ogv" id="12_y0noc"]
 [ext_resource type="VideoStream" path="res://videos/Air/OrangePM.ogv" id="13_388q1"]
 [ext_resource type="VideoStream" path="res://videos/Air/PurpleO3.ogv" id="14_0nl3a"]
 [ext_resource type="VideoStream" path="res://videos/Air/RedCO.ogv" id="15_0wtqx"]
-[ext_resource type="AudioStream" uid="uid://chn1v5y5qr8p4" path="res://Materials/Audio/template_tutorial/IntroExplanation.mp3" id="16_6yc6e"]
-[ext_resource type="AudioStream" uid="uid://bjwqgd5wbussp" path="res://Materials/Audio/template_tutorial/LeftExplanation.mp3" id="17_t7lu7"]
-[ext_resource type="AudioStream" uid="uid://d33qimb18rx5n" path="res://Materials/Audio/template_tutorial/MiddleExplanation.mp3" id="18_lwvso"]
-[ext_resource type="AudioStream" uid="uid://bxiq83gnnpnui" path="res://Materials/Audio/template_tutorial/RightExplanation.mp3" id="19_inbbl"]
+[ext_resource type="AudioStream" uid="uid://chn1v5y5qr8p4" path="res://DemoVR/audio/Explain/IntroExplanation.mp3" id="16_6yc6e"]
+[ext_resource type="AudioStream" uid="uid://bjwqgd5wbussp" path="res://DemoVR/audio/Explain/LeftExplanation.mp3" id="17_t7lu7"]
+[ext_resource type="AudioStream" uid="uid://d33qimb18rx5n" path="res://DemoVR/audio/Explain/MiddleExplanation.mp3" id="18_lwvso"]
+[ext_resource type="AudioStream" uid="uid://bxiq83gnnpnui" path="res://DemoVR/audio/Explain/RightExplanation.mp3" id="19_inbbl"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5q328"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -39,7 +39,7 @@ material = SubResource("StandardMaterial3D_dokgr")
 size = Vector2(4, 1)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_2ggwm"]
-viewport_path = NodePath("Subviewport/SubViewport")
+viewport_path = NodePath("SubViewPorts/SubViewport")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l8c47"]
 resource_local_to_scene = true
@@ -59,7 +59,7 @@ blend_mode = 1
 albedo_color = Color(1, 0.196078, 0, 1)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_xvmjc"]
-viewport_path = NodePath("Subviewport/SubViewport2")
+viewport_path = NodePath("SubViewPorts/SubViewport2")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_66lgr"]
 resource_local_to_scene = true
@@ -111,7 +111,7 @@ bottom_radius = 0.15
 height = 0.01
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_qa4et"]
-viewport_path = NodePath("Subviewport/SubViewport3")
+viewport_path = NodePath("SubViewPorts/SubViewport3")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_smbqv"]
 resource_local_to_scene = true
@@ -121,7 +121,7 @@ albedo_texture = SubResource("ViewportTexture_qa4et")
 size = Vector2(0.92, 0.36)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_a18hx"]
-viewport_path = NodePath("Subviewport/SubViewport4")
+viewport_path = NodePath("SubViewPorts/SubViewport4")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t63yo"]
 resource_local_to_scene = true
@@ -146,10 +146,10 @@ tracks/0/path = NodePath("Background/Video1/MeshInstance3D:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(-1.527, -0.137, 0.01), Vector3(0, 0, 1)]
+"values": [Vector3(-1.527, -0.272, 0.001)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -158,10 +158,10 @@ tracks/1/path = NodePath("Background/Video1/MeshInstance3D:scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(1, 1, 1), Vector3(2, 2, 2)]
+"values": [Vector3(1, 1, 1)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -173,7 +173,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(-0.092, 0.01, 0.01)]
+"values": [Vector3(-0.092, -0.05, 0.001)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -185,7 +185,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(1.43, 0.231, 0.01)]
+"values": [Vector3(1.43, 0.181, 0.001)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -209,7 +209,7 @@ tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(1.43, -0.225703, 0.0100021)]
+"values": [Vector3(1.43, -0.286, 0.001)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
@@ -317,7 +317,7 @@ tracks/14/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [false]
 }
 tracks/15/type = "value"
 tracks/15/imported = false
@@ -329,7 +329,7 @@ tracks/15/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [false]
 }
 tracks/16/type = "value"
 tracks/16/imported = false
@@ -426,6 +426,34 @@ tracks/23/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_b1f86"]
+resource_name = "PlayRight"
+length = 15.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background/Video3/MeshInstance3D3:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 3.03333, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(1.43, 0.231, 0.01), Vector3(1.43, 0, 1), Vector3(1.43, 0, 1), Vector3(1.43, 0.231, 0.01)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Background/Video3/MeshInstance3D3:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 3.03333, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(1.3, 1.3, 1.3), Vector3(1.3, 1.3, 1.3), Vector3(1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_abrki"]
@@ -610,34 +638,6 @@ tracks/14/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [true, true, false]
-}
-
-[sub_resource type="Animation" id="Animation_b1f86"]
-resource_name = "PlayRight"
-length = 15.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Background/Video3/MeshInstance3D3:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1, 3.03333, 4),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(1.43, 0.231, 0.01), Vector3(1.43, 0, 1), Vector3(1.43, 0, 1), Vector3(1.43, 0.231, 0.01)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Background/Video3/MeshInstance3D3:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1, 3.03333, 4),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(1, 1, 1), Vector3(1.3, 1.3, 1.3), Vector3(1.3, 1.3, 1.3), Vector3(1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_wje1f"]
@@ -830,10 +830,6 @@ environment = SubResource("Environment_sv5or")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.5)
 visible = false
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.43043)
-visible = false
-
 [node name="Dashboard" type="Node3D" parent="."]
 
 [node name="Background" type="MeshInstance3D" parent="Dashboard"]
@@ -841,20 +837,39 @@ mesh = SubResource("QuadMesh_4hlah")
 skeleton = NodePath("../..")
 
 [node name="AirQuality" type="Label3D" parent="Dashboard/Background"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.527, 0.295255, 0.001)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.527, 0.345, 0.03)
+pixel_size = 0.001
 text = "Air Quality"
+font_size = 150
+
+[node name="Text1" type="Label3D" parent="Dashboard/Background"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.911, 0.156, 0.03)
+pixel_size = 0.0005
+text = "This section offers four pollutant maps over the
+past two weeks."
+font_size = 65
+horizontal_alignment = 0
+
+[node name="Text2" type="Label3D" parent="Dashboard/Background"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.91, 0.04, 0.03)
+pixel_size = 0.0005
+text = "Showing how emissions from traffic, industry and
+wildfires cross borders to threaten respiratory health."
+font_size = 65
+horizontal_alignment = 0
 
 [node name="Video1" type="Node3D" parent="Dashboard/Background"]
 
 [node name="Title" type="Label3D" parent="Dashboard/Background/Video1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.91447, 0.078087, 0.001)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.914, -0.07, 0.03)
+pixel_size = 0.0025
 text = "Nitrogen Oxides (NO)"
-font_size = 10
+font_size = 20
 outline_size = 3
 horizontal_alignment = 0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Dashboard/Background/Video1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.527, -0.137, 0.01)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.527, -0.272, 0.001)
 material_override = SubResource("StandardMaterial3D_l8c47")
 transparency = 1.0
 mesh = SubResource("QuadMesh_t8djh")
@@ -862,6 +877,7 @@ skeleton = NodePath("../..")
 
 [node name="EastAsia" type="CSGTorus3D" parent="Dashboard/Background/Video1/MeshInstance3D"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.251079, 0.0555468, 0)
+visible = false
 transparency = 0.00873348
 inner_radius = 0.0483109
 outer_radius = 0.0573484
@@ -870,6 +886,7 @@ material = SubResource("StandardMaterial3D_f466c")
 
 [node name="SouthAsia" type="CSGTorus3D" parent="Dashboard/Background/Video1/MeshInstance3D"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.167, 0.039, 0)
+visible = false
 inner_radius = 0.031
 outer_radius = 0.039
 sides = 20
@@ -902,8 +919,16 @@ spot_angle = 60.0468
 
 [node name="Video2" type="Node3D" parent="Dashboard/Background"]
 
+[node name="Title" type="Label3D" parent="Dashboard/Background/Video2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.948, 0.368, 0.03)
+pixel_size = 0.0025
+text = "Particulate Matter (PM)"
+font_size = 20
+outline_size = 3
+horizontal_alignment = 0
+
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Dashboard/Background/Video2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.092, 0.01, 0.01)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.092, -0.05, 0.001)
 material_override = SubResource("StandardMaterial3D_66lgr")
 mesh = SubResource("QuadMesh_xs6pa")
 skeleton = NodePath("../..")
@@ -950,16 +975,32 @@ mesh = SubResource("CylinderMesh_a625i")
 
 [node name="Video3" type="Node3D" parent="Dashboard/Background"]
 
+[node name="Title" type="Label3D" parent="Dashboard/Background/Video3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.975, 0.4, 0.03)
+pixel_size = 0.0025
+text = "Near Surface Ozone (O3)"
+font_size = 20
+outline_size = 3
+horizontal_alignment = 0
+
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="Dashboard/Background/Video3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.43, 0.231, 0.01)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.43, 0.181, 0.001)
 material_override = SubResource("StandardMaterial3D_smbqv")
 mesh = SubResource("QuadMesh_75irl")
 skeleton = NodePath("../..")
 
 [node name="Video4" type="Node3D" parent="Dashboard/Background"]
 
+[node name="Title" type="Label3D" parent="Dashboard/Background/Video4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.975, -0.06, 0.03)
+pixel_size = 0.0025
+text = "Carbon Monoxide (CO)"
+font_size = 20
+outline_size = 3
+horizontal_alignment = 0
+
 [node name="MeshInstance3D4" type="MeshInstance3D" parent="Dashboard/Background/Video4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.43, -0.225703, 0.0100021)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.43, -0.286, 0.001)
 material_override = SubResource("StandardMaterial3D_t63yo")
 mesh = SubResource("QuadMesh_7h0d8")
 skeleton = NodePath("../..")
@@ -1008,46 +1049,42 @@ libraries = {
 &"": SubResource("AnimationLibrary_2a5q2")
 }
 
-[node name="Subviewport" type="Node3D" parent="."]
+[node name="SubViewPorts" type="Node3D" parent="."]
 
-[node name="SubViewport" type="SubViewport" parent="Subviewport"]
+[node name="SubViewport" type="SubViewport" parent="SubViewPorts"]
 size = Vector2i(2048, 1024)
 
-[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="Subviewport/SubViewport"]
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="SubViewPorts/SubViewport"]
 offset_right = 40.0
 offset_bottom = 40.0
 stream = ExtResource("12_y0noc")
-autoplay = true
 loop = true
 
-[node name="SubViewport2" type="SubViewport" parent="Subviewport"]
+[node name="SubViewport2" type="SubViewport" parent="SubViewPorts"]
 size = Vector2i(2048, 1024)
 
-[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="Subviewport/SubViewport2"]
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="SubViewPorts/SubViewport2"]
 offset_right = 40.0
 offset_bottom = 40.0
 stream = ExtResource("13_388q1")
-autoplay = true
 loop = true
 
-[node name="SubViewport3" type="SubViewport" parent="Subviewport"]
+[node name="SubViewport3" type="SubViewport" parent="SubViewPorts"]
 size = Vector2i(2048, 1024)
 
-[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="Subviewport/SubViewport3"]
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="SubViewPorts/SubViewport3"]
 offset_right = 40.0
 offset_bottom = 40.0
 stream = ExtResource("14_0nl3a")
-autoplay = true
 loop = true
 
-[node name="SubViewport4" type="SubViewport" parent="Subviewport"]
+[node name="SubViewport4" type="SubViewport" parent="SubViewPorts"]
 size = Vector2i(2048, 1024)
 
-[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="Subviewport/SubViewport4"]
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="SubViewPorts/SubViewport4"]
 offset_right = 40.0
 offset_bottom = 40.0
 stream = ExtResource("15_0wtqx")
-autoplay = true
 loop = true
 
 [node name="Audio" type="Node3D" parent="."]

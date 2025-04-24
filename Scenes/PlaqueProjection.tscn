@@ -1,0 +1,54 @@
+[gd_scene load_steps=6 format=3 uid="uid://djs6r2ngc7i82"]
+
+[ext_resource type="Material" uid="uid://bwcbbw6gtxwq" path="res://Assets/textures/red_wall.tres" id="1_7fc57"]
+[ext_resource type="ArrayMesh" uid="uid://dfalfeatlgtod" path="res://Assets/models/lobby_plaque.obj" id="2_eg2so"]
+[ext_resource type="FontFile" uid="uid://brvfr0sedu7gb" path="res://Assets/fonts/NotoSans-Bold.ttf" id="4_7fykc"]
+[ext_resource type="FontFile" uid="uid://q6xb46ncgqie" path="res://Assets/fonts/NotoSans-Light.ttf" id="5_ft63e"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_pkvds"]
+points = PackedVector3Array(-0.875, 0, -0.1, -0.875, 0, 0.1, -0.875, 3, -0.1, 0.875, 0, -0.1, 0.875, 0, 0.1, -0.875, 3, 0.1, 0.875, 3, -0.1, 0.875, 3, 0.1)
+
+[node name="PlaqueProjection" type="MeshInstance3D"]
+material_override = ExtResource("1_7fc57")
+mesh = ExtResource("2_eg2so")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." groups=["managed_light", "managed_light_skip_direction_test"]]
+transform = Transform3D(1, 0, 0, 0, 0.216542, 0.976273, 0, -0.976273, 0.216542, 0.00160336, 4.4339, 1.21375)
+light_energy = 2.0
+distance_fade_enabled = true
+distance_fade_begin = 30.0
+spot_attenuation = 0.5
+spot_angle = 37.73
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_pkvds")
+
+[node name="Title" type="Label3D" parent="." groups=["render_distance"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.756845, 2.1927, 0.101)
+visibility_range_end = 50.0
+visibility_range_end_margin = 3.0
+shaded = true
+double_sided = false
+text = "Projection"
+font = ExtResource("4_7fykc")
+font_size = 55
+outline_size = 0
+horizontal_alignment = 0
+
+[node name="Subtitle" type="Label3D" parent="." groups=["render_distance"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.767118, 1.25751, 0.101)
+visibility_range_end = 40.0
+visibility_range_end_margin = 3.0
+shaded = true
+double_sided = false
+text = "Try here the Full-Tech
+Prototype"
+font = ExtResource("5_ft63e")
+font_size = 20
+outline_size = 0
+horizontal_alignment = 0
+autowrap_mode = 2
+justification_flags = 35
+width = 300.0

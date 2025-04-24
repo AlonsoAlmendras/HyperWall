@@ -70,50 +70,97 @@ visible = false
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_lypat")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.43043)
-visible = false
-
 [node name="Template" type="MeshInstance3D" parent="."]
 mesh = SubResource("QuadMesh_0oohm")
 
-[node name="Label3D2" type="Label3D" parent="Template"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.54223, 0.382893, 0.001)
-pixel_size = 0.0025
+[node name="Title" type="Label3D" parent="Template"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.505, 0.361, 0.03)
+pixel_size = 0.001
 text = "Wildland Fires"
-font_size = 35
+font_size = 125
 
-[node name="Label3D" type="Label3D" parent="Template"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.91354, 0.166, 0.001)
-pixel_size = 0.0025
-text = "Climate change continues to cause longer fire seasons and
-more severe wildfires. NASA's Earth observing satellites and
-its robust network of interagency partners work together to
-hel communities mage the impacts of fire, and reduce
-risks before, during, and agter events."
-font_size = 12
+[node name="Text1" type="Label3D" parent="Template"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.936, 0.208, 0.03)
+pixel_size = 0.0005
+text = "Explore how wildfire locations and spread patterns have
+evolved over time."
+font_size = 65
 outline_size = 3
 horizontal_alignment = 0
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Template"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.527, -0.223893, 0.01)
+[node name="Text2" type="Label3D" parent="Template"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.936, 0.07, 0.03)
+pixel_size = 0.0005
+text = "This section features active fire maps highlighting seasonal
+and annual trends, smoke dispersion forecasts for the next
+days, and Fire Weather Index visualizations."
+font_size = 65
+outline_size = 3
+horizontal_alignment = 0
+
+[node name="Fires1" type="Node3D" parent="Template"]
+
+[node name="Title" type="Label3D" parent="Template/Fires1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.908, -0.068, 0.03)
+pixel_size = 0.001
+text = "WildFires (2000-2013)"
+font_size = 50
+outline_size = 3
+horizontal_alignment = 0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Template/Fires1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.527, -0.28, 0.03)
 material_override = SubResource("StandardMaterial3D_nxng6")
 transparency = 1.0
 mesh = SubResource("QuadMesh_0xijm")
+skeleton = NodePath("../..")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="Template"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.092, -0.0466988, 0.01)
+[node name="Fires2" type="Node3D" parent="Template"]
+
+[node name="Title" type="Label3D" parent="Template/Fires2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.954, 0.376, 0.03)
+pixel_size = 0.001
+text = "WildFires (2023 - Present)"
+font_size = 50
+outline_size = 3
+horizontal_alignment = 0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Template/Fires2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.092, -0.047, 0.03)
 material_override = SubResource("StandardMaterial3D_nfhte")
 mesh = SubResource("QuadMesh_bkw3o")
+skeleton = NodePath("../..")
 
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="Template"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.43, 0.187339, 0.01)
+[node name="Smoke" type="Node3D" parent="Template"]
+
+[node name="Title" type="Label3D" parent="Template/Smoke"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.972, 0.406, 0.03)
+pixel_size = 0.001
+text = "Carbon Monoxide (CO)"
+font_size = 50
+outline_size = 3
+horizontal_alignment = 0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Template/Smoke"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.43, 0.187, 0.03)
 material_override = SubResource("StandardMaterial3D_frcs1")
 mesh = SubResource("QuadMesh_0pyd5")
+skeleton = NodePath("../..")
 
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="Template"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.43, -0.237029, 0.0100021)
+[node name="FireIndex" type="Node3D" parent="Template"]
+
+[node name="Title" type="Label3D" parent="Template/FireIndex"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.958, -0.064, 0.03)
+pixel_size = 0.001
+text = "Fire forecast"
+font_size = 50
+outline_size = 3
+horizontal_alignment = 0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Template/FireIndex"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.43, -0.281, 0.03)
 mesh = SubResource("QuadMesh_mavlv")
+skeleton = NodePath("../..")
 
 [node name="SubViewPorts" type="Node3D" parent="."]
 
@@ -124,7 +171,6 @@ size = Vector2i(1280, 720)
 offset_right = 40.0
 offset_bottom = 40.0
 stream = ExtResource("2_2wdf5")
-autoplay = true
 loop = true
 
 [node name="SubViewport2" type="SubViewport" parent="SubViewPorts"]
@@ -134,7 +180,6 @@ size = Vector2i(4096, 2048)
 offset_right = 40.0
 offset_bottom = 40.0
 stream = ExtResource("3_juqol")
-autoplay = true
 loop = true
 
 [node name="SubViewport3" type="SubViewport" parent="SubViewPorts"]
@@ -144,5 +189,4 @@ size = Vector2i(4096, 2048)
 offset_right = 40.0
 offset_bottom = 40.0
 stream = ExtResource("4_fon80")
-autoplay = true
 loop = true

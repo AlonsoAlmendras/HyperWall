@@ -22,9 +22,9 @@ var carousel_angle: float = 0.0
 
 # List of image paths to be loaded dynamically
 var image_paths: Array = [
-	"res://Materials/DashboardFireExample.png",
-	"res://Materials/DashboardFireExample2.png",
-	"res://Materials/DashboardTemplateComplete.png"
+	"res://DemoVR/TemplateAir.png",
+	"res://DemoVR/TemplateFire.png",
+	"res://DemoVR/TemplateWeather.png"
 ]
 func set_xr_origin(origin: XROrigin3D):
 	right_hand = origin.get_node_or_null("RightHand")  # Ajusta la ruta según tu escena

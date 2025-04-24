@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/button.gd" id="1_1tml8"]
 [ext_resource type="Material" uid="uid://di6byd02jaxgp" path="res://Materials/button_off.tres" id="2_0b6pf"]
 [ext_resource type="PackedScene" uid="uid://cme66uldrjl2i" path="res://addons/godot-xr-tools/interactables/interactable_area_button.tscn" id="2_w42xn"]
-[ext_resource type="AudioStream" uid="uid://dwekp5fmmfa4m" path="res://Materials/Audio/Buton.mp3" id="4_bxms4"]
+[ext_resource type="AudioStream" uid="uid://dwekp5fmmfa4m" path="res://DemoVR/audio/Buton.mp3" id="4_bxms4"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0q8ws"]
 albedo_color = Color(0.252028, 0.252028, 0.252028, 1)
