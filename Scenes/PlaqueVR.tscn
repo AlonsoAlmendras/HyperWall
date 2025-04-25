@@ -60,6 +60,6 @@ justification_flags = 35
 width = 300.0
 
 [node name="Inria" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.374478, 0.506296, 0.225412)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.374, 0.506, 0.11)
 material_override = SubResource("StandardMaterial3D_ipe7c")
 mesh = SubResource("QuadMesh_l6kos")

@@ -1,12 +1,19 @@
-[gd_scene load_steps=6 format=3 uid="uid://djs6r2ngc7i82"]
+[gd_scene load_steps=9 format=3 uid="uid://djs6r2ngc7i82"]
 
 [ext_resource type="Material" uid="uid://bwcbbw6gtxwq" path="res://Assets/textures/red_wall.tres" id="1_7fc57"]
 [ext_resource type="ArrayMesh" uid="uid://dfalfeatlgtod" path="res://Assets/models/lobby_plaque.obj" id="2_eg2so"]
 [ext_resource type="FontFile" uid="uid://brvfr0sedu7gb" path="res://Assets/fonts/NotoSans-Bold.ttf" id="4_7fykc"]
 [ext_resource type="FontFile" uid="uid://q6xb46ncgqie" path="res://Assets/fonts/NotoSans-Light.ttf" id="5_ft63e"]
+[ext_resource type="Texture2D" uid="uid://c02gq8osrgede" path="res://Assets/InriaLogo.jpg" id="5_ihlrt"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_pkvds"]
 points = PackedVector3Array(-0.875, 0, -0.1, -0.875, 0, 0.1, -0.875, 3, -0.1, 0.875, 0, -0.1, 0.875, 0, 0.1, -0.875, 3, 0.1, 0.875, 3, -0.1, 0.875, 3, 0.1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ig4wx"]
+albedo_texture = ExtResource("5_ihlrt")
+
+[sub_resource type="QuadMesh" id="QuadMesh_u4023"]
+size = Vector2(0.8, 0.2)
 
 [node name="PlaqueProjection" type="MeshInstance3D"]
 material_override = ExtResource("1_7fc57")
@@ -52,3 +59,8 @@ horizontal_alignment = 0
 autowrap_mode = 2
 justification_flags = 35
 width = 300.0
+
+[node name="Inria" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.374, 0.506, 0.11)
+material_override = SubResource("StandardMaterial3D_ig4wx")
+mesh = SubResource("QuadMesh_u4023")

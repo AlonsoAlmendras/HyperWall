@@ -7,6 +7,9 @@ var ActualStage     #Track the value of the actual stage
 var StageChange     #True when ActualStage just change his value
 var ActualDashboard
 
+
+@export var xr_origin: XROrigin3D
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	xr_interface = XRServer.find_interface("OpenXR")
@@ -20,6 +23,10 @@ func _ready() -> void:
 		print("OpenXR not initialialised, headset prbably desconnected")
 		
 	print("Posición global del XROrigin3D: ", global_transform.origin)
+	
+	#Tell the carousel wich user to use
+	$CarouselRoot/CarouselContainer.set_xr_origin(xr_origin)
+	
 	ActualStage = "None"
 	$Phases/Introduction/ShiningText/Rotation.play("Rotation")
 	$Phases/Orientation/ShiningText2/Rotation.play("Rotation")
@@ -67,6 +74,7 @@ func IntroductionIn(_body) -> void:
 	ActualStage = "Intro"
 	StageChange = true
 	$Phases/Introduction/AnimationPlayer.play("Intro")
+	$Phases/Introduction/InvisibleWall
 
 func IntroductionOut(_body) -> void:
 	print("FASE 2 Out")
@@ -85,6 +93,34 @@ func OrientationIn(_body) -> void:
 	print("Phase3")
 	$Phases/Orientation/ShiningText2.visible = false
 	$Phases/Orientation/AnimationPlayer.play("Overview")
+	await get_tree().create_timer(14.9).timeout
+	print("PRIMEEER AIR")
+	$Room/WallFront/HyperWallAir/SubViewPorts/SubViewport/VideoStreamPlayer.paused = false
+	$Room/WallFront/HyperWallAir/SubViewPorts/SubViewport2/VideoStreamPlayer.paused = false
+	$Room/WallFront/HyperWallAir/SubViewPorts/SubViewport3/VideoStreamPlayer.paused = false
+	$Room/WallFront/HyperWallAir/SubViewPorts/SubViewport4/VideoStreamPlayer.paused = false
+	await get_tree().create_timer(10.9).timeout
+	print("SEGUNDO FIRE")
+	$Room/WallFront/HyperWallFire/SubViewPorts/SubViewport/VideoStreamPlayer.paused = false
+	$Room/WallFront/HyperWallFire/SubViewPorts/SubViewport2/VideoStreamPlayer.paused = false
+	$Room/WallFront/HyperWallFire/SubViewPorts/SubViewport3/VideoStreamPlayer.paused = false
+	
+	#Stop previous Videos
+	$Room/WallFront/HyperWallAir/SubViewPorts/SubViewport/VideoStreamPlayer.paused = true
+	$Room/WallFront/HyperWallAir/SubViewPorts/SubViewport2/VideoStreamPlayer.paused = true
+	$Room/WallFront/HyperWallAir/SubViewPorts/SubViewport3/VideoStreamPlayer.paused = true
+	$Room/WallFront/HyperWallAir/SubViewPorts/SubViewport4/VideoStreamPlayer.paused = true
+	
+	await get_tree().create_timer(17.2).timeout
+	$Room/WallFront/HyperWallWeather/SubViewPorts/SubViewport/VideoStreamPlayer.paused = false
+	$Room/WallFront/HyperWallWeather/SubViewPorts/SubViewport2/VideoStreamPlayer.paused = false
+	$Room/WallFront/HyperWallWeather/SubViewPorts/SubViewport3/VideoStreamPlayer.paused = false
+	
+	#Stop previous Videos
+	$Room/WallFront/HyperWallFire/SubViewPorts/SubViewport/VideoStreamPlayer.paused = true
+	$Room/WallFront/HyperWallFire/SubViewPorts/SubViewport2/VideoStreamPlayer.paused = true
+	$Room/WallFront/HyperWallFire/SubViewPorts/SubViewport3/VideoStreamPlayer.paused = true
+	
 	
 	
 
@@ -96,15 +132,24 @@ func OrientationOut(_body) -> void:
 
 
 func ExplainIn(_body) -> void:
-	ActualStage = "Explain"
-	$Phases/Explain/StandHere.visisble = false
-	
+	ActualStage = "Explain"	
 	if ActualDashboard == "Air":
 		$Room/WallFront/HyperWallAir/Dashboard/Background/Video2/MeshInstance3D2/US.visible = true
 		$Room/WallFront/HyperWallAir/Dashboard/Background/Video2/MeshInstance3D2/Asia.visible = true
 		$Room/WallFront/HyperWallAir/Dashboard/Background/Video2/MeshInstance3D2/SouthAmerica.visible = true
 		
-
+	#Restart Videos position
+	$Room/WallFront/HyperWallAir/SubViewPorts/SubViewport/VideoStreamPlayer.stream_position = 0
+	$Room/WallFront/HyperWallAir/SubViewPorts/SubViewport2/VideoStreamPlayer.stream_position = 0
+	$Room/WallFront/HyperWallAir/SubViewPorts/SubViewport3/VideoStreamPlayer.stream_position = 0
+	$Room/WallFront/HyperWallAir/SubViewPorts/SubViewport4/VideoStreamPlayer.stream_position = 0
+	$Room/WallFront/HyperWallWeather/SubViewPorts/SubViewport/VideoStreamPlayer.stream_position = 0
+	$Room/WallFront/HyperWallWeather/SubViewPorts/SubViewport2/VideoStreamPlayer.stream_position = 0
+	$Room/WallFront/HyperWallWeather/SubViewPorts/SubViewport3/VideoStreamPlayer.stream_position = 0
+	$Room/WallFront/HyperWallFire/SubViewPorts/SubViewport/VideoStreamPlayer.stream_position = 0
+	$Room/WallFront/HyperWallFire/SubViewPorts/SubViewport2/VideoStreamPlayer.stream_position = 0
+	$Room/WallFront/HyperWallFire/SubViewPorts/SubViewport3/VideoStreamPlayer.stream_position = 0
+	
 func ExplainOut(_body) -> void:
 	pass
 
@@ -115,11 +160,34 @@ func ExploreLeftIn(_body) -> void:
 		$Room/WallFront/HyperWallAir/Audios/Middle/SouthAmerica.stop()
 		$Room/WallFront/HyperWallAir/Audios/Middle/Asia.stop()		
 		$Room/WallFront/HyperWallAir/Audios/Middle/US.stop()
+		
 	
 func ExploreLeftOut(_body) -> void:
 	$Room/WallFront/HyperWallAir/Animation.stop()
 	$Room/WallFront/HyperWallAir/Animation.seek(0)
 	
+
+
+func ExploreMiddleIn(body: Node3D) -> void:
+	pass # Replace with function body.
+
+
+
+func ExploreMiddleOut(body: Node3D) -> void:
+	pass # Replace with function body.
+
+
+func ExploreRightIn(body: Node3D) -> void:
+	pass # Replace with function body.
+
+
+func ExploreRightOut(body: Node3D) -> void:
+	pass # Replace with function body.
+
+
+
+
+
 
 func carousel_image_change(image_id: Variant) -> void:
 	if $CarouselRoot.visible == true:

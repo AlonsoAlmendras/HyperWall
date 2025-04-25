@@ -1,8 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://c55din6ihs07i"]
+[gd_scene load_steps=7 format=3 uid="uid://c55din6ihs07i"]
 
 [ext_resource type="ArrayMesh" uid="uid://gjymylshj4jf" path="res://Assets/models/sign.obj" id="1_rp4sm"]
 [ext_resource type="Material" uid="uid://me7rtp53de2k" path="res://Assets/textures/black.tres" id="2_2bof8"]
 [ext_resource type="Material" uid="uid://bm6ehx61ibtab" path="res://Assets/textures/sign.tres" id="3_0shm2"]
+[ext_resource type="Texture2D" uid="uid://c02gq8osrgede" path="res://Assets/InriaLogo.jpg" id="4_3ao67"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ah8bf"]
+albedo_texture = ExtResource("4_3ao67")
+
+[sub_resource type="QuadMesh" id="QuadMesh_5f1bs"]
+material = SubResource("StandardMaterial3D_ah8bf")
+size = Vector2(0.4, 0.1)
 
 [node name="Sign" type="Node3D"]
 
@@ -12,16 +20,22 @@ surface_material_override/0 = ExtResource("2_2bof8")
 surface_material_override/1 = ExtResource("3_0shm2")
 
 [node name="Text" type="Label3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.975149, 0.221548, 0, -0.221548, 0.975149, 0, 1.66, 0.009)
+transform = Transform3D(1, 0, 0, 0, 0.975149, 0.221548, 0, -0.221548, 0.975149, 0, 1.63659, 0.0142232)
 pixel_size = 0.002
 modulate = Color(0, 0, 0, 1)
-text = "Hello"
+text = "Welcome to
+
+Nasa's
+HyperWall"
 outline_size = 0
 
 [node name="Label3D2" type="Label3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.975149, 0.221548, 0, -0.221548, 0.975149, 0, 1.35972, 0.078)
 pixel_size = 0.002
 modulate = Color(0, 0, 0, 1)
-text = "←"
 font_size = 165
 outline_size = 6
+
+[node name="Logo" type="MeshInstance3D" parent="Label3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 2.98023e-08, 0, -2.98023e-08, 1, 0, -0.0468864, -0.000695705)
+mesh = SubResource("QuadMesh_5f1bs")

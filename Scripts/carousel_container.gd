@@ -36,7 +36,10 @@ func _ready():
 	position_images()
 
 func _process(delta):
-	if right_hand.is_button_pressed("trigger_click"):
+	if right_hand.is_button_pressed("trigger_click") \
+	or right_hand.is_button_pressed("grip_click") \
+	or right_hand.is_button_pressed("ax_button") \
+	or right_hand.is_button_pressed("by_button"):
 		if not is_trigger_held:  # Execute only the first time the button is pressed
 			is_trigger_held = true
 			if is_grabbed:

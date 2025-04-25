@@ -8,7 +8,8 @@ func _ready() -> void:
 	get_viewport().use_xr = true
 	
 	# Give XROrigin3D to CarouselContainer
-	$CarouselContainer.set_xr_origin(xr_origin)
+	print(xr_origin)
+	#$CarouselContainer.set_xr_origin(xr_origin)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

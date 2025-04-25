@@ -1,11 +1,19 @@
-[gd_scene load_steps=5 format=3 uid="uid://d4ndimcjk1xlb"]
+[gd_scene load_steps=8 format=3 uid="uid://d4ndimcjk1xlb"]
 
 [ext_resource type="ArrayMesh" uid="uid://ckd1r4li80v78" path="res://Assets/models/sign_wide.obj" id="1_sub2a"]
 [ext_resource type="Texture2D" uid="uid://6s001c6me5bj" path="res://Assets/textures/sign.png" id="2_40deo"]
 [ext_resource type="Material" uid="uid://me7rtp53de2k" path="res://Assets/textures/black.tres" id="3_skr33"]
+[ext_resource type="Texture2D" uid="uid://c02gq8osrgede" path="res://Assets/InriaLogo.jpg" id="4_amufe"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7hira"]
 albedo_texture = ExtResource("2_40deo")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ah8bf"]
+albedo_texture = ExtResource("4_amufe")
+
+[sub_resource type="QuadMesh" id="QuadMesh_bv5xc"]
+material = SubResource("StandardMaterial3D_ah8bf")
+size = Vector2(0.4, 0.1)
 
 [node name="Node3D" type="Node3D"]
 
@@ -14,10 +22,24 @@ mesh = ExtResource("1_sub2a")
 surface_material_override/0 = SubResource("StandardMaterial3D_7hira")
 surface_material_override/1 = ExtResource("3_skr33")
 
-[node name="Text" type="Label3D" parent="MeshInstance3D"]
-transform = Transform3D(1, 0, 0, 0, 0.975149, 0.221548, 0, -0.221548, 0.975149, 0, 1.07645, 0.031006)
-pixel_size = 0.002
+[node name="Content" type="Node3D" parent="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 0.975149, 0.221548, 0, -0.221548, 0.975149, 0, 1.076, 0.031)
+
+[node name="Text" type="Label3D" parent="MeshInstance3D/Content"]
+transform = Transform3D(1, 0, 0, 0, 1, -7.45058e-08, 0, 7.45058e-08, 1, -0.656503, -0.0272059, 0.00198668)
+pixel_size = 0.001
 modulate = Color(0, 0, 0, 1)
-text = "This dashboard show WildFires
-"
+text = "NASA’s Wildfires dashboard uses satellites to show
+where fires are burning around the world on a live map.
+
+Colorful dots mark each hotspot and its intensity,
+helping everyone—from firefighters to families—
+see real-time fire activity, stay safe, and protect our
+forests and communities."
+font_size = 50
 outline_size = 0
+horizontal_alignment = 0
+
+[node name="Logo" type="MeshInstance3D" parent="MeshInstance3D/Content"]
+transform = Transform3D(1, 0, 0, 0, 1, -4.47035e-08, 0, 4.47035e-08, 1, 0.48213, -0.281539, 0.000467658)
+mesh = SubResource("QuadMesh_bv5xc")

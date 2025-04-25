@@ -52,7 +52,6 @@ func _ready() -> void:
 	#$Room/WallFront/MeshInstance3D/Dashboard/Left/Fires2.texture = static_texture
 	#$Room/WallFront/MeshInstance3D/Dashboard/Middle/Weather3/SubViewport/VideoStreamPlayer.stop()
 	
-	$Node3D/Man/AnimationPlayer.play("ManAnimation/Walk")
 	
 	
 func _process(delta: float) -> void:

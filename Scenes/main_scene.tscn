@@ -1,6 +1,7 @@
-[gd_scene load_steps=18 format=3 uid="uid://fih8ffweyh3y"]
+[gd_scene load_steps=21 format=3 uid="uid://fih8ffweyh3y"]
 
 [ext_resource type="PackedScene" uid="uid://p0rqj36w3w10" path="res://Scenes/DemoVR.tscn" id="1_qvdh4"]
+[ext_resource type="Script" path="res://Scenes/main_scene.gd" id="1_tjcyn"]
 [ext_resource type="PackedScene" uid="uid://mnqhir54em6u" path="res://Scenes/DemoProjections.tscn" id="2_m0gu0"]
 [ext_resource type="PackedScene" uid="uid://dh568b4j8nfvq" path="res://Scenes/DemoStatic.tscn" id="3_usufw"]
 [ext_resource type="Material" uid="uid://ymekg2f8n1vn" path="res://Assets/textures/ceiling.tres" id="4_0vk35"]
@@ -10,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://bccxo2v0dul4e" path="res://Scenes/PlaqueVR.tscn" id="8_ikg6i"]
 [ext_resource type="PackedScene" uid="uid://b4trm4nxtf83u" path="res://Scenes/PlaqueStatic.tscn" id="9_v388l"]
 [ext_resource type="PackedScene" uid="uid://djs6r2ngc7i82" path="res://Scenes/PlaqueProjection.tscn" id="10_61i0c"]
+[ext_resource type="PackedScene" uid="uid://cjntk5c7e4mc0" path="res://Scenes/man_character.tscn" id="11_x1pjf"]
+[ext_resource type="PackedScene" uid="uid://chjxei1mtldmu" path="res://Scenes/woman.tscn" id="12_lcgrx"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_8cbx4"]
 material = ExtResource("4_0vk35")
@@ -37,22 +40,23 @@ size = Vector3(0.1, 6, 20)
 data = PackedVector3Array(-0.05, 3, 10, 0.05, 3, 10, -0.05, -3, 10, 0.05, 3, 10, 0.05, -3, 10, -0.05, -3, 10, 0.05, 3, -10, -0.05, 3, -10, 0.05, -3, -10, -0.05, 3, -10, -0.05, -3, -10, 0.05, -3, -10, 0.05, 3, 10, 0.05, 3, -10, 0.05, -3, 10, 0.05, 3, -10, 0.05, -3, -10, 0.05, -3, 10, -0.05, 3, -10, -0.05, 3, 10, -0.05, -3, -10, -0.05, 3, 10, -0.05, -3, 10, -0.05, -3, -10, 0.05, 3, 10, -0.05, 3, 10, 0.05, 3, -10, -0.05, 3, 10, -0.05, 3, -10, 0.05, 3, -10, -0.05, -3, 10, 0.05, -3, 10, -0.05, -3, -10, 0.05, -3, 10, 0.05, -3, -10, -0.05, -3, -10)
 
 [node name="MainScene" type="Node3D"]
+script = ExtResource("1_tjcyn")
 
 [node name="XROrigin3D" parent="." instance=ExtResource("7_h37i1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.2776)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7.25378, 0, 0)
 
-[node name="DemoVR" parent="." instance=ExtResource("1_qvdh4")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -30, 0, 0)
+[node name="DemoVR" parent="." node_paths=PackedStringArray("xr_origin") instance=ExtResource("1_qvdh4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -24.2)
+xr_origin = NodePath("../XROrigin3D")
 
 [node name="DemoProjections" parent="." instance=ExtResource("2_m0gu0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -30)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -30, 0, 0)
 
 [node name="DemoStatic" parent="." instance=ExtResource("3_usufw")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 30, 0, 0)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 27.5)
 
 [node name="Roof" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.5, 0)
-visible = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Roof"]
 mesh = SubResource("BoxMesh_8cbx4")
@@ -67,21 +71,30 @@ mesh = SubResource("QuadMesh_j2chm")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
 shape = SubResource("ConcavePolygonShape3D_cni8m")
 
-[node name="WallLeft" type="StaticBody3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 2.5, 10)
+[node name="Wall" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 2.5, 0)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="WallLeft"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Wall"]
 material_override = ExtResource("6_4lkp4")
 mesh = SubResource("BoxMesh_naebr")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="WallLeft"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall"]
 shape = SubResource("ConcavePolygonShape3D_jtsxq")
 
 [node name="PlaqueProjection" parent="." instance=ExtResource("10_61i0c")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, -0.5, -8)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8, -0.5, 5)
 
 [node name="PlaqueStatic" parent="." instance=ExtResource("9_v388l")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 8, -0.5, -5)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 5, -0.5, 8)
 
 [node name="PlaqueVR" parent="." instance=ExtResource("8_ikg6i")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8, -0.5, 5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, -0.5, -8)
+
+[node name="Characters" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.40023, -0.5, -10.6308)
+
+[node name="Man" parent="Characters" instance=ExtResource("11_x1pjf")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1.5, 0, 5.43347)
+
+[node name="Woman" parent="Characters" instance=ExtResource("12_lcgrx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.60796, 0, 20.6384)

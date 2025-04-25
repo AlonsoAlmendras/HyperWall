@@ -1,7 +1,6 @@
-[gd_scene load_steps=88 format=3 uid="uid://p0rqj36w3w10"]
+[gd_scene load_steps=75 format=3 uid="uid://p0rqj36w3w10"]
 
-[ext_resource type="Script" path="res://Scripts/demo_vr.gd" id="1_awelo"]
-[ext_resource type="PackedScene" uid="uid://1cglsstr7xwf" path="res://Scenes/xr_origin_3d.tscn" id="2_cjyj1"]
+[ext_resource type="Script" path="res://Scripts/demoVR.gd" id="1_awelo"]
 [ext_resource type="PackedScene" uid="uid://d4eurqowkikdd" path="res://Scenes/HyperWallFire.tscn" id="2_mpuv3"]
 [ext_resource type="Material" uid="uid://x8q20urpssf8" path="res://Assets/textures/flat_white.tres" id="3_oxx36"]
 [ext_resource type="PackedScene" uid="uid://b04mc3elohq87" path="res://Scenes/HyperWallAirQuality.tscn" id="4_dtc2x"]
@@ -20,9 +19,7 @@
 [ext_resource type="AudioStream" uid="uid://c5fq6j2gtnckx" path="res://DemoVR/audio/Attention1.mp3" id="12_uucn2"]
 [ext_resource type="AudioStream" uid="uid://bplh2dq7olg8x" path="res://DemoVR/audio/Attention2.mp3" id="13_fs47h"]
 [ext_resource type="AudioStream" uid="uid://ci4b6jame74ay" path="res://DemoVR/audio/SelectInstructions.mp3" id="14_7v2sb"]
-[ext_resource type="VideoStream" path="res://videos/Air/RedCO.ogv" id="15_0w8fv"]
 [ext_resource type="AudioStream" uid="uid://cg53yecvtkvhy" path="res://DemoVR/audio/MoveFurther.mp3" id="15_e0khf"]
-[ext_resource type="VideoStream" path="res://videos/Air/PurpleO3.ogv" id="16_8bunb"]
 [ext_resource type="AudioStream" uid="uid://80tm10x063ci" path="res://DemoVR/audio/SelectTopic.mp3" id="22_288cj"]
 [ext_resource type="PackedScene" uid="uid://bmh8ra2indctv" path="res://Scenes/globe.tscn" id="23_knptf"]
 [ext_resource type="PackedScene" uid="uid://ba1s3cmbt8idk" path="res://Scenes/items/SmallPlanter.tscn" id="25_43p5x"]
@@ -73,19 +70,19 @@ orientation = 0
 
 [sub_resource type="BoxMesh" id="BoxMesh_3w8l1"]
 material = SubResource("StandardMaterial3D_cwsd6")
-size = Vector3(0.1, 6, 20)
+size = Vector3(0.1, 6, 15)
 
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_iseb0"]
-data = PackedVector3Array(-0.05, 3, 10, 0.05, 3, 10, -0.05, -3, 10, 0.05, 3, 10, 0.05, -3, 10, -0.05, -3, 10, 0.05, 3, -10, -0.05, 3, -10, 0.05, -3, -10, -0.05, 3, -10, -0.05, -3, -10, 0.05, -3, -10, 0.05, 3, 10, 0.05, 3, -10, 0.05, -3, 10, 0.05, 3, -10, 0.05, -3, -10, 0.05, -3, 10, -0.05, 3, -10, -0.05, 3, 10, -0.05, -3, -10, -0.05, 3, 10, -0.05, -3, 10, -0.05, -3, -10, 0.05, 3, 10, -0.05, 3, 10, 0.05, 3, -10, -0.05, 3, 10, -0.05, 3, -10, 0.05, 3, -10, -0.05, -3, 10, 0.05, -3, 10, -0.05, -3, -10, 0.05, -3, 10, 0.05, -3, -10, -0.05, -3, -10)
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_104ji"]
+data = PackedVector3Array(-0.05, 3, 7.5, 0.05, 3, 7.5, -0.05, -3, 7.5, 0.05, 3, 7.5, 0.05, -3, 7.5, -0.05, -3, 7.5, 0.05, 3, -7.5, -0.05, 3, -7.5, 0.05, -3, -7.5, -0.05, 3, -7.5, -0.05, -3, -7.5, 0.05, -3, -7.5, 0.05, 3, 7.5, 0.05, 3, -7.5, 0.05, -3, 7.5, 0.05, 3, -7.5, 0.05, -3, -7.5, 0.05, -3, 7.5, -0.05, 3, -7.5, -0.05, 3, 7.5, -0.05, -3, -7.5, -0.05, 3, 7.5, -0.05, -3, 7.5, -0.05, -3, -7.5, 0.05, 3, 7.5, -0.05, 3, 7.5, 0.05, 3, -7.5, -0.05, 3, 7.5, -0.05, 3, -7.5, 0.05, 3, -7.5, -0.05, -3, 7.5, 0.05, -3, 7.5, -0.05, -3, -7.5, 0.05, -3, 7.5, 0.05, -3, -7.5, -0.05, -3, -7.5)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xj443"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_qqruj"]
 material = SubResource("StandardMaterial3D_xj443")
-size = Vector3(0.1, 6, 20)
+size = Vector3(0.1, 6, 15)
 
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_fgudu"]
-data = PackedVector3Array(-0.05, 3, 10, 0.05, 3, 10, -0.05, -3, 10, 0.05, 3, 10, 0.05, -3, 10, -0.05, -3, 10, 0.05, 3, -10, -0.05, 3, -10, 0.05, -3, -10, -0.05, 3, -10, -0.05, -3, -10, 0.05, -3, -10, 0.05, 3, 10, 0.05, 3, -10, 0.05, -3, 10, 0.05, 3, -10, 0.05, -3, -10, 0.05, -3, 10, -0.05, 3, -10, -0.05, 3, 10, -0.05, -3, -10, -0.05, 3, 10, -0.05, -3, 10, -0.05, -3, -10, 0.05, 3, 10, -0.05, 3, 10, 0.05, 3, -10, -0.05, 3, 10, -0.05, 3, -10, 0.05, 3, -10, -0.05, -3, 10, 0.05, -3, 10, -0.05, -3, -10, 0.05, -3, 10, 0.05, -3, -10, -0.05, -3, -10)
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_55ctm"]
+data = PackedVector3Array(-0.05, 3, 7.5, 0.05, 3, 7.5, -0.05, -3, 7.5, 0.05, 3, 7.5, 0.05, -3, 7.5, -0.05, -3, 7.5, 0.05, 3, -7.5, -0.05, 3, -7.5, 0.05, -3, -7.5, -0.05, 3, -7.5, -0.05, -3, -7.5, 0.05, -3, -7.5, 0.05, 3, 7.5, 0.05, 3, -7.5, 0.05, -3, 7.5, 0.05, 3, -7.5, 0.05, -3, -7.5, 0.05, -3, 7.5, -0.05, 3, -7.5, -0.05, 3, 7.5, -0.05, -3, -7.5, -0.05, 3, 7.5, -0.05, -3, 7.5, -0.05, -3, -7.5, 0.05, 3, 7.5, -0.05, 3, 7.5, 0.05, 3, -7.5, -0.05, 3, 7.5, -0.05, 3, -7.5, 0.05, 3, -7.5, -0.05, -3, 7.5, 0.05, -3, 7.5, -0.05, -3, -7.5, 0.05, -3, 7.5, 0.05, -3, -7.5, -0.05, -3, -7.5)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_1oqi5"]
 bounce = 0.5
@@ -93,7 +90,7 @@ absorbent = true
 
 [sub_resource type="QuadMesh" id="QuadMesh_wiqfc"]
 material = ExtResource("6_ckvqu")
-size = Vector2(20, 20)
+size = Vector2(20, 15)
 orientation = 1
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_ghucw"]
@@ -101,10 +98,10 @@ data = PackedVector3Array(10, 0, 10, -10, 0, 10, 10, 0, -10, -10, 0, 10, -10, 0,
 
 [sub_resource type="BoxMesh" id="BoxMesh_fm4me"]
 material = ExtResource("7_nggh3")
-size = Vector3(20, 0.1, 20)
+size = Vector3(15, 0.1, 20)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xhhks"]
-size = Vector3(1.75, 2, 9)
+size = Vector3(1.75, 2, 2)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_klv1v"]
 albedo_color = Color(1, 0.843137, 0, 1)
@@ -116,9 +113,6 @@ emission = Color(1, 0.996078, 1, 1)
 material = SubResource("StandardMaterial3D_klv1v")
 text = "Stand Here"
 font_size = 35
-
-[sub_resource type="Animation" id="Animation_jqo36"]
-length = 0.001
 
 [sub_resource type="Animation" id="Animation_dk5gg"]
 resource_name = "Rotation"
@@ -137,10 +131,13 @@ tracks/0/keys = {
 "values": [Vector3(0, -0.523599, 0), Vector3(0, 0.523599, 0), Vector3(0, -0.523599, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_jqo36"]
+length = 0.001
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_v1wa5"]
 _data = {
-&"RESET": SubResource("Animation_jqo36"),
-&"Rotation": SubResource("Animation_dk5gg")
+&"Rotation": SubResource("Animation_dk5gg"),
+&"RESET": SubResource("Animation_jqo36")
 }
 
 [sub_resource type="Curve3D" id="Curve3D_okif6"]
@@ -157,6 +154,154 @@ albedo_color = Color(1, 1, 0, 1)
 material = SubResource("StandardMaterial3D_q4gem")
 size = Vector2(0.2, 0.4)
 orientation = 1
+
+[sub_resource type="Animation" id="Animation_h045v"]
+resource_name = "Intro"
+length = 19.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Welcome:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../Room/WallFront/Intro/Welcome:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1, 3.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Satelites:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 4.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../../Room/WallFront/Intro/NasaSatelites:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 3.6, 8.7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../../Room/WallFront/Intro/NasaSatelites/Video/SubViewport/VideoStreamPlayer:paused")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 3.6, 8.7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("PlanetaryChanges:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 9.76667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../../Room/WallFront/Intro/DataCollected:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 8.7, 14.7333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../../Room/WallFront/Intro/DataCollected/Sketchfab_Scene:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(8.76667, 15.0333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.5, 0, -2), Vector3(9, 0, -1)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../../Room/WallFront/Intro/DataCollected/Sketchfab_Scene:rotation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(8.46667, 15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.18675, -1.39626, 2.76111), Vector3(-0.18675, 3.49066, 2.76111)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("MoveFurther:playing")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 15.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Path3D:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 14.8667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("../Orientation/ShiningText2:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(14.9333),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_56s5b"]
 length = 0.001
@@ -305,12 +450,22 @@ tracks/11/keys = {
 "values": [false]
 }
 
-[sub_resource type="Animation" id="Animation_h045v"]
-resource_name = "Intro"
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_atncu"]
+_data = {
+&"Intro": SubResource("Animation_h045v"),
+&"RESET": SubResource("Animation_56s5b")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_32h1a"]
+size = Vector3(1.75, 2, 2)
+
+[sub_resource type="Animation" id="Animation_23n36"]
+resource_name = "Overview"
+length = 70.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Welcome:playing")
+tracks/0/path = NodePath("Audio/OverviewIntro:playing")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -322,59 +477,59 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../../Room/WallFront/Intro/Welcome:visible")
+tracks/1/path = NodePath("Audio/OverviewAir:playing")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.1, 3.6),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Satelites:playing")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 4.2),
+"times": PackedFloat32Array(0, 14.6),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../Room/WallFront/HyperWallAir:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 6.26667, 7, 14.9, 25.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [false, true, false, true, false]
+}
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("../../Room/WallFront/Intro/NasaSatelites:visible")
+tracks/3/path = NodePath("Audio/OverviewFire:playing")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 3.6, 8.7),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 26.6667),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [false, true, false]
+"values": [false, true]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("../../Room/WallFront/Intro/NasaSatelites/Video/SubViewport/VideoStreamPlayer:paused")
+tracks/4/path = NodePath("../../Room/WallFront/HyperWallFire:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 3.6, 8.7),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 7, 8.8, 25.8, 43),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
-"values": [true, false, true]
+"values": [false, true, false, true, false]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("PlanetaryChanges:playing")
+tracks/5/path = NodePath("Audio/OverviewWeather:playing")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 9.76667),
+"times": PackedFloat32Array(0, 44.4),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
@@ -382,84 +537,63 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("../../Room/WallFront/Intro/DataCollected:visible")
+tracks/6/path = NodePath("../../Room/WallFront/HyperWallWeather:visible")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0, 8.7, 14.7333),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 8.8, 10.5, 43, 59.2667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
-"values": [false, true, false]
+"values": [false, true, false, true, false]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("../../Room/WallFront/Intro/DataCollected/Sketchfab_Scene:position")
+tracks/7/path = NodePath("Audio/SelectInstructions:playing")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(8.76667, 15.0333),
+"times": PackedFloat32Array(0, 60),
 "transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(-0.5, 0, -2), Vector3(9, 0, -1)]
+"update": 1,
+"values": [false, true]
 }
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("../../Room/WallFront/Intro/DataCollected/Sketchfab_Scene:rotation")
+tracks/8/path = NodePath("../../CarouselRoot:visible")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(8.46667, 15),
+"times": PackedFloat32Array(0, 59.4),
 "transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(-0.18675, -1.39626, 2.76111), Vector3(-0.18675, 3.49066, 2.76111)]
+"update": 1,
+"values": [false, true]
 }
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("MoveFurther:playing")
+tracks/9/path = NodePath("Audio/SelectTopic:playing")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
-"times": PackedFloat32Array(0, 15.4),
+"times": PackedFloat32Array(0, 65.8333),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
 }
 tracks/10/type = "value"
 tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("Path3D:visible")
+tracks/10/enabled = false
+tracks/10/path = NodePath("../Explain/StandHere:visible")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
-"times": PackedFloat32Array(0, 14.8667),
+"times": PackedFloat32Array(0, 66.0667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
 }
-tracks/11/type = "value"
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/path = NodePath("../Orientation/ShiningText2:visible")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/keys = {
-"times": PackedFloat32Array(14.9333),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_atncu"]
-_data = {
-&"RESET": SubResource("Animation_56s5b"),
-&"Intro": SubResource("Animation_h045v")
-}
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_32h1a"]
-size = Vector3(1.75, 2, 9)
 
 [sub_resource type="Animation" id="Animation_5xvi5"]
 length = 0.001
@@ -596,150 +730,14 @@ tracks/10/keys = {
 "values": [false]
 }
 
-[sub_resource type="Animation" id="Animation_23n36"]
-resource_name = "Overview"
-length = 70.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Audio/OverviewIntro:playing")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Audio/OverviewAir:playing")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 14.6),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../../Room/WallFront/HyperWallAir:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 6.26667, 7, 14.9, 25.8),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 1,
-"values": [false, true, false, true, false]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Audio/OverviewFire:playing")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 26.6667),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("../../Room/WallFront/HyperWallFire:visible")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 7, 8.8, 25.8, 43),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 1,
-"values": [false, true, false, true, false]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Audio/OverviewWeather:playing")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 44.4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("../../Room/WallFront/HyperWallWeather:visible")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0, 8.8, 10.5, 43, 59.2667),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 1,
-"values": [false, true, false, true, false]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("Audio/SelectInstructions:playing")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0, 60),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("../../CarouselRoot:visible")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(0, 59.4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("Audio/SelectTopic:playing")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"times": PackedFloat32Array(0, 65.8333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/10/type = "value"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("../Explain/StandHere:visible")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
-"times": PackedFloat32Array(0, 66.0667),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_m4qds"]
 _data = {
-&"RESET": SubResource("Animation_5xvi5"),
-&"Overview": SubResource("Animation_23n36")
+&"Overview": SubResource("Animation_23n36"),
+&"RESET": SubResource("Animation_5xvi5")
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_g4l06"]
-size = Vector3(1.75, 2, 9)
+size = Vector3(1.75, 2, 2)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ml3so"]
 size = Vector3(1.75, 2, 1)
@@ -762,76 +760,6 @@ size = Vector3(1.75, 2, 1)
 material = SubResource("StandardMaterial3D_b4de6")
 size = Vector2(2.5, 1)
 
-[sub_resource type="GDScript" id="GDScript_ryolw"]
-script/source = "extends Node3D
-
-# Variables de referencia
-var right_hand: XRController3D
-var left_hand: XRController3D
-@export var rotation_speed: float = 3.0  # Velocidad de rotación ajustable
-
-func _ready():
-	# Obtener la referencia al controlador derecho
-	var xr_origin = get_node(\"../XROrigin3D\")  # Asumiendo que XROrigin3D es hermano en la escena
-	if xr_origin:
-		right_hand = xr_origin.get_node(\"RightHand\")
-		left_hand = xr_origin.get_node(\"LeftHand\")
-
-func _process(delta):
-	# Verificar si el botón está presionado y rotar el mesh
-	if right_hand.is_button_pressed(\"ax_button\"):
-		$MeshInstance3D.rotate_y(rotation_speed * delta)
-	
-	if left_hand.is_button_pressed(\"ax_button\"):
-		$MeshInstance3D.rotate_y(-rotation_speed * delta)
-"
-
-[sub_resource type="ViewportTexture" id="ViewportTexture_s5iu7"]
-viewport_path = NodePath("SphereVideo/SubViewport")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_02bpg"]
-resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_s5iu7")
-
-[sub_resource type="SphereMesh" id="SphereMesh_cigej"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_l0cfe"]
-
-[sub_resource type="GDScript" id="GDScript_tvr7u"]
-script/source = "extends Node3D
-
-# Variables de referencia
-var right_hand: XRController3D
-var left_hand: XRController3D
-@export var rotation_speed: float = 3.0  # Velocidad de rotación ajustable
-
-func _ready():
-	# Obtener la referencia al controlador derecho
-	var xr_origin = get_node(\"../XROrigin3D\")  # Asumiendo que XROrigin3D es hermano en la escena
-	if xr_origin:
-		right_hand = xr_origin.get_node(\"RightHand\")
-		left_hand = xr_origin.get_node(\"LeftHand\")
-
-func _process(delta):
-	# Verificar si el botón está presionado y rotar el mesh
-	if right_hand.is_button_pressed(\"ax_button\"):
-		$MeshInstance3D.rotate_y(rotation_speed * delta)
-	
-	if left_hand.is_button_pressed(\"ax_button\"):
-		$MeshInstance3D.rotate_y(-rotation_speed * delta)
-"
-
-[sub_resource type="ViewportTexture" id="ViewportTexture_lnnao"]
-viewport_path = NodePath("SphereVideo2/SubViewport")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4b6r4"]
-resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_lnnao")
-
-[sub_resource type="SphereMesh" id="SphereMesh_urxem"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_o6rvf"]
-
 [sub_resource type="Curve3D" id="Curve3D_70s00"]
 _data = {
 "points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -0.0482693, -4.14848e-05, -0.940672, 0, 0, -3),
@@ -849,9 +777,6 @@ orientation = 1
 
 [node name="DemoVR" type="Node3D"]
 script = ExtResource("1_awelo")
-
-[node name="XROrigin3D" parent="." instance=ExtResource("2_cjyj1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 18.4847)
 
 [node name="Room" type="Node3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
@@ -954,27 +879,32 @@ transform = Transform3D(-0.0742789, -0.0297095, 0, 0.0291929, -0.0729874, 0.0148
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 10, 2.5, 10)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Room/WallLeft"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.25)
 material_override = ExtResource("3_oxx36")
 mesh = SubResource("BoxMesh_3w8l1")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Room/WallLeft"]
-shape = SubResource("ConcavePolygonShape3D_iseb0")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.25)
+shape = SubResource("ConcavePolygonShape3D_104ji")
 
 [node name="WallRight" type="StaticBody3D" parent="Room"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 10, 2.5, -10)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Room/WallRight"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.25)
 material_override = ExtResource("3_oxx36")
 mesh = SubResource("BoxMesh_qqruj")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Room/WallRight"]
-shape = SubResource("ConcavePolygonShape3D_fgudu")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.25)
+shape = SubResource("ConcavePolygonShape3D_55ctm")
 
 [node name="Floor" type="StaticBody3D" parent="Room"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 10, -0.51, 0)
 physics_material_override = SubResource("PhysicsMaterial_1oqi5")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Room/Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.25)
 mesh = SubResource("QuadMesh_wiqfc")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Floor"]
@@ -984,13 +914,14 @@ shape = SubResource("ConcavePolygonShape3D_ghucw")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 5.5, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Room/Roof"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.25, 0, 0)
 mesh = SubResource("BoxMesh_fm4me")
 
 [node name="Phases" type="Node3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, -0.505, 1.63886)
 
 [node name="Introduction" type="Node3D" parent="Phases"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.8216, 0, -3.59115e-08)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.7544, 0, -5.48315e-08)
 
 [node name="Area3D" type="Area3D" parent="Phases/Introduction"]
 collision_layer = 0
@@ -1084,8 +1015,10 @@ libraries = {
 &"": SubResource("AnimationLibrary_atncu")
 }
 
+[node name="InvisibleWall" type="StaticBody3D" parent="Phases/Introduction"]
+
 [node name="Orientation" type="Node3D" parent="Phases"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.52258, 0, -9.86915e-10)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0, 0)
 
 [node name="Area3D" type="Area3D" parent="Phases/Orientation"]
 collision_layer = 0
@@ -1137,7 +1070,7 @@ stream = ExtResource("14_7v2sb")
 stream = ExtResource("22_288cj")
 
 [node name="Explain" type="Node3D" parent="Phases"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.54691, 0, -2.39062e-08)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 0)
 
 [node name="Area3D" type="Area3D" parent="Phases/Explain"]
 collision_layer = 0
@@ -1183,59 +1116,17 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 
 visible = false
 mesh = SubResource("QuadMesh_8udpy")
 
-[node name="CarouselRoot" parent="." node_paths=PackedStringArray("xr_origin") instance=ExtResource("8_le5lg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 5.32233)
+[node name="Audios" type="Node" parent="Phases/Explore"]
+
+[node name="Fire" type="Node" parent="Phases/Explore/Audios"]
+
+[node name="Weather" type="Node" parent="Phases/Explore/Audios"]
+
+[node name="Air" type="Node" parent="Phases/Explore/Audios"]
+
+[node name="CarouselRoot" parent="." instance=ExtResource("8_le5lg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 4.87507)
 visible = false
-xr_origin = NodePath("../XROrigin3D")
-
-[node name="SphereVideo" type="Node3D" parent="."]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 1.02537, -16.0273)
-script = SubResource("GDScript_ryolw")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="SphereVideo"]
-material_override = SubResource("StandardMaterial3D_02bpg")
-mesh = SubResource("SphereMesh_cigej")
-
-[node name="SubViewport" type="SubViewport" parent="SphereVideo"]
-size = Vector2i(2048, 1024)
-
-[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="SphereVideo/SubViewport"]
-offset_right = 40.0
-offset_bottom = 40.0
-stream = ExtResource("15_0w8fv")
-autoplay = true
-loop = true
-
-[node name="Area3D" type="Area3D" parent="SphereVideo"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.851136)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="SphereVideo/Area3D"]
-shape = SubResource("BoxShape3D_l0cfe")
-
-[node name="SphereVideo2" type="Node3D" parent="."]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 2.8047, 1.02537, -23.4087)
-script = SubResource("GDScript_tvr7u")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="SphereVideo2"]
-transform = Transform3D(0.890086, 0, -0.455793, 0, 1, 0, 0.455793, 0, 0.890086, 0, 0, 0)
-material_override = SubResource("StandardMaterial3D_4b6r4")
-mesh = SubResource("SphereMesh_urxem")
-
-[node name="SubViewport" type="SubViewport" parent="SphereVideo2"]
-size = Vector2i(2048, 1024)
-
-[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="SphereVideo2/SubViewport"]
-offset_right = 40.0
-offset_bottom = 40.0
-stream = ExtResource("16_8bunb")
-autoplay = true
-loop = true
-
-[node name="Area3D" type="Area3D" parent="SphereVideo2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.851136)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="SphereVideo2/Area3D"]
-shape = SubResource("BoxShape3D_o6rvf")
 
 [node name="Path3DAhead" type="Path3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.4642)
@@ -1289,32 +1180,31 @@ skeleton = NodePath("../../..")
 [node name="Decoration" type="Node3D" parent="."]
 
 [node name="Planter" parent="Decoration" instance=ExtResource("25_43p5x")]
-transform = Transform3D(-0.99825, 0, 0.0591321, 0, 1, 0, -0.0591321, 0, -0.99825, -9, -0.5, 11)
+transform = Transform3D(-0.99825, 0, 0.0591321, 0, 1, 0, -0.0591321, 0, -0.99825, -9, -0.5, 10)
 
 [node name="Planter2" parent="Decoration" instance=ExtResource("25_43p5x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, -0.5, 11)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, -0.5, 10)
 
 [node name="Planter3" parent="Decoration" instance=ExtResource("25_43p5x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, -0.5, 5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, -0.5, 4)
 
 [node name="Planter4" parent="Decoration" instance=ExtResource("25_43p5x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, -0.5, 5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, -0.5, 4)
 
 [node name="BenchLegged" type="MeshInstance3D" parent="Decoration"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -0.5, 17)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -0.5, 12.5)
 material_override = ExtResource("26_wh6b6")
 mesh = ExtResource("27_t6xuk")
 skeleton = NodePath("../..")
 surface_material_override/0 = ExtResource("28_3v0wk")
 
 [node name="BenchLegged2" type="MeshInstance3D" parent="Decoration"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -0.5, 17)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -0.5, 12.5)
 material_override = ExtResource("26_wh6b6")
 mesh = ExtResource("27_t6xuk")
 skeleton = NodePath("../..")
 surface_material_override/0 = ExtResource("28_3v0wk")
 
-[connection signal="object_seen" from="XROrigin3D" to="." method="XROrigin_ObjectSeen"]
 [connection signal="body_entered" from="Phases/Introduction/Area3D" to="." method="IntroductionIn"]
 [connection signal="body_exited" from="Phases/Introduction/Area3D" to="." method="IntroductionOut"]
 [connection signal="body_entered" from="Phases/Orientation/Area3D" to="." method="OrientationIn"]
@@ -1323,4 +1213,8 @@ surface_material_override/0 = ExtResource("28_3v0wk")
 [connection signal="body_exited" from="Phases/Explain/Area3D" to="." method="ExplainOut"]
 [connection signal="body_entered" from="Phases/Explore/Left" to="." method="ExploreLeftIn"]
 [connection signal="body_exited" from="Phases/Explore/Left" to="." method="ExploreLeftOut"]
+[connection signal="body_entered" from="Phases/Explore/Middle" to="." method="ExploreMiddleIn"]
+[connection signal="body_exited" from="Phases/Explore/Middle" to="." method="ExploreMiddleOut"]
+[connection signal="body_entered" from="Phases/Explore/Right" to="." method="ExploreRightIn"]
+[connection signal="body_exited" from="Phases/Explore/Right" to="." method="ExploreRightOut"]
 [connection signal="image_change" from="CarouselRoot" to="." method="carousel_image_change"]
